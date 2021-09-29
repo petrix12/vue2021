@@ -24,8 +24,14 @@
     + $ git push -u origin main
 
 ### Video 002. ¿Cómo funciona el curso?
-
-
+**Contenido:** Detalles y recomendaciones sobre el funcionamiento del curso.
+1. Commit Video 002:
+    + $ git add .
+    + $ git commit -m "Commit 002: Detalles y recomendaciones sobre el funcionamiento del curso."
+    + $ git push -u origin main
 
 ### Video 003. ¿Cómo hacer preguntas?
+
+
+
 ### Video 004. Instalaciones recomendadas y obligatorias
