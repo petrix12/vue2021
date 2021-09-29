@@ -14,13 +14,18 @@
     + $ git remote add origin https://github.com/petrix12/vue2021.git
     + $ git push -u origin main
 
-## Sección 1: Introducción
+## Sección 01: Introducción
+
+### Video 001. Introducción
+**Contenido:** Conocimientos previos y que esperar del curso.
 1. Commit Video 001:
     + $ git add .
     + $ git commit -m "Commit 001: Introducción"
     + $ git push -u origin main
 
-### Video 001. Introducción
 ### Video 002. ¿Cómo funciona el curso?
+
+
+
 ### Video 003. ¿Cómo hacer preguntas?
 ### Video 004. Instalaciones recomendadas y obligatorias
