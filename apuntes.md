@@ -27,11 +27,14 @@
 **Contenido:** Detalles y recomendaciones sobre el funcionamiento del curso.
 1. Commit Video 002:
     + $ git add .
-    + $ git commit -m "Commit 002: Detalles y recomendaciones sobre el funcionamiento del curso."
+    + $ git commit -m "Commit 002: ¿Cómo funciona el curso?"
     + $ git push -u origin main
 
 ### Video 003. ¿Cómo hacer preguntas?
-
-
+**Contenido:** Políticas del curso sobre como formular preguntas.
+1. Commit Video 003:
+    + $ git add .
+    + $ git commit -m "Commit 003: ¿Cómo hacer preguntas?"
+    + $ git push -u origin main
 
 ### Video 004. Instalaciones recomendadas y obligatorias
