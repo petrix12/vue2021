@@ -38,3 +38,82 @@
     + $ git push -u origin main
 
 ### Video 004. Instalaciones recomendadas y obligatorias
++ [Instalaciones recomendadas](https://gist.github.com/Klerith/c994a32ad825d4e87b9efbfb7174bcaa)
+1. Instalaciones recomendadas:
+    + [Node Js](https://nodejs.org)
+    + [Visual Studio Code](https://code.visualstudio.com/download)
+    + [Google Chrome](https://www.google.com/intl/es/chrome/?brand=UUXU&gclid=CjwKCAjwndCKBhAkEiwAgSDKQVlgpc0j06KtDtMn3gg-cCI_2KuhgL-PoRBJXLhg93KfoAmqVbPeLBoCkSwQAvD_BwE&gclsrc=aw.ds)
+    + [Vue CLI](https://cli.vuejs.org/guide/installation.html)
+    + [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
+    + [Postman](https://www.postman.com/downloads)
+2. Extensiones de VSCode:
+    + Activitus Bar:
+        + Gruntfuggly
+        + Save some real estate by recreating the activity bar buttons on the status bar
+    + TypeScript importer:
+        + pmneo
+        + Automatically searches for TypeScript definitions in workspace files and provides all known symbols as completion item to allow code completion.
+3. Extensiones de Chrome
+    + Vue DevTools
+    + Vue DevTools Beta
+    + Json Viewer Awesome
+4. Instalación de **Vue CLI**:
+    + Abrir terminal como administrador.
+    + $ npm install -g @vue/cli
+5. Instalación de Vetur en VSCode:
+    + Abrir VSCode.
+    + Ir a la página de [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur).
+    + Presionar el botón **Install**.
+    + Seguir el resto de las instrucciones de forma intuitiva.
+6. Instalar Bracket Pair Colorizer 2 en VSCode:
+    + Abrir VSCode.
+    + Ir a la página de [Bracket Pair Colorizer 2](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2).
+    + Presionar el botón **Install**.
+    + Una vez instalado, para configurar los colores de las llaves, ir a **Ver > Paleta de comandos...**.
+    + Ubicar **Open Settings (JEISON)** y establecer la configuración de colores de llaves anexando en **C:\Users\bazop\AppData\Roaming\Code\User\settings.json**:
+        ```json
+        "bracket-pair-colorizer-2.colors": [
+            "#fafafa",
+            "#9F51B6",
+            "#F7C244",
+            "#F07850",
+            "#9CDD29",
+            "#0098FA"
+        ],
+        ```
+7. Consultar las versiones de los programas:
+    + Node Js:
+        + $ node --version
+    + Vue CLI:
+        + $ vue --version
+8. Commit Video 004:
+    + $ git add .
+    + $ git commit -m "Commit 004: Instalaciones recomendadas y obligatorias"
+    + $ git push -u origin main
+
+## Sección 2: Reforzamiento de JavaScript
+
+### Video 005. Introducción a la sección
+
+
+
+### Video 006. Temas puntuales de la sección
+### Video 007. Inicio de proyecto - Bases de JavaScript
+### Video 008. Let vs Var vs Const
+### Video 009. Template literals
+### Video 010. Object literal
+### Video 011. Arrays
+### Video 012. Functions
+### Video 013. Functions - Segunda Parte
+### Video 014. Desestructuración de objetos
+### Video 015. Desestructuración de Arreglos
+### Video 016. Importaciones y exportaciones
+### Video 017. Exportar funciones - Tarea
+### Video 018. Promesas
+### Video 019. Argumentos a las promesas
+### Video 020. Fetch API
+### Video 021. Axios
+### Video 022. Async - Await
+### Video 023. Async - Await - Aplicado
+### Video 024. Ternarios y null check
+### Video 025. Código fuente de la sección
