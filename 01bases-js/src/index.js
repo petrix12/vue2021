@@ -1,21 +1,39 @@
-const arreglo1 = []
-const arreglo2 = new Array()
-/* la forma en que se definieron los arreglos 1 y 2 son equivalentes */
+// Función tradicional
+function saludar1(nombre){
+    return `Hola ${ nombre }`
+}
 
-const arreglo3 = [1, 2, 3, 4]
-// agregar un elemento al arreglo:
-arreglo3.push(5)
+// Función anónima
+const saludar2 = function(nombre){
+    return `Hola ${ nombre }`
+}
 
-const arreglo4 = [ ...arreglo3 ]
-arreglo4.push(6)
+// Función flecha
+const saludar3 = (nombre) => `Hola ${ nombre }`
 
-const arreglo5 = arreglo4.map(function(n){
-    // return 1
-    return n * 2
+const nombre = 'Rosa'
+
+// Otro ejemplo de función flecha
+const getUser = () => ({ 
+    uid: 'ABC123', 
+    username: 'Guillermo007' 
 })
 
-console.log(arreglo1)
-console.log(arreglo2)
-console.log(arreglo3)
-console.log(arreglo4)
-console.log(arreglo5)
+const heroes = [
+    {
+        id: 1,
+        name: 'Batman'
+    },
+    {
+        id: 2,
+        name: 'Superman'       
+    }
+]
+
+const existe = heroes.some((heroe) => heroe.id === 1)
+
+console.log(saludar1(nombre))
+console.log(saludar2(nombre))
+console.log(saludar3(nombre))
+console.log(getUser(nombre))
+console.log(existe)

@@ -250,8 +250,53 @@
     + $ git push -u origin main
 
 ### Video 012. Functions
++ [Array.prototype.some](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/some)
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    // Función tradicional
+    function saludar1(nombre){
+        return `Hola ${ nombre }`
+    }
 
+    // Función anónima
+    const saludar2 = function(nombre){
+        return `Hola ${ nombre }`
+    }
 
+    // Función flecha
+    const saludar3 = (nombre) => `Hola ${ nombre }`
+
+    const nombre = 'Rosa'
+
+    // Otro ejemplo de función flecha
+    const getUser = () => ({ 
+        uid: 'ABC123', 
+        username: 'Guillermo007' 
+    })
+
+    const heroes = [
+        {
+            id: 1,
+            name: 'Batman'
+        },
+        {
+            id: 2,
+            name: 'Superman'       
+        }
+    ]
+
+    const existe = heroes.some((heroe) => heroe.id === 1)
+
+    console.log(saludar1(nombre))
+    console.log(saludar2(nombre))
+    console.log(saludar3(nombre))
+    console.log(getUser(nombre))
+    console.log(existe)
+    ```
+2. Commit Video 012:
+    + $ git add .
+    + $ git commit -m "Commit 012: Functions"
+    + $ git push -u origin main
 
 ### Video 013. Functions - Segunda Parte
 ### Video 014. Desestructuración de objetos
