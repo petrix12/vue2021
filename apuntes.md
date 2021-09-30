@@ -212,17 +212,47 @@
     console.log(persona2)
     console.log(persona3)
     ```
-    + Guardar este archivo como: **01bases-js\src\bases\03-objetos.js**.
+    + Guardar este archivo como: **01bases-js\src\bases\03-objets.js**.
 2. Commit Video 010:
     + $ git add .
     + $ git commit -m "Commit 010: Object literal"
     + $ git push -u origin main
 
 ### Video 011. Arrays
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const arreglo1 = []
+    const arreglo2 = new Array()
+    /* la forma en que se definieron los arreglos 1 y 2 son equivalentes */
 
+    const arreglo3 = [1, 2, 3, 4]
+    // agregar un elemento al arreglo:
+    arreglo3.push(5)
 
+    const arreglo4 = [ ...arreglo3 ]
+    arreglo4.push(6)
+
+    const arreglo5 = arreglo4.map(function(n){
+        // return 1
+        return n * 2
+    })
+
+    console.log(arreglo1)
+    console.log(arreglo2)
+    console.log(arreglo3)
+    console.log(arreglo4)
+    console.log(arreglo5)
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\04-arrays.js**.
+2. Commit Video 011:
+    + $ git add .
+    + $ git commit -m "Commit 011: Arrays"
+    + $ git push -u origin main
 
 ### Video 012. Functions
+
+
+
 ### Video 013. Functions - Segunda Parte
 ### Video 014. Desestructuración de objetos
 ### Video 015. Desestructuración de Arreglos
