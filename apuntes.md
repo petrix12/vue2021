@@ -290,7 +290,7 @@
     console.log(saludar1(nombre))
     console.log(saludar2(nombre))
     console.log(saludar3(nombre))
-    console.log(getUser(nombre))
+    console.log(getUser())
     console.log(existe)
     ```
 2. Commit Video 012:
@@ -299,7 +299,38 @@
     + $ git push -u origin main
 
 ### Video 013. Functions - Segunda Parte
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const heroes = [
+        {
+            id: 1,
+            name: 'Batman'
+        },
+        {
+            id: 2,
+            name: 'Superman'       
+        }
+    ]
+
+    const existe = heroes.find((heroe) => heroe.id === 1)
+
+    // Desestructurado
+    const { id, name } = heroes.find((heroe) => heroe.id === 2)
+
+    console.log(existe.name)
+    console.log(id)
+    console.log(name)
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\04-arrays.js**.
+2. Commit Video 013:
+    + $ git add .
+    + $ git commit -m "Commit 013: Functions - Segunda Parte"
+    + $ git push -u origin main
+
 ### Video 014. Desestructuración de objetos
+
+
+
 ### Video 015. Desestructuración de Arreglos
 ### Video 016. Importaciones y exportaciones
 ### Video 017. Exportar funciones - Tarea
