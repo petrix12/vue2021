@@ -94,7 +94,11 @@
 ## Sección 2: Reforzamiento de JavaScript
 
 ### Video 005. Introducción a la sección
-
+**Contenido**: Importancia de reforzar JavaScript.
+1. Commit Video 005:
+    + $ git add .
+    + $ git commit -m "Commit 005: Importancia de reforzar JavaScript"
+    + $ git push -u origin main
 
 
 ### Video 006. Temas puntuales de la sección
