@@ -186,10 +186,42 @@
     + $ git push -u origin main
 
 ### Video 010. Object literal
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const persona = {
+        nombre: 'Isabel',
+        apellido: 'Bazó',
+        edad: 130,
+        direccion: {
+            ciudad: 'Roma',
+            zip: 525545,
+            lat: 14.5777,
+            lng: 3.99988
+        }
+    }
 
+    const persona2 = persona
 
+    persona2.nombre = 'María'
+
+    const persona3 = { ...persona }
+
+    persona3.nombre = 'Rebeca'
+
+    console.log(persona)
+    console.log(persona2)
+    console.log(persona3)
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\03-objetos.js**.
+2. Commit Video 010:
+    + $ git add .
+    + $ git commit -m "Commit 010: Object literal"
+    + $ git push -u origin main
 
 ### Video 011. Arrays
+
+
+
 ### Video 012. Functions
 ### Video 013. Functions - Segunda Parte
 ### Video 014. Desestructuración de objetos
