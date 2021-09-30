@@ -140,6 +140,30 @@
     + $ git push -u origin main
 
 ### Video 008. Let vs Var vs Const
++ **Nota**: No usar **var** en JavaScript, en su lugar utilizar **let** y **const**.
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const nombre = 'Tony'
+    const apellido = 'Stark'
+
+    console.log(nombre, apellido)
+
+    if(true){
+        let nombre = ''
+        nombre = 'Peter'
+    }
+
+    console.log(nombre)
+    ```
+    + Guardar este archivo como:
+        + 01bases-js\src\bases\01-const-let.js
+2. Commit Video 008:
+    + $ git add .
+    + $ git commit -m "Commit 008: Let vs Var vs Const"
+    + $ git push -u origin main
+
+
+
 
 
 
