@@ -155,20 +155,40 @@
 
     console.log(nombre)
     ```
-    + Guardar este archivo como:
-        + 01bases-js\src\bases\01-const-let.js
+    + Guardar este archivo como: **01bases-js\src\bases\01-const-let.js**.
 2. Commit Video 008:
     + $ git add .
     + $ git commit -m "Commit 008: Let vs Var vs Const"
     + $ git push -u origin main
 
-
-
-
-
-
 ### Video 009. Template literals
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const nombre = 'Leticia'
+    const apellido = 'Rodríguez'
+
+    const nombreCompleto = `${ nombre } ${ apellido }`
+
+    console.log(nombreCompleto)
+
+    console.log(`Resultado: ${ 7 + 18 }`)
+
+    function getSaludo(nombre){
+        return 'Hola ' + nombre
+    }
+
+    console.log(`Este es un texto: ${ getSaludo(nombre) }`)
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\02-template.js**.
+2. Commit Video 009:
+    + $ git add .
+    + $ git commit -m "Commit 009: Template literals"
+    + $ git push -u origin main
+
 ### Video 010. Object literal
+
+
+
 ### Video 011. Arrays
 ### Video 012. Functions
 ### Video 013. Functions - Segunda Parte
