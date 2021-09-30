@@ -100,9 +100,33 @@
     + $ git commit -m "Commit 005: Importancia de reforzar JavaScript"
     + $ git push -u origin main
 
+### Nota 006. Temas puntuales de la sección
+1. Puntos importantes a reforzar en JavaScript: 
+    + Constantes, let y var
+    + Template literals
+    + Objetos
+    + Arreglos
+    + Funciones
+    + Funciones de flecha
+    + Desestructuración de objetos y arreglos
+    + Importaciones y exportaciones
+    + Promesas
+    + Argumentos a promesas
+    + Valor y referencia
+    + Async y Await
+    + Peticiones HTTP
+    + Ternarios
+    + Null check
 
-### Video 006. Temas puntuales de la sección
+2. Commit Video 006:
+    + $ git add .
+    + $ git commit -m "Commit 006: Temas puntuales de la sección"
+    + $ git push -u origin main
+
 ### Video 007. Inicio de proyecto - Bases de JavaScript
+
+
+
 ### Video 008. Let vs Var vs Const
 ### Video 009. Template literals
 ### Video 010. Object literal
