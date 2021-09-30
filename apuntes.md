@@ -124,10 +124,25 @@
     + $ git push -u origin main
 
 ### Video 007. Inicio de proyecto - Bases de JavaScript
-
-
+1. Descargar repositorio: https://github.com/Klerith/javascript-intro
+2. Ir a la raíz del proyecto y descargar todos los modulos de Node Js requeridos:
+    + $ npm i
+3. Levantar un servidor para el proyecto:
+    + $ npm start
+4. Ir en el navegador a las **Herramientas para desarrolladores** y luego a **Console**.
+5. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    console.log('Soluciones++')
+    ```
+6. Commit Video 007:
+    + $ git add .
+    + $ git commit -m "Commit 007: Inicio de proyecto - Bases de JavaScript"
+    + $ git push -u origin main
 
 ### Video 008. Let vs Var vs Const
+
+
+
 ### Video 009. Template literals
 ### Video 010. Object literal
 ### Video 011. Arrays
@@ -145,3 +160,6 @@
 ### Video 023. Async - Await - Aplicado
 ### Video 024. Ternarios y null check
 ### Video 025. Código fuente de la sección
+
+    ```js
+    ```
