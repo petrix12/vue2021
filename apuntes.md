@@ -293,6 +293,7 @@
     console.log(getUser())
     console.log(existe)
     ```
+    + Guardar este archivo como: **01bases-js\src\bases\06-functions1.js**.
 2. Commit Video 012:
     + $ git add .
     + $ git commit -m "Commit 012: Functions"
@@ -321,17 +322,78 @@
     console.log(id)
     console.log(name)
     ```
-    + Guardar este archivo como: **01bases-js\src\bases\04-arrays.js**.
+    + Guardar este archivo como: **01bases-js\src\bases\06-functions2.js**.
 2. Commit Video 013:
     + $ git add .
     + $ git commit -m "Commit 013: Functions - Segunda Parte"
     + $ git push -u origin main
 
 ### Video 014. Desestructuración de objetos
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const person = {
+        name: 'Tony',
+        age: 45,
+        codeName: 'Ironman',
+        power1: 'Dinero'
+    }
 
+    console.log(person.name)
+    console.log(person.age)
+    console.log(person.codeName)
 
+    // Desestructurando el objeto persona
+    const { age, name, codeName, power1 = 'No tiene', power2 = 'No tiene' } = person
+
+    console.log(name)
+    console.log(age)
+    console.log(codeName)
+    console.log(power1)
+    console.log(power2)
+
+    // Otro ejemplo de desestructuración
+    const createHero = (person) => {
+        const { age, name, codeName, power } = person
+        return {
+            id: 11639889,
+            name: name,
+            age: age,
+            codeName: codeName,
+            power: power
+        }
+    }
+    console.log(createHero(person))
+
+    // Esta función es equivalente a la anterior
+    const createHero2 = ({ age, name, codeName, power }) => {
+        return {
+            id: 11639889,
+            name,
+            age,
+            codeName,
+            power
+        }
+    }
+    console.log(createHero2(person))
+
+    // Esta función es equivalente a la anterior
+    const createHero3 = ({ age, name, codeName, power }) => ({id: 11639889, name, age, codeName, power})
+    console.log(createHero3(person))
+
+    // Esta función es equivalente a la anterior
+    const createHero4 = ({ age, name: nombre, codeName, power }) => ({id: 11639889, nombre, age, codeName, power})
+    console.log(createHero4(person))
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\07-deses-obj.js**.
+2. Commit Video 014:
+    + $ git add .
+    + $ git commit -m "Commit 014: Desestructuración de objetos"
+    + $ git push -u origin main
 
 ### Video 015. Desestructuración de Arreglos
+
+
+
 ### Video 016. Importaciones y exportaciones
 ### Video 017. Exportar funciones - Tarea
 ### Video 018. Promesas
