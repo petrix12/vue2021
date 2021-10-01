@@ -433,12 +433,60 @@
     + $ git commit -m "Commit 015: Desestructuración de Arreglos"
     + $ git push -u origin main
 
-
 ### Video 016. Importaciones y exportaciones
+1. Modificar el archivo **01bases-js\src\data\heroes.js**:
+    ```js
+    const heroes = [
+        {
+            id: 1,
+            name: 'Batman',
+            owner: 'DC'
+        },
+        {
+            id: 2,
+            name: 'Spiderman',
+            owner: 'Marvel'
+        },
+        {
+            id: 3,
+            name: 'Superman',
+            owner: 'DC'
+        },
+        {
+            id: 4,
+            name: 'Flash',
+            owner: 'DC'
+        },
+        {
+            id: 5,
+            name: 'Wolverine',
+            owner: 'Marvel'
+        },
+    ];
 
+    export const owners = ['DC','Marvel'];
 
+    export default heroes;
+    ```
+2. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    import {owners} from './data/heroes'
+    console.log(owners)
+
+    // Importación por defecto
+    import superHeroes from './data/heroes'
+    console.log(superHeroes)
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\aaaaaaaa.js**.
+3. Commit Video 016:
+    + $ git add .
+    + $ git commit -m "Commit 016: Importaciones y exportaciones"
+    + $ git push -u origin main
 
 ### Video 017. Exportar funciones - Tarea
+
+
+
 ### Video 018. Promesas
 ### Video 019. Argumentos a las promesas
 ### Video 020. Fetch API
