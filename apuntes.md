@@ -810,7 +810,32 @@
     + $ git push -u origin main
 
 ### Nota 025. Código fuente de la sección
++ [Repositorio del proyecto **01bases-js**](https://github.com/Klerith/javascript-intro/tree/introduccion-terminada)
+1. Commit Video 025:
+    + $ git add .
+    + $ git commit -m "Commit 025: Código fuente de la sección"
+    + $ git push -u origin main
 
+## Sección 3: Introducción a Vue.js
+
+### Video 026. Introducción a la sección
+
+
+
+### Video 027. Temas puntuales de la sección
+### Video 028. Breve introducción sobre Vue.js
+### Video 029. Puntos interesantes de Vue.js
+### Video 030. Hola Mundo - Vue.js
+### Video 031. Representación declarativa
+### Video 032. Estado del componente - Data
+### Video 033. Introducción a los eventos
+### Video 034. Directiva v-for
+### Video 035. Indices y desestructuración dentro de v-for
+### Video 036. Directiva v-model
+### Video 037. Modificadores de eventos
+### Video 038. Directivas v-if y v-show
+### Video 039. Recapitulación de la sección
+### Video 040. Código fuente de la sección
 
 
 
