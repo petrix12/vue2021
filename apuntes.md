@@ -826,10 +826,31 @@
     + $ git push -u origin main
 
 ### Nota 027. Temas puntuales de la sección
-
-
+1. Temas puntuales de la sección: 
+   + Sección introductoria a Vue.js
+       + En esta sección tocaremos las bases generales sobre Vue.js, creando una pequeña aplicación encapsulada y demostrando el por qué es un framework progresivo.
+       + Veremos los siguientes temas de forma general:
+           + Options Api
+           + Métodos
+           + Eventos
+           + Modificadores de eventos
+           + Propiedades reactivas
+           + Directivas
+           + v-if
+           + v-show
+           + v-for
+           + Crear una aplicación / componente
+           + Y más
+       + Esta sección tiene por objetivo darnos el empujón inicial para romper la barrera de entrada al Framework de Vue.js
+2. Commit Video 027:
+    + $ git add .
+    + $ git commit -m "Commit 027: Temas puntuales de la sección"
+    + $ git push -u origin main
 
 ### Video 028. Breve introducción sobre Vue.js
+
+
+
 ### Video 029. Puntos interesantes de Vue.js
 ### Video 030. Hola Mundo - Vue.js
 ### Video 031. Representación declarativa
