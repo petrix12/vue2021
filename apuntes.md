@@ -864,10 +864,48 @@
     + $ git push -u origin main
 
 ### Video 030. Hola Mundo - Vue.js
++ [Página de **Vue.js**](https://v3.vuejs.org)
+1. Crear una nueva carpeta para el proyecto base de Vue.js llamada **02bases-vue**.
+2. Crear el archivo **02bases-vue\index.html**:
+    ```html
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js intro</title>
+    </head>
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp"></div>
 
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+3. Crear archivo **02bases-vue\app.js**:
+    ```js
+    // console.log(Vue)
+    const app = Vue.createApp({
+        template: `
+            <h1>Hola Guillermo y Rosita</h1>
+            <p>Desde app.js</p>
+        `
+    })
 
+    app.mount('#myApp')
+    // Si fuese una clase:
+    // app.mount('.myApp')
+    ```
+4. Commit Video 030:
+    + $ git add .
+    + $ git commit -m "Commit 030: Hola Mundo - Vue.js"
+    + $ git push -u origin main
 
 ### Video 031. Representación declarativa
+
+
+
 ### Video 032. Estado del componente - Data
 ### Video 033. Introducción a los eventos
 ### Video 034. Directiva v-for
