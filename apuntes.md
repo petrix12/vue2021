@@ -848,10 +848,18 @@
     + $ git push -u origin main
 
 ### Video 028. Breve introducción sobre Vue.js
-
-
++ [Framework más usados](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-web-frameworks-loved2)
++ [Empresas que usan Vue.js](https://medium.com/notonlycss/google-apple-and-other-users-of-vue-js-e4505359e5d5)
+**Contenido**: Comparación entre **Vue.js**, **React** y **Angular**.
+1. Commit Video 028:
+    + $ git add .
+    + $ git commit -m "Commit 028: Breve introducción sobre Vue.js"
+    + $ git push -u origin main
 
 ### Video 029. Puntos interesantes de Vue.js
+
+
+
 ### Video 030. Hola Mundo - Vue.js
 ### Video 031. Representación declarativa
 ### Video 032. Estado del componente - Data
