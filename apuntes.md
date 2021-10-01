@@ -819,10 +819,16 @@
 ## Sección 3: Introducción a Vue.js
 
 ### Video 026. Introducción a la sección
+**Contenido**: Breve introducción a Vue.js.
+1. Commit Video 026:
+    + $ git add .
+    + $ git commit -m "Commit 026: Introducción a la sección"
+    + $ git push -u origin main
+
+### Nota 027. Temas puntuales de la sección
 
 
 
-### Video 027. Temas puntuales de la sección
 ### Video 028. Breve introducción sobre Vue.js
 ### Video 029. Puntos interesantes de Vue.js
 ### Video 030. Hola Mundo - Vue.js
@@ -835,7 +841,7 @@
 ### Video 037. Modificadores de eventos
 ### Video 038. Directivas v-if y v-show
 ### Video 039. Recapitulación de la sección
-### Video 040. Código fuente de la sección
+### Nota 040. Código fuente de la sección
 
 
 
