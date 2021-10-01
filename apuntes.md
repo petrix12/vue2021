@@ -477,17 +477,62 @@
     import superHeroes from './data/heroes'
     console.log(superHeroes)
     ```
-    + Guardar este archivo como: **01bases-js\src\bases\aaaaaaaa.js**.
+    + Guardar este archivo como: **01bases-js\src\bases\09-imp-exp1.js**.
 3. Commit Video 016:
     + $ git add .
     + $ git commit -m "Commit 016: Importaciones y exportaciones"
     + $ git push -u origin main
 
 ### Video 017. Exportar funciones - Tarea
++ [Array.prototype.filter](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
++ [Array.prototype.find](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    // Importación por defecto
+    import superHeroes from './data/heroes'
+    console.log(superHeroes)
 
+    // getHeroById(id)  find
+    const getHeroById = (id) => superHeroes.find(hero => hero.id === id)
+    console.log(getHeroById(2))
 
+    // getHeroByOwner('DC' o 'Marvel') filter
+    const getHeroByOwner = (owner) => superHeroes.filter(hero => hero.owner === owner)
+    console.log(getHeroByOwner('DC'))
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\10-imp-exp2.js**.
+2. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    // Importación por defecto
+    import superHeroes from '../data/heroes'
+    console.log(superHeroes)
+
+    // getHeroById(id)  find
+    export const getHeroById = (id) => superHeroes.find(hero => hero.id === id)
+    //console.log(getHeroById(2))
+
+    // getHeroByOwner('DC' o 'Marvel') filter
+    export const getHeroByOwner = (owner) => superHeroes.filter(hero => hero.owner === owner)
+    //console.log(getHeroByOwner('DC'))
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\11-imp-exp3.js**.
+3. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    import { getHeroById, getHeroByOwner } from './bases/11-imp-exp3'
+
+    console.log(getHeroById(2))
+    console.log(getHeroByOwner('Marvel'))
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\12-imp-exp4.js**.
+4. Commit Video 018:
+    + $ git add .
+    + $ git commit -m "Commit 018: Exportar funciones - Tarea"
+    + $ git push -u origin main
 
 ### Video 018. Promesas
+
+
+
 ### Video 019. Argumentos a las promesas
 ### Video 020. Fetch API
 ### Video 021. Axios
