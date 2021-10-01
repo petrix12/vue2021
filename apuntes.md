@@ -602,10 +602,68 @@
     + $ git push -u origin main
 
 ### Video 020. Fetch API
+1. Ingresar a [Giphy](https://developers.giphy.com/) e iniciar sesión.
+2. Crear una nueva aplicación.
+3. Seleccionar API y dar clic en siguiente:
+    + Your App Name: Prueba VueJs
+    + App Description: Este es un demo para pruebas Vue Js
+4. Recuperar el **API Key**: 3aYTpZYbtPMeAPMXJ3AfCcEJTVwfymFt
+5. Ir a **Docs** y luego a **API Endpoints** y luego a **Random Enpoint**.
+6. Obtener el **Gif URL**: api.giphy.com/v1/gifs/random
+7. Construir la siguiente petición http: 'https://' + **Gif URL** + '?api_key=' + **API Key**:
+    + **URL resultante**: https://api.giphy.com/v1/gifs/random?api_key=3aYTpZYbtPMeAPMXJ3AfCcEJTVwfymFt
+8. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const apiKey = '3aYTpZYbtPMeAPMXJ3AfCcEJTVwfymFt'
 
+    // Pasar como parámetro la URL resultante
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`)
+        .then(resp => {
+            /* console.log(resp.json()) */
+            resp.json().then(resp => console.log(resp))
+        })
+        .catch(e => console.log(e))
 
+    // Esta instrucción es equivalente a la anterior
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`)
+        .then(resp => resp.json())
+        .then(img => {
+            console.log(img)
+        })
+        .catch(e => console.log(e))
+
+    // Para obtener unicamente la data desestructuramos la respuesta json
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`)
+        .then(resp => resp.json())
+        .then(({data}) => {
+            console.log(data)
+        })
+        .catch(e => console.log(e))
+
+    // Para obtener la imagen original
+    fetch(`https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`)
+        .then(resp => resp.json())
+        .then(({data}) => {
+            const {url} = data.images.original
+            console.log(url)
+
+            // Para añadir la imagen en el index.html
+            const img = document.createElement('img')
+            img.src = url
+            document.body.append(img)
+        })
+        .catch(e => console.log(e))
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\16-fetch.js**.
+9. Commit Video 020:
+    + $ git add .
+    + $ git commit -m "Commit 020: Fetch API"
+    + $ git push -u origin main
 
 ### Video 021. Axios
+
+
+
 ### Video 022. Async - Await
 ### Video 023. Async - Await - Aplicado
 ### Video 024. Ternarios y null check
