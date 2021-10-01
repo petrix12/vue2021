@@ -17,21 +17,21 @@
 ## Sección 01: Introducción
 
 ### Video 001. Introducción
-**Contenido:** Conocimientos previos y que esperar del curso.
++ **Contenido:** Conocimientos previos y que esperar del curso.
 1. Commit Video 001:
     + $ git add .
     + $ git commit -m "Commit 001: Introducción"
     + $ git push -u origin main
 
 ### Video 002. ¿Cómo funciona el curso?
-**Contenido:** Detalles y recomendaciones sobre el funcionamiento del curso.
++ **Contenido:** Detalles y recomendaciones sobre el funcionamiento del curso.
 1. Commit Video 002:
     + $ git add .
     + $ git commit -m "Commit 002: ¿Cómo funciona el curso?"
     + $ git push -u origin main
 
 ### Video 003. ¿Cómo hacer preguntas?
-**Contenido:** Políticas del curso sobre como formular preguntas.
++ **Contenido:** Políticas del curso sobre como formular preguntas.
 1. Commit Video 003:
     + $ git add .
     + $ git commit -m "Commit 003: ¿Cómo hacer preguntas?"
@@ -94,7 +94,7 @@
 ## Sección 2: Reforzamiento de JavaScript
 
 ### Video 005. Introducción a la sección
-**Contenido**: Importancia de reforzar JavaScript.
++ **Contenido**: Importancia de reforzar JavaScript.
 1. Commit Video 005:
     + $ git add .
     + $ git commit -m "Commit 005: Importancia de reforzar JavaScript"
@@ -819,7 +819,7 @@
 ## Sección 3: Introducción a Vue.js
 
 ### Video 026. Introducción a la sección
-**Contenido**: Breve introducción a Vue.js.
++ **Contenido**: Breve introducción a Vue.js.
 1. Commit Video 026:
     + $ git add .
     + $ git commit -m "Commit 026: Introducción a la sección"
@@ -850,17 +850,23 @@
 ### Video 028. Breve introducción sobre Vue.js
 + [Framework más usados](https://insights.stackoverflow.com/survey/2020#technology-most-loved-dreaded-and-wanted-web-frameworks-loved2)
 + [Empresas que usan Vue.js](https://medium.com/notonlycss/google-apple-and-other-users-of-vue-js-e4505359e5d5)
-**Contenido**: Comparación entre **Vue.js**, **React** y **Angular**.
++ **Contenido**: Comparación entre **Vue.js**, **React** y **Angular**.
 1. Commit Video 028:
     + $ git add .
     + $ git commit -m "Commit 028: Breve introducción sobre Vue.js"
     + $ git push -u origin main
 
 ### Video 029. Puntos interesantes de Vue.js
-
-
++ **Contenido**: Posicionamiento de **Vue.js** entre los principales framework y librerías, y principales empresas que lo usan.
+1. Commit Video 029:
+    + $ git add .
+    + $ git commit -m "Commit 029: Puntos interesantes de Vue.js"
+    + $ git push -u origin main
 
 ### Video 030. Hola Mundo - Vue.js
+
+
+
 ### Video 031. Representación declarativa
 ### Video 032. Estado del componente - Data
 ### Video 033. Introducción a los eventos
