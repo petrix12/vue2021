@@ -746,10 +746,53 @@
     + $ git push -u origin main
 
 ### Video 023. Async - Await - Aplicado
+1. Modificar el archivo **01bases-js\src\bases\17-axios.js**:
+    ```js
+    import axios from 'axios'
 
+    const apiKey = '3aYTpZYbtPMeAPMXJ3AfCcEJTVwfymFt'
 
+    const giphyApi = axios.create({
+        baseURL: 'https://api.giphy.com/v1/gifs',
+        params: {
+            api_key: apiKey
+        }
+    })
+
+    export default giphyApi
+    ```
+2. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    import giphyApi from './bases/17-axios'
+
+    const getImage = async() => {
+        try {
+            const { data } = (await giphyApi.get('/random')).data
+            const { url } = data.images.original
+            //console.log(url)
+
+            // Para añadir la imagen en el index.html
+            const img = document.createElement('img')
+            img.src = url
+            document.body.append(img)
+        } catch (error) {
+            console.log('Error en la petición', error)
+            throw error
+        }
+    }
+
+    getImage();
+    ```
+   + Guardar este archivo como: **01bases-js\src\bases\19-async-await-b.js**.
+3. Commit Video 023:
+    + $ git add .
+    + $ git commit -m "Commit 023: Async - Await - Aplicado"
+    + $ git push -u origin main
 
 ### Video 024. Ternarios y null check
+
+
+
 ### Nota 025. Código fuente de la sección
 
     ```js
