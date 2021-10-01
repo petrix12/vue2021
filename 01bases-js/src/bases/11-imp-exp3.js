@@ -1,6 +1,6 @@
 // Importación por defecto
 import superHeroes from '../data/heroes'
-console.log(superHeroes)
+//console.log(superHeroes)
 
 // getHeroById(id)  find
 export const getHeroById = (id) => superHeroes.find(hero => hero.id === id)

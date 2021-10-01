@@ -505,7 +505,7 @@
     ```js
     // Importación por defecto
     import superHeroes from '../data/heroes'
-    console.log(superHeroes)
+    //console.log(superHeroes)
 
     // getHeroById(id)  find
     export const getHeroById = (id) => superHeroes.find(hero => hero.id === id)
@@ -569,11 +569,42 @@
     + $ git commit -m "Commit 018: Promesas"
     + $ git push -u origin main
 
-
-
-
 ### Video 019. Argumentos a las promesas
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    import { getHeroById } from './bases/11-imp-exp3'
+
+    const getHeroByIdAsync = (id) => {
+        return new Promise((resolve, reject) => {
+            // la siguiente instrucción se ejecutará 1 seg después
+            setTimeout(() => {
+                const hero = getHeroById(id)
+                if(hero){
+                    resolve(hero)
+                }else{
+                    reject('El héroe no existe')
+                }
+                
+            })
+        })
+    }
+
+    getHeroByIdAsync(5)
+        .then(h => {
+            console.log(`El héroe es: ${ h.name }`)
+        })
+        .catch(console.log)
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\15-promise-async.js**.
+2. Commit Video 019:
+    + $ git add .
+    + $ git commit -m "Commit 019: Argumentos a las promesas"
+    + $ git push -u origin main
+
 ### Video 020. Fetch API
+
+
+
 ### Video 021. Axios
 ### Video 022. Async - Await
 ### Video 023. Async - Await - Aplicado
