@@ -708,12 +708,49 @@
     + $ git push -u origin main
 
 ### Video 022. Async - Await
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    const miPromesa = () => {
+        return new Promise( resolve => {
+            setTimeout(() => {
+                resolve('Tenemos un valor en la promesa')
+            }, 1000)
+        })
+    }
 
+    const medirTiempoAsync = async() => {
+        try {
+            console.log('Inicio')
 
+            //miPromesa().then(console.log)
+            const respuesta = await miPromesa()
+            console.log(respuesta)
+
+            console.log('Fin')
+
+            return 'Fin de medir tiempo async'        
+        }catch{
+            // return 'catch en medirTiempoAsync'
+            throw 'Error en medirTiempoAsync'
+        }
+    }
+
+    medirTiempoAsync()
+        .then(valor => console.log(valor))
+        .catch(err => console.log('error:', err))
+    ```
+   + Guardar este archivo como: **01bases-js\src\bases\18-async-await-a.js**.
+2. Commit Video 022:
+    + $ git add .
+    + $ git commit -m "Commit 022: Async - Await"
+    + $ git push -u origin main
 
 ### Video 023. Async - Await - Aplicado
+
+
+
 ### Video 024. Ternarios y null check
-### Video 025. Código fuente de la sección
+### Nota 025. Código fuente de la sección
 
     ```js
     ```
