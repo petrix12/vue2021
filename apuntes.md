@@ -661,10 +661,56 @@
     + $ git push -u origin main
 
 ### Video 021. Axios
++ [Axios](https://www.npmjs.com/package/axios)
+1. Instalar las dependencias de Axios en la raíz del proyecto **01bases-js**:
+    + $ npm i axios
+2. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    import axios from 'axios'
 
+    const apiKey = '3aYTpZYbtPMeAPMXJ3AfCcEJTVwfymFt'
 
+    //`https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`
+
+    const giphyApi = axios.create({
+        baseURL: 'https://api.giphy.com/v1/gifs',
+        params: {
+            api_key: apiKey
+        }
+    })
+
+    giphyApi.get('/random')
+        .then(resp => {
+            console.log(resp.data.data.images.original)
+            
+            // Forma 1 de obtener la imagen
+            //const {url} = resp.data.data.images.original
+
+            // Forma 2 de obtener la imagen
+            //const url = resp.data.data.images.original.url
+            
+            // Forma 3 de obtener la imagen (la más elegante)
+            const { data } = resp.data
+            const { url } = data.images.original
+
+            console.log(url)
+
+            // Para añadir la imagen en el index.html
+            const img = document.createElement('img')
+            img.src = url
+            document.body.append(img)
+        })
+    ```
+   + Guardar este archivo como: **01bases-js\src\bases\17-axios.js**.
+3. Commit Video 021:
+    + $ git add .
+    + $ git commit -m "Commit 021: Axios"
+    + $ git push -u origin main
 
 ### Video 022. Async - Await
+
+
+
 ### Video 023. Async - Await - Aplicado
 ### Video 024. Ternarios y null check
 ### Video 025. Código fuente de la sección
