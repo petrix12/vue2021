@@ -524,12 +524,51 @@
     console.log(getHeroByOwner('Marvel'))
     ```
     + Guardar este archivo como: **01bases-js\src\bases\12-imp-exp4.js**.
-4. Commit Video 018:
+4. Commit Video 017:
     + $ git add .
-    + $ git commit -m "Commit 018: Exportar funciones - Tarea"
+    + $ git commit -m "Commit 017: Exportar funciones - Tarea"
     + $ git push -u origin main
 
 ### Video 018. Promesas
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    console.log('Inicio')
+
+    new Promise((resolve, reject) => {
+        console.log('Cuerpo de la promesa')
+        resolve('Promesa resuelta')
+    }).then(msg => console.log(msg))
+
+    console.log('Fin')
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\13-promise1.js**.
+2. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    console.log('Inicio')
+
+    new Promise((resolve, reject) => {
+        console.log('Cuerpo de la promesa 1')
+        reject('Promesa 1 resuelta con error')
+    })
+    .then(msg => console.log(msg))
+    .catch(err => console.log(err))
+
+    // La Promise2 es equivalente a Promise
+    new Promise((resolve, reject) => {
+        console.log('Cuerpo de la promesa 2')
+        reject('Promesa 2 resuelta con error')
+    })
+    .then(console.log)
+    .catch(console.log)
+
+    console.log('Fin')
+    ```
+    + Guardar este archivo como: **01bases-js\src\bases\14-promise2.js**.
+3. Commit Video 018:
+    + $ git add .
+    + $ git commit -m "Commit 018: Promesas"
+    + $ git push -u origin main
+
 
 
 
