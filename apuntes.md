@@ -907,7 +907,7 @@
     ```js
     // console.log(Vue)
     const app = Vue.createApp({
-        template: ``/* `
+        /* template: `
             <h1>Hola Leticia</h1>
             <p>{{ 1 + 1 }}</p>
         ` */
@@ -943,10 +943,60 @@
     + $ git push -u origin main
 
 ### Video 032. Estado del componente - Data
+1. Modificar el archivo **02bases-vue\app.js**:
+    ```js
+    // console.log(Vue)
+    const app = Vue.createApp({
+        /* template: `
+            <h1>Hola Leticia</h1>
+            <p>{{ 1 + 1 }}</p>
+        ` */
 
+        data(){
+            return{
+                message: 'Hola Isabel',
+                quote: 'Soluciones++'
+            }
+        }
 
+        /* methods: {},
+        watch: {},
+        setup() {} */
+    })
+
+    app.mount('#myApp')
+    // Si fuese una clase:
+    // app.mount('.myApp')
+    ```
+2. Modificar el archivo **02bases-vue\index.html**:
+    ```html
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js intro</title>
+    </head>
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>{{ quote }}</h1>
+            <p>{{ message }}</p>        
+        </div>
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+3. Commit Video 032:
+    + $ git add .
+    + $ git commit -m "Commit 032: Estado del componente - Data"
+    + $ git push -u origin main
 
 ### Video 033. Introducción a los eventos
+
+
+
 ### Video 034. Directiva v-for
 ### Video 035. Indices y desestructuración dentro de v-for
 ### Video 036. Directiva v-model
