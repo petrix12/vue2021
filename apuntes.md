@@ -790,10 +790,29 @@
     + $ git push -u origin main
 
 ### Video 024. Ternarios y null check
+1. Modificar el archivo **01bases-js\src\index.js**:
+    ```js
+    let firstName
+    let lastName = 'Bazó'
 
+    /* console.log(`${ firstName || 'No firstName'} ${ lastName || 'No lastName'}`) */
 
+    const isActive = true
+
+    const message = isActive ? 'Activo' : 'Inactivo'
+
+    console.log(message)
+    ```
+   + Guardar este archivo como: **01bases-js\src\bases\20-ternary.js**.
+3. Commit Video 024:
+    + $ git add .
+    + $ git commit -m "Commit 024: Ternarios y null check"
+    + $ git push -u origin main
 
 ### Nota 025. Código fuente de la sección
+
+
+
 
     ```js
     ```
