@@ -903,10 +903,49 @@
     + $ git push -u origin main
 
 ### Video 031. Representación declarativa
+1. Modificar el archivo **02bases-vue\app.js**:
+    ```js
+    // console.log(Vue)
+    const app = Vue.createApp({
+        template: ``/* `
+            <h1>Hola Leticia</h1>
+            <p>{{ 1 + 1 }}</p>
+        ` */
+    })
 
+    app.mount('#myApp')
+    // Si fuese una clase:
+    // app.mount('.myApp')
+    ```
+2. Modificar el archivo **02bases-vue\index.html**:
+    ```js
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js intro</title>
+    </head>
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>Hola Leticia</h1>
+            <p>Desde index.html {{ 24 * 88 }}</p>        
+        </div>
 
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+3. Commit Video 031:
+    + $ git add .
+    + $ git commit -m "Commit 031: Representación declarativa"
+    + $ git push -u origin main
 
 ### Video 032. Estado del componente - Data
+
+
+
 ### Video 033. Introducción a los eventos
 ### Video 034. Directiva v-for
 ### Video 035. Indices y desestructuración dentro de v-for
