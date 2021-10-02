@@ -1326,6 +1326,12 @@
     + $ git push -u origin main
 
 ### Video 043. Bonus: Atajos de Vue.js
++ **Contenido**: Entrega de un pdf sobre atajos de Vue.js
+1. Commit Video 043:
+    + $ git add .
+    + $ git commit -m "Commit 043: Atajos de Vue.js"
+    + $ git push -u origin main
+
 ### Video 044. Inicio de proyecto - FundamentosApp
 ### Video 045. Estructura de directorios generada por defecto
 ### Video 046. Estructura básica del directorio SRC
