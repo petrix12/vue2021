@@ -1309,8 +1309,21 @@
     + $ git push -u origin main
 
 ### Nota 042. Temas puntuales de la sección
-
-
+1. Temas puntuales de la sección:
+    + En esta sección comenzaremos a trabajar con el Vue CLI (Command Line Interface), pero también explicaremos muchas cosas como:
+        + Estructura de directorios
+        + Guía de atajos de Vue.js
+        + Props
+        + Methods
+        + Propiedades computadas
+        + Componentes
+        + Validaciones
+        + Y más
+    + Esta sección es muy importante ya que empezaremos explicando desde las bases hasta ir creciendo poco a poco, eventualmente terminaremos creando soluciones mucho más complejas, pero todo parte desde el inicio.
+2. Commit Video 042:
+    + $ git add .
+    + $ git commit -m "Commit 042: Temas puntuales de la sección"
+    + $ git push -u origin main
 
 ### Video 043. Bonus: Atajos de Vue.js
 ### Video 044. Inicio de proyecto - FundamentosApp
