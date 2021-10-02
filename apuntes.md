@@ -1215,7 +1215,7 @@
     </body>
     </html>
     ```
-    + [Vue.js Event Modifiers](https://v3.vuejs.org/guide/events.html#multiple-event-handlers)
+    + [Vue.js - Event Modifiers](https://v3.vuejs.org/guide/events.html#multiple-event-handlers)
     + Modificadores del evento **keypress**:
         + .enter
         + .tab
@@ -1253,10 +1253,42 @@
     + $ git push -u origin main
 
 ### Video 038. Directivas v-if y v-show
-
-
++ [Vue.js - Directiva v-show](https://v3.vuejs.org/guide/conditional.html#v-show)
+1. Modificar 02bases-vue\index.html:
+    ```html
+    ≡
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>Frases de Batman</h1>
+            <input
+                type="text"
+                v-model="newQuote"
+                v-on:keypress.enter="addQuote"
+            >
+            <p>{{ newQuote }}</p>
+            <hr>
+            <ul>
+                <li v-for="({quote, author}, index) in quotes">
+                    <span>{{ index + 1 }} - {{ quote }}</span>
+                    <!-- <blockquote v-if="author">-{{ author }}</blockquote> -->
+                    <blockquote v-show="author">-{{ author }}</blockquote>
+                </li>
+            </ul>      
+        </div>
+        ≡
+    </body>
+    ≡
+    ```
+2. Commit Video 038:
+    + $ git add .
+    + $ git commit -m "Commit 038: Directivas v-if y v-show"
+    + $ git push -u origin main
 
 ### Video 039. Recapitulación de la sección
+
+
+
 ### Nota 040. Código fuente de la sección
 
     ≡
