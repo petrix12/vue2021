@@ -1286,10 +1286,16 @@
     + $ git push -u origin main
 
 ### Video 039. Recapitulación de la sección
-
-
++ **Contenido**: Resumen de lo visto en esta sección.
+1. Commit Video 039:
+    + $ git add .
+    + $ git commit -m "Commit 039: Resumen de lo visto en esta sección"
+    + $ git push -u origin main
 
 ### Nota 040. Código fuente de la sección
+
+
+
 
     ≡
     ```js
