@@ -1363,6 +1363,13 @@
     + $ git push -u origin main
 
 ### Video 046. Estructura básica del directorio SRC
++ **Contenido**: Estructura de un proyecto Vue.js generado con Vue CLI. Continuación del video anterior.
+1. Commit Video 046:
+    + $ git add .
+    + $ git commit -m "Commit 046: Estructura básica del directorio SRC"
+    + $ git push -u origin main
+
+### Video 046. Estructura básica del directorio SRC
 
 
 
