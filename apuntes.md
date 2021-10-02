@@ -1183,11 +1183,82 @@
     + $ git push -u origin main
 
 ### Video 037. Modificadores de eventos
+1. Modificar **02bases-vue\index.html**:
+    ```html
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js intro</title>
+    </head>
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>Frases de Batman</h1>
+            <input
+                type="text"
+                v-model="newQuote"
+                v-on:keypress.enter="addQuote"
+            >
+            <p>{{ newQuote }}</p>
+            <hr>
+            <ul>
+                <li v-for="({quote, author}, index) in quotes">
+                    <span>{{ index + 1 }} - {{ quote }}</span>
+                    <blockquote>-{{ author }}</blockquote>
+                </li>
+            </ul>      
+        </div>
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+    + [Vue.js Event Modifiers](https://v3.vuejs.org/guide/events.html#multiple-event-handlers)
+    + Modificadores del evento **keypress**:
+        + .enter
+        + .tab
+        + .delete (captura las teclas: **Delete** y **Backspace**)
+        + .esc
+        + .space
+        + .up
+        + .down
+        + .left
+        + .right
+2. Modificar **02bases-vue\app.js**:
+    ```js
+    ≡
+    const app = Vue.createApp({
+        data(){
+            return{
+                quotes,
+                newQuote: 'Hola mundo'
+            }
+        },
+        methods: {
+            addQuote() {
+                console.log(this.newQuote)
+                this.quotes.unshift({
+                    quote: this.newQuote
+                })
+            }
+        }
+    })
+    ≡
+    ```
+3. Commit Video 037:
+    + $ git add .
+    + $ git commit -m "Commit 037: Modificadores de eventos"
+    + $ git push -u origin main
+
 ### Video 038. Directivas v-if y v-show
+
+
+
 ### Video 039. Recapitulación de la sección
 ### Nota 040. Código fuente de la sección
 
     ≡
-
     ```js
     ```
