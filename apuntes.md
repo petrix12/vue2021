@@ -1082,10 +1082,53 @@
     + $ git push -u origin main
 
 ### Video 035. Indices y desestructuración dentro de v-for
+1. Modificar **02bases-vue\index.html**:
+    ```js
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js intro</title>
+    </head>
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>Frases de Batman</h1>
+            <ul><!-- 
+                <li v-for="quote in quotes">
+                    <span>{{ quote.quote }}</span>
+                    <blockquote>-{{ quote.author }}</blockquote>
+                </li> -->
+                <!-- La siguiente expresión es equivalente a la anteriormente comentada -->
+                <!-- <li v-for="{quote, author} in quotes">
+                    <span>{{ quote }}</span>
+                    <blockquote>-{{ author }}</blockquote>
+                </li> -->
+                <!-- <li v-for="(quote, index) in quotes">
+                    <span>{{ index + 1 }} {{ quote.quote }}</span>
+                    <blockquote>-{{ quote.author }}</blockquote>
+                </li> -->
+                <li v-for="({quote, author}, index) in quotes">
+                    <span>{{ index + 1 }} - {{ quote }}</span>
+                    <blockquote>-{{ author }}</blockquote>
+                </li>
+            </ul>      
+        </div>
 
-
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+2. Commit Video 035:
+    + $ git add .
+    + $ git commit -m "Commit 035: Indices y desestructuración dentro de v-for"
+    + $ git push -u origin main
 
 ### Video 036. Directiva v-model
+
+
+
 ### Video 037. Modificadores de eventos
 ### Video 038. Directivas v-if y v-show
 ### Video 039. Recapitulación de la sección
