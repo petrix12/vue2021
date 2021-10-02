@@ -7,10 +7,11 @@
 <body>
     <!-- Vue tendrá el control de este div -->
     <div id="myApp">
-        <h1>Frases de Batman</h1>
-        <ul>
-            <li v-for="quote in quotes">{{ quote.author }}</li>
-        </ul>      
+        <h1>{{ quote }}</h1>
+        <p>{{ message }}</p>
+        <button v-on:click="changeQuote">
+            Cambiar
+        </button>       
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>

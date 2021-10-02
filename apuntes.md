@@ -1027,10 +1027,64 @@
     + $ git push -u origin main
 
 ### Video 034. Directiva v-for
++ [Arreglo quote](https://gist.github.com/Klerith/2cda65e18f4575b8e70fd8a5f12c0048)
+1. Crear una copia de los archivos **02bases-vue\index.html** y **02bases-vue\app.js** y en una carpeta llamada **bases**.
+2. Modificar **02bases-vue\app.js**:
+    ```js
+    const quotes = [
+        { quote: 'The night is darkest just before the dawn. And I promise you, the dawn is coming.', author: 'Harvey Dent, The Dark Knight' },
+        { quote: 'I believe what doesn’t kill you simply makes you, stranger.', author: 'The Joker, The Dark Knight' },
+        { quote: 'Your anger gives you great power. But if you let it, it will destroy you… As it almost did me', author: 'Henri Ducard, Batman Begins' },
+        { quote: 'You either die a hero or live long enough to see yourself become the villain.', author: 'Harvey Dent, The Dark Knight' },
+        { quote: 'If you’re good at something, never do it for free.', author: 'The Joker, The Dark Knight' },
+        { quote: 'Yes, father. I shall become a bat.', author: 'Bruce Wayne/Batman, Batman: Year One' },
+    ]
 
+    console.log(quotes)
 
+    const app = Vue.createApp({
+        data(){
+            return{
+                // quotes: quotes
+                // La expresión comentada arriba es equivalente a la de abajo
+                quotes
+            }
+        },
+    })
+
+    app.mount('#myApp')
+    ```
+3. Modificar **02bases-vue\index.html**:
+    ```html
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js intro</title>
+    </head>
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>Frases de Batman</h1>
+            <ul>
+                <li v-for="quote in quotes">cita autor</li>
+            </ul>      
+        </div>
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+4. Commit Video 034:
+    + $ git add .
+    + $ git commit -m "Commit 034: Directiva v-for"
+    + $ git push -u origin main
 
 ### Video 035. Indices y desestructuración dentro de v-for
+
+
+
 ### Video 036. Directiva v-model
 ### Video 037. Modificadores de eventos
 ### Video 038. Directivas v-if y v-show
