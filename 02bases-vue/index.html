@@ -8,7 +8,10 @@
     <!-- Vue tendrá el control de este div -->
     <div id="myApp">
         <h1>{{ quote }}</h1>
-        <p>{{ message }}</p>        
+        <p>{{ message }}</p>
+        <button v-on:click="changeQuote">
+            Cambiar
+        </button>       
     </div>
 
     <script src="https://unpkg.com/vue@next"></script>

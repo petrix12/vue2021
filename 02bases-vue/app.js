@@ -10,9 +10,18 @@ const app = Vue.createApp({
             message: 'Hola Isabel',
             quote: 'Soluciones++'
         }
+    },
+    methods: {
+        changeQuote(event){
+            console.log('Hola María Valentina', event)
+            this.message = 'Hola Rebeca'
+            this.capitalize()
+        },
+        capitalize(){
+            this.quote = this.quote.toUpperCase()
+        }
     }
-
-    /* methods: {},
+    /* 
     watch: {},
     setup() {} */
 })

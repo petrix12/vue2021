@@ -905,17 +905,11 @@
 ### Video 031. Representación declarativa
 1. Modificar el archivo **02bases-vue\app.js**:
     ```js
-    // console.log(Vue)
     const app = Vue.createApp({
-        /* template: `
-            <h1>Hola Leticia</h1>
-            <p>{{ 1 + 1 }}</p>
-        ` */
+
     })
 
     app.mount('#myApp')
-    // Si fuese una clase:
-    // app.mount('.myApp')
     ```
 2. Modificar el archivo **02bases-vue\index.html**:
     ```js
@@ -945,28 +939,15 @@
 ### Video 032. Estado del componente - Data
 1. Modificar el archivo **02bases-vue\app.js**:
     ```js
-    // console.log(Vue)
     const app = Vue.createApp({
-        /* template: `
-            <h1>Hola Leticia</h1>
-            <p>{{ 1 + 1 }}</p>
-        ` */
-
         data(){
             return{
                 message: 'Hola Isabel',
                 quote: 'Soluciones++'
             }
         }
-
-        /* methods: {},
-        watch: {},
-        setup() {} */
     })
-
     app.mount('#myApp')
-    // Si fuese una clase:
-    // app.mount('.myApp')
     ```
 2. Modificar el archivo **02bases-vue\index.html**:
     ```html
@@ -994,10 +975,61 @@
     + $ git push -u origin main
 
 ### Video 033. Introducción a los eventos
+1. Modificar el archivo **02bases-vue\index.html**:
+    ```html
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue.js intro</title>
+    </head>
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>{{ quote }}</h1>
+            <p>{{ message }}</p>
+            <button v-on:click="changeQuote">
+                Cambiar
+            </button>       
+        </div>
 
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="app.js"></script>
+    </body>
+    </html>
+    ```
+2. Modificar el archivo **02bases-vue\app.js**:
+    ```js
+    const app = Vue.createApp({
+        data(){
+            return{
+                message: 'Hola Isabel',
+                quote: 'Soluciones++'
+            }
+        },
+        methods: {
+            changeQuote(event){
+                console.log('Hola María Valentina', event)
+                this.message = 'Hola Rebeca'
+                this.capitalize()
+            },
+            capitalize(){
+                this.quote = this.quote.toUpperCase()
+            }
+        }
+    })
 
+    app.mount('#myApp')
+    ```
+3. Commit Video 033:
+    + $ git add .
+    + $ git commit -m "Commit 033: Introducción a los eventos"
+    + $ git push -u origin main
 
 ### Video 034. Directiva v-for
+
+
+
 ### Video 035. Indices y desestructuración dentro de v-for
 ### Video 036. Directiva v-model
 ### Video 037. Modificadores de eventos
