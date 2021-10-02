@@ -1333,6 +1333,32 @@
     + $ git push -u origin main
 
 ### Video 044. Inicio de proyecto - FundamentosApp
+1. Verficar que la versión de Vue.js sea superior a 4.5.12:
+    + $ vue --version
+2. Crear nuevo proyecto de Vue.js:
+    + $ vue create 03fundamentos
+    + Seleccionar la opción: **Manually select features**.
+    + Check the features needed for your project:
+        + **Choose Vue version**
+        + **Babel**
+        + **Unit Testing**
+    + Choose a version of Vue.js that you want to start the project with: **3.x**
+    + Pick a unit testing solution: **Jest**
+    + Where do you prefer placing config for Babel, ESLint, etc.?: **In dedicated config files**
+    + Save this as a preset for future projects? **n**
+3. Ejecutar proyecto:
+    + $ cd 03fundamentos
+    + $ cd 03fundamentos
+    + $ npm run serve (También se podría utilizar yarn serve)
+5. Commit Video 044:
+    + $ git add .
+    + $ git commit -m "Commit 044: Inicio de proyecto - FundamentosApp"
+    + $ git push -u origin main
+
+
+
+
+
 ### Video 045. Estructura de directorios generada por defecto
 ### Video 046. Estructura básica del directorio SRC
 ### Video 047. Mi primer componente
