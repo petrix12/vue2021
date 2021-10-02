@@ -12,11 +12,22 @@ console.log(quotes)
 const app = Vue.createApp({
     data(){
         return{
-            // quotes: quotes
-            // La expresión comentada arriba es equivalente a la de abajo
-            quotes
+            quotes,
+            newQuote: 'Hola mundo'
         }
     },
+    methods: {
+        addQuote(event) {
+            console.log(this.newQuote)
+            console.log(event)
+
+            if(event.key == 'Enter'){
+                this.quotes.unshift({
+                    quote: this.newQuote
+                })
+            }
+        }
+    }
 })
 
 app.mount('#myApp')

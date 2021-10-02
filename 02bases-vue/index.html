@@ -8,6 +8,13 @@
     <!-- Vue tendrá el control de este div -->
     <div id="myApp">
         <h1>Frases de Batman</h1>
+        <input
+            type="text"
+            v-model="newQuote"
+            v-on:keypress="addQuote"
+        >
+        <p>{{ newQuote }}</p>
+        <hr>
         <ul>
             <li v-for="({quote, author}, index) in quotes">
                 <span>{{ index + 1 }} - {{ quote }}</span>

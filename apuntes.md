@@ -1083,7 +1083,7 @@
 
 ### Video 035. Indices y desestructuración dentro de v-for
 1. Modificar **02bases-vue\index.html**:
-    ```js
+    ```html
     <!DOCTYPE html>
     <html lang="es">
     <head>
@@ -1126,15 +1126,68 @@
     + $ git push -u origin main
 
 ### Video 036. Directiva v-model
+1. Modificar **02bases-vue\index.html**:
+    ```html
+    ≡
+    <body>
+        <!-- Vue tendrá el control de este div -->
+        <div id="myApp">
+            <h1>Frases de Batman</h1>
+            <input
+                type="text"
+                v-model="newQuote"
+                v-on:keypress="addQuote"
+            >
+            <p>{{ newQuote }}</p>
+            <hr>
+            <ul>
+                <li v-for="({quote, author}, index) in quotes">
+                    <span>{{ index + 1 }} - {{ quote }}</span>
+                    <blockquote>-{{ author }}</blockquote>
+                </li>
+            </ul>      
+        </div>
+        ≡
+    </body>
+    </html>
+    ```
+2. Modificar **02bases-vue\app.js**:
+    ```js
+    ≡
+    const app = Vue.createApp({
+        data(){
+            return{
+                quotes,
+                newQuote: 'Hola mundo'
+            }
+        },
+        methods: {
+            addQuote(event) {
+                console.log(this.newQuote)
+                console.log(event)
 
+                if(event.key == 'Enter'){
+                    this.quotes.unshift({
+                        quote: this.newQuote
+                    })
+                }
+            }
+        }
+    })
 
+    app.mount('#myApp')
+    ```
+3. Commit Video 036:
+    + $ git add .
+    + $ git commit -m "Commit 036: Directiva v-model"
+    + $ git push -u origin main
 
 ### Video 037. Modificadores de eventos
 ### Video 038. Directivas v-if y v-show
 ### Video 039. Recapitulación de la sección
 ### Nota 040. Código fuente de la sección
 
-
+    ≡
 
     ```js
     ```
