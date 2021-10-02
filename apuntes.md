@@ -1302,10 +1302,16 @@
 ## Sección 4: Vue CLI - Primera aplicación real
 
 ### Video 041. Introducción a la sección
++ **Contenido**: Introducción a nuevos conceptos de Vue.js
+1. Commit Video 041:
+    + $ git add .
+    + $ git commit -m "Commit 041: Introducción a nuevos conceptos de Vue.js"
+    + $ git push -u origin main
+
+### Nota 042. Temas puntuales de la sección
 
 
 
-### Video 042. Temas puntuales de la sección
 ### Video 043. Bonus: Atajos de Vue.js
 ### Video 044. Inicio de proyecto - FundamentosApp
 ### Video 045. Estructura de directorios generada por defecto
@@ -1317,7 +1323,7 @@
 ### Video 051. Properties - Props
 ### Video 052. Diferentes formas de definir las props
 ### Video 053. Validación de los props
-### Video 054. Código fuente
+### Nota 054. Código fuente
 
 
 
