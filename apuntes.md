@@ -1293,6 +1293,32 @@
     + $ git push -u origin main
 
 ### Nota 040. Código fuente de la sección
++ [Repositorio del autor bases de Vue.js](https://github.com/Klerith/vue-bases)
+1. Commit Video 040:
+    + $ git add .
+    + $ git commit -m "Commit 040: Código fuente de la sección"
+    + $ git push -u origin main
+
+## Sección 4: Vue CLI - Primera aplicación real
+
+### Video 041. Introducción a la sección
+
+
+
+### Video 042. Temas puntuales de la sección
+### Video 043. Bonus: Atajos de Vue.js
+### Video 044. Inicio de proyecto - FundamentosApp
+### Video 045. Estructura de directorios generada por defecto
+### Video 046. Estructura básica del directorio SRC
+### Video 047. Mi primer componente
+### Video 048. Estado del componente y Vue DevTools
+### Video 049. Propiedades computadas - Computed Properties
+### Video 050. Incrementar y Decrementar
+### Video 051. Properties - Props
+### Video 052. Diferentes formas de definir las props
+### Video 053. Validación de los props
+### Video 054. Código fuente
+
 
 
 
