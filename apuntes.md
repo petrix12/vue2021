@@ -1355,12 +1355,17 @@
     + $ git commit -m "Commit 044: Inicio de proyecto - FundamentosApp"
     + $ git push -u origin main
 
-
-
-
-
 ### Video 045. Estructura de directorios generada por defecto
++ **Contenido**: Estructura de un proyecto Vue.js generado con Vue CLI.
+1. Commit Video 045:
+    + $ git add .
+    + $ git commit -m "Commit 045: Estructura de directorios generada por defecto"
+    + $ git push -u origin main
+
 ### Video 046. Estructura básica del directorio SRC
+
+
+
 ### Video 047. Mi primer componente
 ### Video 048. Estado del componente y Vue DevTools
 ### Video 049. Propiedades computadas - Computed Properties
