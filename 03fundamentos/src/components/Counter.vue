@@ -1,5 +1,6 @@
 <template>
-    <h2>Contador</h2>
+    <!-- <h2>{{ title || 'Contador' }}</h2> -->
+    <h2>{{ customTitle }}</h2>
     <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
     <div>
         <!-- <button v-on:click="increase">+1</button>
@@ -12,6 +13,7 @@
 
 <script>
 export default {
+    props: ['title'],
     data(){
         return {
             counter: 5
@@ -31,6 +33,11 @@ export default {
     computed: {
         squareCounter(){
             return this.counter * this.counter
+        },
+        customTitle(){
+            /* console.log(this.title)
+            return this.title */
+            return this.title || 'Contador'
         }
     }
 }
