@@ -19,7 +19,10 @@ export default {
         start: {
             type: Number,
             // required: true
-            default: 100
+            default: 100,
+            validator1(value){
+                return value >= 0
+            }
         }
     },
     data(){
