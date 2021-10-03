@@ -1625,10 +1625,80 @@
     + $ git push -u origin main
 
 ### Video 052. Diferentes formas de definir las props
+1. Modificar **03fundamentos\src\App.vue**:
+    ```vue
+    <template>
+        <img alt="Vue logo" src="./assets/logo.png">
+        <Counter :start="10" />
+    </template>
+    ≡
+    ```
+2. Modificar **03fundamentos\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <!-- <h2>{{ title || 'Contador' }}</h2> -->
+        <h2>{{ customTitle }}</h2>
+        <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+        <div>
+            <!-- <button v-on:click="increase">+1</button>
+            <button v-on:click="decrease">-1</button> -->
+            <!-- Las siguientes dos líneas de código son equivalentes a las dos comentadas anteriormente -->
+            <button @click="increase">+1</button>
+            <button @click="decrease">-1</button>
+        </div>
+    </template>
 
+    <script>
+    export default {
+        /* props: ['title', 'start'], */
+        props: {
+            title: String, 
+            start: {
+                type: Number,
+                // required: true
+                default: 100
+            }
+        },
+        data(){
+            return {
+                counter: this.start
+            }
+        },
+        methods: {
+            getSquareValue(){
+                return this.counter * this.counter
+            },
+            increase(){
+                this.counter++
+            },
+            decrease(){
+                this.counter--
+            }
+        },
+        computed: {
+            squareCounter(){
+                return this.counter * this.counter
+            },
+            customTitle(){
+                /* console.log(this.title)
+                return this.title */
+                return this.title || 'Contador'
+            }
+        }
+    }
+    </script>
+    ≡
+    ```
+3. Commit Video 052:
+    + $ git add .
+    + $ git commit -m "Commit 052: Diferentes formas de definir las props"
+    + $ git push -u origin main
 
 
 ### Video 053. Validación de los props
+
+
+
 ### Nota 054. Código fuente
 
 
