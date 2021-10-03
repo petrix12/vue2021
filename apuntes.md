@@ -1788,7 +1788,7 @@
 ## Sección 5: IndecisionApp - Continuación
 
 ### Video 55. Introducción a la sección
-**Contenido**: Breve explicación al **Options API** y **Composition API**.
++ **Contenido**: Breve explicación al **Options API** y **Composition API**.
 1. Commit Video 055:
     + $ git add .
     + $ git commit -m "Commit 055: Introducción a la sección"
@@ -1811,9 +1811,16 @@
     + $ git push -u origin main
 
 ### Video 57. Demostración del objetivo final
-
++ **Contenido**: breve explicación de una aplicación que consume una API.
+1. Commit Video 057:
+    + $ git add .
+    + $ git commit -m "Commit 057: Demostración del objetivo final"
+    + $ git push -u origin main
 
 ### Video 58. Continuación de proyecto - FundamentosApp
+
+
+
 ### Video 59. Indecision Component
 ### Video 60. Watch - Observar cambios en una propiedad reactiva
 ### Video 61. Realizar petición HTTP a un backend
