@@ -1370,10 +1370,60 @@
     + $ git push -u origin main
 
 ### Video 046. Estructura básica del directorio SRC
+1. Modificar el archivo **03fundamentos\src\App.vue**:
+    ```vue
+    <template>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <Counter />
+    </template>
 
+    <script>
+    import Counter from './components/Counter.vue'
+    export default {
+        name: 'App',
+        components: {
+            Counter
+        }
+    }
+    </script>
 
+    <style>
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+    </style>
+    ```
+2. Borrar el archivo **03fundamentos\src\components\HelloWorld.vue**.
+3. Crear componente **03fundamentos\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h2>Contador</h2>
+        <p>10</p>
+    </template>
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style>
+
+    </style>
+    ```
+4. Commit Video 046:
+    + $ git add .
+    + $ git commit -m "Commit 046: Estructura básica del directorio SRC"
+    + $ git push -u origin main
 
 ### Video 047. Mi primer componente
+
+
 ### Video 048. Estado del componente y Vue DevTools
 ### Video 049. Propiedades computadas - Computed Properties
 ### Video 050. Incrementar y Decrementar
