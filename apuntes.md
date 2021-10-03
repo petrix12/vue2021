@@ -1779,8 +1779,26 @@
     + $ git push -u origin main
 
 ### Nota 054. Código fuente
++ [Repositorio de esta sección](https://github.com/Klerith/vue-fundamentos-cli/tree/fin-seccion-4)
+1. Commit Video 054:
+    + $ git add .
+    + $ git commit -m "Commit 054: Código fuente"
+    + $ git push -u origin main
+
+## Sección 5: IndecisionApp - Continuación
+
+### Video 55. Introducción a la sección
 
 
+
+### Video 56. Temas puntuales de la sección
+### Video 57. Demostración del objetivo final
+### Video 58. Continuación de proyecto - FundamentosApp
+### Video 59. Indecision Component
+### Video 60. Watch - Observar cambios en una propiedad reactiva
+### Video 61. Realizar petición HTTP a un backend
+### Video 62. Pulir detalles de nuestra aplicación
+### Video 63. Código fuente de la sección
 
 
 
