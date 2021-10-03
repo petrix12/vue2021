@@ -1418,14 +1418,40 @@
     ```
 4. Commit Video 047:
     + $ git add .
-    + $ git commit -m "Commit 047:  Mi primer componente"
+    + $ git commit -m "Commit 047: Mi primer componente"
     + $ git push -u origin main
 
 ### Video 048. Estado del componente y Vue DevTools
+1. Modificar **03fundamentos\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h2>Contador</h2>
+        <p>{{ counter }} <sup>2</sup> = {{ counter * counter }}</p>
+    </template>
 
+    <script>
+    export default {
+        data(){
+            return {
+                counter: 5
+            }
+        }
+    }
+    </script>
 
+    <style>
+
+    </style>
+    ```
+2. Commit Video 048:
+    + $ git add .
+    + $ git commit -m "Commit 048: Estado del componente y Vue DevTools"
+    + $ git push -u origin main
 
 ### Video 049. Propiedades computadas - Computed Properties
+
+
+
 ### Video 050. Incrementar y Decrementar
 ### Video 051. Properties - Props
 ### Video 052. Diferentes formas de definir las props
@@ -1437,5 +1463,6 @@
 
 
     ≡
-    ```js
+    ```vue
     ```
+    npm run serve
