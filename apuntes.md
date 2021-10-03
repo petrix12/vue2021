@@ -1449,6 +1449,55 @@
     + $ git push -u origin main
 
 ### Video 049. Propiedades computadas - Computed Properties
++ [Vue.js - Computed Properties](https://v3.vuejs.org/guide/computed.html#computed-properties)
+1. Modificar **03fundamentos\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h2>Contador</h2>
+        <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+        <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+        <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+        <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+
+        <p>{{ counter }} <sup>2</sup> = {{ getSquareValue() }}</p>
+        <p>{{ counter }} <sup>2</sup> = {{ getSquareValue() }}</p>
+        <p>{{ counter }} <sup>2</sup> = {{ getSquareValue() }}</p>
+        <p>{{ counter }} <sup>2</sup> = {{ getSquareValue() }}</p>
+    </template>
+
+    <script>
+    export default {
+        data(){
+            return {
+                counter: 5
+            }
+        },
+        methods: {
+            getSquareValue(){
+                console.log('getSquareValue')
+                return this.counter * this.counter
+            }
+        },
+        computed: {
+            squareCounter(){
+                console.log('squareCounter')
+                return this.counter * this.counter
+            }
+        }
+    }
+    </script>
+
+    <style>
+
+    </style>
+    ```
+2. Commit Video 049:
+    + $ git add .
+    + $ git commit -m "Commit 049: Propiedades computadas - Computed Properties"
+    + $ git push -u origin main
+
+
+
 
 
 
