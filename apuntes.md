@@ -1794,14 +1794,31 @@
     + $ git commit -m "Commit 055: Introducción a la sección"
     + $ git push -u origin main
 
-### Video 56. Temas puntuales de la sección
+### Nota 56. Temas puntuales de la sección
+1. Temas puntuales de la sección:
+    + Esta sección aunque es pequeña, contiene información importante sobre:
+        + Watch
+        + Métodos
+        + Peticiones HTTP
+        + Ternarios
+        + Renderizado condicional
+        + Estilos globales
+        + Y más
+    + Al final, crearemos una aplicación pequeña pero muy útil para poder ir tomando confianza en Vue.js
+2. Commit Video 056:
+    + $ git add .
+    + $ git commit -m "Commit 056: Temas puntuales de la sección"
+    + $ git push -u origin main
+
 ### Video 57. Demostración del objetivo final
+
+
 ### Video 58. Continuación de proyecto - FundamentosApp
 ### Video 59. Indecision Component
 ### Video 60. Watch - Observar cambios en una propiedad reactiva
 ### Video 61. Realizar petición HTTP a un backend
 ### Video 62. Pulir detalles de nuestra aplicación
-### Video 63. Código fuente de la sección
+### Nota 63. Código fuente de la sección
 
 
 
