@@ -1818,10 +1818,16 @@
     + $ git push -u origin main
 
 ### Video 58. Continuación de proyecto - FundamentosApp
-
-
+**Contenido**: indicaciones para seguir trabajando con el proyecto **03fundamentos**.
+1. Commit Video 058:
+    + $ git add .
+    + $ git commit -m "Commit 058: Continuación de proyecto - FundamentosApp"
+    + $ git push -u origin main
 
 ### Video 59. Indecision Component
+
+
+
 ### Video 60. Watch - Observar cambios en una propiedad reactiva
 ### Video 61. Realizar petición HTTP a un backend
 ### Video 62. Pulir detalles de nuestra aplicación
