@@ -1369,7 +1369,7 @@
     + $ git commit -m "Commit 046: Estructura básica del directorio SRC"
     + $ git push -u origin main
 
-### Video 046. Estructura básica del directorio SRC
+### Video 047. Mi primer componente
 1. Modificar el archivo **03fundamentos\src\App.vue**:
     ```vue
     <template>
@@ -1416,15 +1416,15 @@
 
     </style>
     ```
-4. Commit Video 046:
+4. Commit Video 047:
     + $ git add .
-    + $ git commit -m "Commit 046: Estructura básica del directorio SRC"
+    + $ git commit -m "Commit 047:  Mi primer componente"
     + $ git push -u origin main
 
-### Video 047. Mi primer componente
-
-
 ### Video 048. Estado del componente y Vue DevTools
+
+
+
 ### Video 049. Propiedades computadas - Computed Properties
 ### Video 050. Incrementar y Decrementar
 ### Video 051. Properties - Props
