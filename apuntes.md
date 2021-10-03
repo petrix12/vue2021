@@ -1788,8 +1788,11 @@
 ## Sección 5: IndecisionApp - Continuación
 
 ### Video 55. Introducción a la sección
-
-
+**Contenido**: Breve explicación al **Options API** y **Composition API**.
+1. Commit Video 055:
+    + $ git add .
+    + $ git commit -m "Commit 055: Introducción a la sección"
+    + $ git push -u origin main
 
 ### Video 56. Temas puntuales de la sección
 ### Video 57. Demostración del objetivo final
