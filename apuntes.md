@@ -1496,12 +1496,73 @@
     + $ git commit -m "Commit 049: Propiedades computadas - Computed Properties"
     + $ git push -u origin main
 
-
-
-
-
-
 ### Video 050. Incrementar y Decrementar
+1. Modificar **03fundamentos\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h2>Contador</h2>
+        <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+        <div>
+            <!-- <button v-on:click="increase">+1</button>
+            <button v-on:click="decrease">-1</button> -->
+            <!-- Las siguientes dos líneas de código son equivalentes a las dos comentadas anteriormente -->
+            <button @click="increase">+1</button>
+            <button @click="decrease">-1</button>
+        </div>
+    </template>
+
+    <script>
+    export default {
+        data(){
+            return {
+                counter: 5
+            }
+        },
+        methods: {
+            getSquareValue(){
+                return this.counter * this.counter
+            },
+            increase(){
+                this.counter++
+            },
+            decrease(){
+                this.counter--
+            }
+        },
+        computed: {
+            squareCounter(){
+                return this.counter * this.counter
+            }
+        }
+    }
+    </script>
+
+    <style>
+    button{
+        background-color: #64BB87;
+        border-radius: 5px;
+        border: 1px solid white;
+        color: white;
+        cursor: pointer;
+        margin: 0 5px;
+        padding: 5px 15px;
+        transition: 0.3s ease-in-out;
+    }
+
+    button:hover{
+        background-color: #5aa67b;
+        transition: 0.3s ease-in-out;
+    }
+    </style>
+    ```
+2. Commit Video 050:
+    + $ git add .
+    + $ git commit -m "Commit 050: Incrementar y Decrementar"
+    + $ git push -u origin main
+
+
+
+
 ### Video 051. Properties - Props
 ### Video 052. Diferentes formas de definir las props
 ### Video 053. Validación de los props
