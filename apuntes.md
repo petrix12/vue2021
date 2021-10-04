@@ -2158,8 +2158,25 @@
     + $ git push -u origin main
 
 ### Nota 65. Temas puntuales de la sección
-
-
+1. Temas puntuales de la sección:
+    + Esta es nuestra primera sección de pruebas unitarias, el objetivo es que probemos todo el trabajo realizado anteriormente. Aquí tocaremos los siguientes temas:
+        + Jest
+        + Expect
+        + Spies (SpyOn)
+        + Ciclo de vida de las pruebas
+        + wrapper
+        + ShallowMount
+        + Mount
+        + Expect
+        + Snapshot
+        + Props
+        + Mocks
+        + Y mucho más
+    + Antes de que piensen en saltarse la sección, porque muchos consideras las pruebas algo innecesario, miren los videos iniciales, son muy importantes, y también recuerden que hay muchas personas que están cursando este curso únicamente por la sección de pruebas.
+2. Commit Video 065:
+    + $ git add .
+    + $ git commit -m "Commit 065: Temas puntuales de la sección"
+    + $ git push -u origin main
 
 ### Video 66. Introducción a las pruebas unitarias y de integración
 ### Video 67. Mi primera prueba
