@@ -2261,7 +2261,16 @@
     + $ git push -u origin main
 
 ### Video 70. Verificar valor en una etiqueta HTML
+1. Modificar 03fundamentos\tests\unit\counter.spec.js:
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+3. mmm
 
+
+4. Commit Video 070:
+    + $ git add .
+    + $ git commit -m "Commit 070: Verificar valor en una etiqueta HTML"
+    + $ git push -u origin main
 
 
 ### Video 71. FindAll vs Find
