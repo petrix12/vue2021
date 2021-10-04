@@ -2142,6 +2142,41 @@
     + $ git push -u origin main
 
 ### Nota 63. Código fuente de la sección
++ [Repositorio de la sección en GitHub](https://github.com/Klerith/vue-fundamentos-cli/tree/fin-seccion-5)
+1. Commit Video 063:
+    + $ git add .
+    + $ git commit -m "Commit 063: Código fuente de la sección"
+    + $ git push -u origin main
+
+## Sección 06: Introducción a las pruebas unitarias y de integración
+
+### Video 64. Introducción a la sección
+
+
+
+### Video 65. Temas puntuales de la sección
+### Video 66. Introducción a las pruebas unitarias y de integración
+### Video 67. Mi primera prueba
+### Video 68. Expect
+### Video 69. Snapshot
+### Video 70. Verificar valor en una etiqueta HTML
+### Video 71. FindAll vs Find
+### Video 72. Simular eventos
+### Video 73. Optimización de código
+### Video 74. Leer props desde pruebas
+### Video 75. Enviar Props y evaluarlas
+### Video 76. Pruebas iniciales en el Indecision component
+### Video 77. Definir las pruebas a realizar
+### Video 78. Spy y Mocks
+### Video 79. Spy con la instancia de Vue
+### Video 80. Tarea: Probar que el getAnswer fue llamado
+### Video 81. Pruebas sobre Fetch Api
+### Video 82. Simular un fallo en el API
+### Video 83. Código fuente de la sección
+
+
+
+
 
 
 
