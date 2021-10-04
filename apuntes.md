@@ -2186,10 +2186,38 @@
     + $ git push -u origin main
 
 ### Video 67. Mi primera prueba
++ **Nota**: Para las pruebas se recomienda copiar la misma estructura del directorio **03fundamentos\src** en **03fundamentos\tests\unit**.
+1. Modificar o crear según sea el caso el archivo **03fundamentos\tests\unit\example.spec.js**:
+    ```js
+    describe('Example Component', () => {
+        test('Debe de ser mayor a 10', () => {
+            // Arreglar
+            let value = 5
 
+            // Estímulo
+            value = value + 2
 
+            // Observar el resultado
+            if(value > 10){
+                // TODO: todo bien!
+            }else{
+                throw `${ value } no es mayor a 10`
+            }
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+    + **Nota**: este comando ejecutará todas las pruebas (*.spec.js) que se encuentren en el directorio **03fundamentos\tests\unit**.
+3. Commit Video 067:
+    + $ git add .
+    + $ git commit -m "Commit 067: Mi primera prueba"
+    + $ git push -u origin main
 
 ### Video 68. Expect
+
+
+
 ### Video 69. Snapshot
 ### Video 70. Verificar valor en una etiqueta HTML
 ### Video 71. FindAll vs Find
