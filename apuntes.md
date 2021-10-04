@@ -2239,10 +2239,31 @@
     + $ git push -u origin main
 
 ### Video 69. Snapshot
+1. Crear archivo de prueba **03fundamentos\tests\unit\counter.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Counter from '@/components/Counter'
 
-
+    describe('Counter Component', () => {
+        test('debe de hacer match con el snapshot', () => {
+            const wrapper = shallowMount(Counter)
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+3. Si se modifica algo en el componente **03fundamentos\src\components\Counter.vue** y se desea actualizar los cambios, ejecutar:
+    + $ npm run test:unit -u
+4. Commit Video 069:
+    + $ git add .
+    + $ git commit -m "Commit 069: Snapshot"
+    + $ git push -u origin main
 
 ### Video 70. Verificar valor en una etiqueta HTML
+
+
+
 ### Video 71. FindAll vs Find
 ### Video 72. Simular eventos
 ### Video 73. Optimización de código
