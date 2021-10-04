@@ -1927,6 +1927,39 @@
 ### Video 60. Watch - Observar cambios en una propiedad reactiva
 1. Modificar **03fundamentos\src\components\Indecision.vue**:
     ```vue
+    <template>
+        <img src="https://via.placeholder.com/250" alt="bg">
+        <div class="bg-dark"></div>
+        <div class="indecision-container">
+            <input
+                type="text"
+                v-model="question"
+                placeholder="Hazme una pregunta">
+            <p>Recuerda terminar con un signo de interrogación (?)</p>
+            <div class="">
+                <h2>{{ question }}</h2>
+                <h1>Si, no, ... pensando</h1>
+            </div>
+        </div>
+    </template>
+
+    <script>
+    export default {
+        data() {
+            return{
+                question: null
+            }
+        },
+        watch: {
+            question(value, oldValue){
+                /* console.log({value, oldValue}) */
+                if (!value.includes('?')) return
+                // TODO: Realizar petición http
+            }
+        }
+    }
+    </script>
+    ≡
     ```
 2. Commit Video 060:
     + $ git add .
@@ -1934,10 +1967,180 @@
     + $ git push -u origin main
 
 ### Video 61. Realizar petición HTTP a un backend
++ [Yes or No](https://yesno.wtf)
+1. Modificar **03fundamentos\src\components\Indecision.vue**:
+    ```vue
+    <template>
+        <img v-if="img" :src="img" alt="bg">
+        <div class="bg-dark"></div>
+        <div class="indecision-container">
+            <input
+                type="text"
+                v-model="question"
+                placeholder="Hazme una pregunta">
+            <p>Recuerda terminar con un signo de interrogación (?)</p>
+            <div class="">
+                <h2>{{ question }}</h2>
+                <h1>{{ answer }}</h1>
+            </div>
+        </div>
+    </template>
 
+    <script>
+    export default {
+        data() {
+            return{
+                question: null,
+                answer: null,
+                /* img: "https://via.placeholder.com/250" */
+                img: null
+            }
+        },
+        methods:{
+            async getAnswer(){
+                this.answer = 'Pensando...'
+                /* const data = await fetch('https://yesno.wtf/api').then(r => r.json()) */
+                const { answer, image } = await fetch('https://yesno.wtf/api').then(r => r.json())
+                /* console.log(answer) */
+                this.answer = answer
+                this.img = image
+            }
+        },
+        watch: {
+            question(value, oldValue){
+                if ( !value.includes('?') ) return
 
+                // TODO: Realizar petición http
+                this.getAnswer()
+            }
+        }
+    }
+    </script>
+    ≡
+    ```
+2. Crear archivo de estilos **03fundamentos\src\css\styles.css**:
+    ```css
+    html, body {
+        background-color: black;
+    }
+    ```
+3. Modificar **03fundamentos\src\main.js**:
+    ```js
+    import { createApp } from 'vue'
+    import App from './App.vue'
+
+    import './css/styles.css'
+
+    createApp(App).mount('#app')
+    ```
+4. Commit Video 061:
+    + $ git add .
+    + $ git commit -m "Commit 061: Realizar petición HTTP a un backend"
+    + $ git push -u origin main
 
 ### Video 62. Pulir detalles de nuestra aplicación
+1. Modificar **03fundamentos\src\components\Indecision.vue**:
+    ```vue
+    <template>
+        <img v-if="img" :src="img" alt="bg">
+        <div class="bg-dark"></div>
+        <div class="indecision-container">
+            <input
+                type="text"
+                v-model="question"
+                placeholder="Hazme una pregunta">
+            <p>Recuerda terminar con un signo de interrogación (?)</p>
+            <div v-if="isValidQuestion">
+                <h2>{{ question }}</h2>
+                <h1>{{ answer }}</h1>
+            </div>
+        </div>
+    </template>
+
+    <script>
+    export default {
+        data() {
+            return{
+                question: null,
+                answer: null,
+                /* img: "https://via.placeholder.com/250" */
+                img: null,
+                isValidQuestion: false
+            }
+        },
+        methods:{
+            async getAnswer(){
+                this.answer = 'Pensando...'
+                /* const data = await fetch('https://yesno.wtf/api').then(r => r.json()) */
+                const { answer, image } = await fetch('https://yesno.wtf/api').then(r => r.json())
+                /* console.log(answer) */
+                this.answer = answer === 'yes' ? 'Si' : answer
+                this.img = image
+            }
+        },
+        watch: {
+            question(value, oldValue){
+                this.isValidQuestion = false
+                if ( !value.includes('?') ) return
+                this.isValidQuestion = true
+
+                // TODO: Realizar petición http
+                this.getAnswer()
+            }
+        }
+    }
+    </script>
+
+    <style>
+        img, .bg-dark {
+            height: 100vh;
+            left: 0px;
+            max-height: 100%;
+            max-width: 100%;
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+        }
+
+        .bg-dark {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .indecision-container {
+            position: relative;
+            z-index: 99;
+        }
+        
+        input {
+            width: 250px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+        }
+        input:focus {
+            outline: none;
+        }
+
+        p {
+            color: white;
+            font-size: 20px;
+            margin-top: 0px;
+        }
+
+        h1, h2 {
+            color: white;
+        }
+        
+        h2 {
+            margin-top: 150px;
+        }
+    </style>
+    ```
+2. Commit Video 062:
+    + $ git add .
+    + $ git commit -m "Commit 062: Pulir detalles de nuestra aplicación"
+    + $ git push -u origin main
+
 ### Nota 63. Código fuente de la sección
 
 
