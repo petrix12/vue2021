@@ -91,7 +91,7 @@
     + $ git commit -m "Commit 004: Instalaciones recomendadas y obligatorias"
     + $ git push -u origin main
 
-## Sección 2: Reforzamiento de JavaScript
+## Sección 02: Reforzamiento de JavaScript
 
 ### Video 005. Introducción a la sección
 + **Contenido**: Importancia de reforzar JavaScript.
@@ -816,7 +816,7 @@
     + $ git commit -m "Commit 025: Código fuente de la sección"
     + $ git push -u origin main
 
-## Sección 3: Introducción a Vue.js
+## Sección 03: Introducción a Vue.js
 
 ### Video 026. Introducción a la sección
 + **Contenido**: Breve introducción a Vue.js.
@@ -1299,7 +1299,7 @@
     + $ git commit -m "Commit 040: Código fuente de la sección"
     + $ git push -u origin main
 
-## Sección 4: Vue CLI - Primera aplicación real
+## Sección 04: Vue CLI - Primera aplicación real
 
 ### Video 041. Introducción a la sección
 + **Contenido**: Introducción a nuevos conceptos de Vue.js
@@ -1785,7 +1785,7 @@
     + $ git commit -m "Commit 054: Código fuente"
     + $ git push -u origin main
 
-## Sección 5: IndecisionApp - Continuación
+## Sección 05: IndecisionApp - Continuación
 
 ### Video 55. Introducción a la sección
 + **Contenido**: Breve explicación al **Options API** y **Composition API**.
@@ -2151,10 +2151,16 @@
 ## Sección 06: Introducción a las pruebas unitarias y de integración
 
 ### Video 64. Introducción a la sección
++ **Contenido**: importancia de probar nuestra aplicaciones.
+1. Commit Video 064:
+    + $ git add .
+    + $ git commit -m "Commit 064: Introducción a la sección"
+    + $ git push -u origin main
+
+### Nota 65. Temas puntuales de la sección
 
 
 
-### Video 65. Temas puntuales de la sección
 ### Video 66. Introducción a las pruebas unitarias y de integración
 ### Video 67. Mi primera prueba
 ### Video 68. Expect
@@ -2172,7 +2178,7 @@
 ### Video 80. Tarea: Probar que el getAnswer fue llamado
 ### Video 81. Pruebas sobre Fetch Api
 ### Video 82. Simular un fallo en el API
-### Video 83. Código fuente de la sección
+### Nota 83. Código fuente de la sección
 
 
 
