@@ -1925,10 +1925,18 @@
     + $ git push -u origin main
 
 ### Video 60. Watch - Observar cambios en una propiedad reactiva
-
-
+1. Modificar **03fundamentos\src\components\Indecision.vue**:
+    ```vue
+    ```
+2. Commit Video 060:
+    + $ git add .
+    + $ git commit -m "Commit 060: Watch - Observar cambios en una propiedad reactiva"
+    + $ git push -u origin main
 
 ### Video 61. Realizar petición HTTP a un backend
+
+
+
 ### Video 62. Pulir detalles de nuestra aplicación
 ### Nota 63. Código fuente de la sección
 
