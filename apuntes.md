@@ -1825,10 +1825,109 @@
     + $ git push -u origin main
 
 ### Video 59. Indecision Component
++ [Klerith/indecision.html](https://gist.github.com/Klerith/0008cd42c24ae01089749ad4d5dcc0c2)
+1. Crear componente Vue **03fundamentos\src\components\Indecision.vue**:
+    ```vue
+    <template>
+        <img src="https://via.placeholder.com/250" alt="bg">
+        <div class="bg-dark"></div>
+        <div class="indecision-container">
+            <input type="text" placeholder="Hazme una pregunta">
+            <p>Recuerda terminar con un signo de interrogación (?)</p>
+            <div class="">
+                <h2>Seré millonario?</h2>
+                <h1>Si, no, ... pensando</h1>
+            </div>
+        </div>
+    </template>
 
+    <script>
+    export default {
 
+    }
+    </script>
+
+    <style>
+        img, .bg-dark {
+            height: 100vh;
+            left: 0px;
+            max-height: 100%;
+            max-width: 100%;
+            position: fixed;
+            top: 0px;
+            width: 100vw;
+        }
+
+        .bg-dark {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .indecision-container {
+            position: relative;
+            z-index: 99;
+        }
+        
+        input {
+            width: 250px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+        }
+        input:focus {
+            outline: none;
+        }
+
+        p {
+            color: white;
+            font-size: 20px;
+            margin-top: 0px;
+        }
+
+        h1, h2 {
+            color: white;
+        }
+        
+        h2 {
+            margin-top: 150px;
+        }
+    </style>   
+    ```
+2. Modifica **03fundamentos\src\App.vue**:
+    ```vue
+    <template>
+        <Indecision />
+    </template>
+
+    <script>
+    import Indecision from './components/Indecision.vue'
+    export default {
+        name: 'App',
+        components: {
+            Indecision
+        }
+    }
+    </script>
+
+    <style>
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+    </style>
+    ```
+3. Commit Video 059:
+    + $ git add .
+    + $ git commit -m "Commit 059: Indecision Component"
+    + $ git push -u origin main
 
 ### Video 60. Watch - Observar cambios en una propiedad reactiva
+
+
+
 ### Video 61. Realizar petición HTTP a un backend
 ### Video 62. Pulir detalles de nuestra aplicación
 ### Nota 63. Código fuente de la sección
