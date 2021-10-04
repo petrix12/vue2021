@@ -2179,7 +2179,16 @@
     + $ git push -u origin main
 
 ### Video 66. Introducción a las pruebas unitarias y de integración
++ **Contenido**: Breve introducción a las pruebas unitarias y de integración
+1. Commit Video 066:
+    + $ git add .
+    + $ git commit -m "Commit 066: Introducción a las pruebas unitarias y de integración"
+    + $ git push -u origin main
+
 ### Video 67. Mi primera prueba
+
+
+
 ### Video 68. Expect
 ### Video 69. Snapshot
 ### Video 70. Verificar valor en una etiqueta HTML
