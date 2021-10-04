@@ -2215,10 +2215,33 @@
     + $ git push -u origin main
 
 ### Video 68. Expect
++ [Jest.js](https://jestjs.io)
+1. Modificar **03fundamentos\tests\unit\example.spec.js**:
+    ```js
+    describe('Example Component', () => {
+        test('Debe de ser mayor a 10', () => {
+            // Arreglar
+            let value = 5
 
+            // Estímulo
+            value = value + 2
 
+            // Observar el resultado
+            expect(value).toBeGreaterThan(10);
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+3. Commit Video 068:
+    + $ git add .
+    + $ git commit -m "Commit 068: Expect"
+    + $ git push -u origin main
 
 ### Video 69. Snapshot
+
+
+
 ### Video 70. Verificar valor en una etiqueta HTML
 ### Video 71. FindAll vs Find
 ### Video 72. Simular eventos
@@ -2235,8 +2258,8 @@
 ### Nota 83. Código fuente de la sección
 
 
-
-
+0.25 - x
+1 - 321
 
 
 
