@@ -2873,10 +2873,16 @@
 ## Sección 7: Pokemon Game
 
 ### Video 84. Introducción a la sección
++ **Contenido**: Sobre el proyecto que se construirá en esta sección.
+1. Commit Video 084:
+    + $ git add .
+    + $ git commit -m "Commit 084: Introducción a la sección"
+    + $ git push -u origin main
+
+### Nota 85. Temas puntuales de la sección
 
 
 
-### Video 85. Temas puntuales de la sección
 ### Video 86. Demostración del objetivo al final de la sección
 ### Video 87. Inicio de proyecto - Pokémon Game
 ### Video 88. Estructura del proyecto y componentes
@@ -2889,7 +2895,7 @@
 ### Video 95. Emit - Emitir eventos
 ### Video 96. Resultado y reinicio de juego
 ### Video 97. Desplegar nuestro juego en producción
-### Video 98. Código fuente de la sección
+### Nota 98. Código fuente de la sección
 
 
 
