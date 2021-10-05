@@ -2362,10 +2362,57 @@
     + $ git push -u origin main
 
 ### Video 73. Optimización de código
++ [Jest.js - Setup and Teardown](https://jestjs.io/docs/setup-teardown)
+1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Counter from '@/components/Counter'
 
+    describe('Counter Component', () => {
+        let wrapper
+        beforeEach(() => {
+            wrapper = shallowMount(Counter)
+        })
+        
+        test('h2 debe de tener el valor por defecto "Contador"', () => {
+            expect(wrapper.find('h2').exists()).toBeTruthy()
+            const h2Value = wrapper.find('h2').text()
+            expect(h2Value).toBe('Contador')
+        })
 
+        test('El valor por defecto debe de ser 100 en el p', async() => {
+            const value = wrapper.find('[data-testid="counter"]').text()
+            expect(value).toBe('100')
+
+            const [increaseBtn, decreaseBtn] = wrapper.findAll('button')
+            await increaseBtn.trigger('click')
+        })
+
+        test('Debe de incrementer en 1 el valor del contador', async() => {
+            const [increaseBtn, decreaseBtn] = wrapper.findAll('button')
+
+            await increaseBtn.trigger('click')
+            await increaseBtn.trigger('click')
+            await increaseBtn.trigger('click')
+            await decreaseBtn.trigger('click')
+            await decreaseBtn.trigger('click')
+
+            const value = wrapper.find('[data-testid="counter"]').text()
+            expect(value).toBe('101')
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+3. Commit Video 073:
+    + $ git add .
+    + $ git commit -m "Commit 073: Optimización de código"
+    + $ git push -u origin main
 
 ### Video 74. Leer props desde pruebas
+
+
+
 ### Video 75. Enviar Props y evaluarlas
 ### Video 76. Pruebas iniciales en el Indecision component
 ### Video 77. Definir las pruebas a realizar
