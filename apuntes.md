@@ -2462,10 +2462,33 @@
     + $ git push -u origin main
 
 ### Video 76. Pruebas iniciales en el Indecision component
+1. Crear el archivo de prueba para el componente Indecision **03fundamentos\tests\unit\indecision.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Indecision from '@/components/Indecision'
 
+    describe('Indecision Component', () => {
+        let wrapper
+        beforeEach(() => {
+            wrapper = shallowMount(Indecision)
+        })
 
+        test('Debe de hacer match con el sanpshot', () => {
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+    })    
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit indecision
+3. Commit Video 076:
+    + $ git add .
+    + $ git commit -m "Commit 076: Pruebas iniciales en el Indecision component"
+    + $ git push -u origin main
 
 ### Video 77. Definir las pruebas a realizar
+
+
+
 ### Video 78. Spy y Mocks
 ### Video 79. Spy con la instancia de Vue
 ### Video 80. Tarea: Probar que el getAnswer fue llamado
