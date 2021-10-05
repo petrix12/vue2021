@@ -2261,20 +2261,82 @@
     + $ git push -u origin main
 
 ### Video 70. Verificar valor en una etiqueta HTML
-1. Modificar 03fundamentos\tests\unit\counter.spec.js:
+1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Counter from '@/components/Counter'
+
+    describe('Counter Component', () => {
+        /* test('debe de hacer match con el snapshot', () => {
+            const wrapper = shallowMount(Counter)
+            expect( wrapper.html() ).toMatchSnapshot()
+        }) */
+        
+        test('h2 debe de tener el valor por defecto "Contador"', () => {
+            const wrapper = shallowMount(Counter)
+            /* const h2 = wrapper.find('h2') */
+            /* console.log(h2.text()) */
+            /* expect( h2.text() ).toBe('Contador!') */
+            expect(wrapper.find('h2').exists()).toBeTruthy()
+            const h2Value = wrapper.find('h2').text()
+            expect(h2Value).toBe('Contador')
+        })
+    })
+    ```
 2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
     + $ npm run test:unit
-3. mmm
-
-
-4. Commit Video 070:
+3. Commit Video 070:
     + $ git add .
     + $ git commit -m "Commit 070: Verificar valor en una etiqueta HTML"
     + $ git push -u origin main
 
-
 ### Video 71. FindAll vs Find
+1. Modificar componente **03fundamentos\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <!-- <h2>{{ title || 'Contador' }}</h2> -->
+        <h2>{{ customTitle }}</h2>
+        <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+        <!-- <p>{{ counter }}</p> -->
+        <p data-testid="counter">{{ counter }}</p>
+        <div class="buttons-container">
+            <!-- <button v-on:click="increase">+1</button>
+            <button v-on:click="decrease">-1</button> -->
+            <!-- Las siguientes dos líneas de código son equivalentes a las dos comentadas anteriormente -->
+            <button @click="increase">+1</button>
+            <button @click="decrease">-1</button>
+        </div>
+    </template>
+    ≡
+    ```
+2. Modificar prueba **03fundamentos\tests\unit\counter.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Counter from '@/components/Counter'
+
+    describe('Counter Component', () => {
+        ≡
+        test('El valor por defecto debe de ser 100 en el p', () => {
+            const wrapper = shallowMount(Counter)
+            /* const pTags = wrapper.findAll('p') */
+            const value = wrapper.find('[data-testid]').text
+            /* console.log(pTags) */
+            /* expect(pTags[1].text()).toBe('100') */
+            expect(value).toBe('100')
+        })
+    })
+    ```
+3. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+4. Commit Video 071:
+    + $ git add .
+    + $ git commit -m "Commit 071: FindAll vs Find"
+    + $ git push -u origin main
+
 ### Video 72. Simular eventos
+
+
+
 ### Video 73. Optimización de código
 ### Video 74. Leer props desde pruebas
 ### Video 75. Enviar Props y evaluarlas

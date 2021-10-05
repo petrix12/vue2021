@@ -2,6 +2,8 @@
     <!-- <h2>{{ title || 'Contador' }}</h2> -->
     <h2>{{ customTitle }}</h2>
     <p>{{ counter }} <sup>2</sup> = {{ squareCounter }}</p>
+    <!-- <p>{{ counter }}</p> -->
+    <p data-testid="counter">{{ counter }}</p>
     <div class="buttons-container">
         <!-- <button v-on:click="increase">+1</button>
         <button v-on:click="decrease">-1</button> -->
