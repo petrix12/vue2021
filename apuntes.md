@@ -2410,8 +2410,29 @@
     + $ git push -u origin main
 
 ### Video 74. Leer props desde pruebas
+1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
+    ```js
+    ≡
+    describe('Counter Component', () => {
+        ≡
+        test('Debe de establecer el valor por defecto', () => {
+            /* console.log(wrapper.props()) */
+            /* const start = wrapper.props('start') */
+            // La siguiente instrucción es equivalente a la anteriormente comentada
+            const {start} = wrapper.props()
+            /* console.log(start, typeof start) */
 
-
+            const value = wrapper.find('[data-testid="counter"]').text()
+            expect(Number(value)).toBe(start)
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+3. Commit Video 074:
+    + $ git add .
+    + $ git commit -m "Commit 074: Leer props desde pruebas"
+    + $ git push -u origin main
 
 ### Video 75. Enviar Props y evaluarlas
 ### Video 76. Pruebas iniciales en el Indecision component
@@ -2431,5 +2452,7 @@
 
     ≡
     ```vue
+    ```
+    ```js
     ```
     npm run serve
