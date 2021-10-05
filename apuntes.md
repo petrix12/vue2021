@@ -2692,7 +2692,78 @@
     + $ git push -u origin main
 
 ### Video 81. Pruebas sobre Fetch Api
+1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Indecision from '@/components/Indecision'
+
+    describe('Indecision Component', () => {
+        let wrapper
+        let clgSpy
+
+        global.fetch = jest.fn( () => Promise.resolve({
+            json: () => Promise.resolve({
+                answer: 'yes',
+                forced: false,
+                image:  'https://yesno.wtf/assets/yes/2.gif'
+            })
+        }))
+
+        beforeEach(() => {
+            wrapper = shallowMount(Indecision)
+            clgSpy = jest.spyOn(console, 'log')
+            jest.clearAllMocks()
+        })
+
+        test('debe de hacer match con el sanpshot', () => {
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+
+        test('escribir en el input no debe de disparar nada (console.log)', async() => {
+            const getAnswerSpy = jest.spyOn(wrapper.vm, 'getAnswer')
+            const input = wrapper.find('input')
+            await input.setValue('Hola Mundo')
+
+            expect(clgSpy).toHaveBeenCalledTimes(1)
+            /* expect(getAnswerSpy).toHaveReturnedTimes(0) */
+            expect(getAnswerSpy).not.toHaveBeenCalled()
+        })
+
+        test('escribir el simbolo de "?" debe de disparar el getAnswer', async() => {
+            const getAnswerSpy = jest.spyOn(wrapper.vm, 'getAnswer')
+            const input = wrapper.find('input')
+            await input.setValue('Hola Mundo?')
+
+            expect(clgSpy).toHaveBeenCalledTimes(1)
+            expect(getAnswerSpy).toHaveBeenCalled()
+        })
+
+        test('pruebas en getAnswer', async() => {
+            await wrapper.vm.getAnswer()
+
+            const img = wrapper.find('img')
+
+            expect( img.exists() ).toBeTruthy()
+            expect( wrapper.vm.img ).toBe('https://yesno.wtf/assets/yes/2.gif')
+            expect( wrapper.vm.answer ).toBe('Si!')
+        })
+
+        test('pruebas en getAnswer - Fallo en el API', () => {
+
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit indecision
+3. Commit Video 081:
+    + $ git add .
+    + $ git commit -m "Commit 081: Pruebas sobre Fetch Api"
+    + $ git push -u origin main
+
 ### Video 82. Simular un fallo en el API
+
+
+
 ### Nota 83. Código fuente de la sección
 
 
