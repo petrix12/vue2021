@@ -2486,10 +2486,64 @@
     + $ git push -u origin main
 
 ### Video 77. Definir las pruebas a realizar
+1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Indecision from '@/components/Indecision'
 
+    describe('Indecision Component', () => {
+        let wrapper
+        beforeEach(() => {
+            wrapper = shallowMount(Indecision)
+        })
 
+        test('debe de hacer match con el sanpshot', () => {
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+
+        test('escribir el simbolo de "?" debe de disparar el fetch', () => {
+
+        })
+
+        test('escribir en el input no debe de disparar nada (console.log)', () => {
+
+        })
+
+        test('pruebas en getAnswer', () => {
+
+        })
+
+        test('pruebas en getAnswer - Fallo en el API', () => {
+
+        })
+    })
+    ```
+2. Modificar componente **03fundamentos\src\components\Indecision.vue**:
+    ```vue
+    ≡
+    <script>
+    export default {
+        ≡
+        watch: {
+            question(value, oldValue){
+                this.isValidQuestion = false
+                console.log({value})
+                ≡
+            }
+        }
+    }
+    </script>
+    ≡
+    ```
+3. Commit Video 077:
+    + $ git add .
+    + $ git commit -m "Commit 077: Definir las pruebas a realizar"
+    + $ git push -u origin main
 
 ### Video 78. Spy y Mocks
+
+
+
 ### Video 79. Spy con la instancia de Vue
 ### Video 80. Tarea: Probar que el getAnswer fue llamado
 ### Video 81. Pruebas sobre Fetch Api

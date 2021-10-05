@@ -7,7 +7,23 @@ describe('Indecision Component', () => {
         wrapper = shallowMount(Indecision)
     })
 
-    test('Debe de hacer match con el sanpshot', () => {
+    test('debe de hacer match con el sanpshot', () => {
         expect( wrapper.html() ).toMatchSnapshot()
+    })
+
+    test('escribir el simbolo de "?" debe de disparar el fetch', () => {
+
+    })
+
+    test('escribir en el input no debe de disparar nada (console.log)', () => {
+
+    })
+
+    test('pruebas en getAnswer', () => {
+
+    })
+
+    test('pruebas en getAnswer - Fallo en el API', () => {
+
     })
 })
