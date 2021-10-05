@@ -2880,10 +2880,23 @@
     + $ git push -u origin main
 
 ### Nota 85. Temas puntuales de la sección
-
-
+1. Temas puntuales de la sección
+    + En esta sección haremos un juego que nos permita aprender mucho sobre Vue y la comunicación entre componentes. Puntualmente veremos:
+        + Mount
+        + Axios en Vue.js
+        + Emitir eventos
+        + Escuchar eventos personalizados
+        + Funciones para generar información aleatoria
+        + Lógica para resolver la necesidad de la aplicación
+2. Commit Video 085:
+    + $ git add .
+    + $ git commit -m "Commit 085: Temas puntuales de la sección"
+    + $ git push -u origin main
 
 ### Video 86. Demostración del objetivo al final de la sección
+
+
+
 ### Video 87. Inicio de proyecto - Pokémon Game
 ### Video 88. Estructura del proyecto y componentes
 ### Video 89. Diseño de los componentes
