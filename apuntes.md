@@ -2311,15 +2311,13 @@
     ```
 2. Modificar prueba **03fundamentos\tests\unit\counter.spec.js**:
     ```js
-    import { shallowMount } from '@vue/test-utils'
-    import Counter from '@/components/Counter'
-
+    ≡
     describe('Counter Component', () => {
         ≡
         test('El valor por defecto debe de ser 100 en el p', () => {
             const wrapper = shallowMount(Counter)
             /* const pTags = wrapper.findAll('p') */
-            const value = wrapper.find('[data-testid]').text
+            const value = wrapper.find('[data-testid="counter"]').text()
             /* console.log(pTags) */
             /* expect(pTags[1].text()).toBe('100') */
             expect(value).toBe('100')
@@ -2334,10 +2332,39 @@
     + $ git push -u origin main
 
 ### Video 72. Simular eventos
+1. Modificar prueba **03fundamentos\tests\unit\counter.spec.js**:
+    ```js
+    ≡
+    describe('Counter Component', () => {
+        ≡
 
+        test('Debe de incrementer en 1 el valor del contador', async() => {
+            const wrapper = shallowMount(Counter)
+            const increaseBtn = wrapper.find('button')
+            await increaseBtn.trigger('click')
+            let value = wrapper.find('[data-testid="counter"]').text()
+            expect(value).toBe('101')
 
+            const decreaseBtn = wrapper.findAll('button')[1]
+            await decreaseBtn.trigger('click')
+            await decreaseBtn.trigger('click')
+            value = wrapper.find('[data-testid="counter"]').text()
+            expect(value).toBe('99')
+        })
+    })   
+    ```
+2. Para realizar una prueba específica:
+    + $ npm run test:unit counter
+    + **Nota**: este comando solo evaluará las pruebas contenidas en **03fundamentos\tests\unit\counter.spec.js**.
+3. Commit Video 072:
+    + $ git add .
+    + $ git commit -m "Commit 072: Simular eventos"
+    + $ git push -u origin main
 
 ### Video 73. Optimización de código
+
+
+
 ### Video 74. Leer props desde pruebas
 ### Video 75. Enviar Props y evaluarlas
 ### Video 76. Pruebas iniciales en el Indecision component
