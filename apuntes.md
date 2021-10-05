@@ -2637,8 +2637,59 @@
     + $ git push -u origin main
 
 ### Video 80. Tarea: Probar que el getAnswer fue llamado
+1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Indecision from '@/components/Indecision'
 
+    describe('Indecision Component', () => {
+        let wrapper
+        let clgSpy
 
+        global.fetch = jest.fn()
+
+        beforeEach(() => {
+            wrapper = shallowMount(Indecision)
+            clgSpy = jest.spyOn(console, 'log')
+            jest.clearAllMocks()
+        })
+
+        test('debe de hacer match con el sanpshot', () => {
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+
+        test('escribir en el input no debe de disparar nada (console.log)', async() => {
+            const getAnswerSpy = jest.spyOn(wrapper.vm, 'getAnswer')
+            const input = wrapper.find('input')
+            await input.setValue('Hola Mundo')
+
+            expect(clgSpy).toHaveBeenCalledTimes(1)
+            expect(getAnswerSpy).not.toHaveBeenCalled()
+        })
+
+        test('escribir el simbolo de "?" debe de disparar el getAnswer', async() => {
+            const getAnswerSpy = jest.spyOn(wrapper.vm, 'getAnswer')
+            const input = wrapper.find('input')
+            await input.setValue('Hola Mundo?')
+
+            expect(getAnswerSpy).toHaveBeenCalledTimes(1)
+        })
+
+        test('pruebas en getAnswer', () => {
+
+        })
+
+        test('pruebas en getAnswer - Fallo en el API', () => {
+
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit indecision
+3. Commit Video 080:
+    + $ git add .
+    + $ git commit -m "Commit 080: Probar que el getAnswer fue llamado"
+    + $ git push -u origin main
 
 ### Video 81. Pruebas sobre Fetch Api
 ### Video 82. Simular un fallo en el API
