@@ -2894,8 +2894,11 @@
     + $ git push -u origin main
 
 ### Video 86. Demostración del objetivo al final de la sección
-
-
++ **Contenido**: Muestra del proyecto terminado.
+1. Commit Video 086:
+    + $ git add .
+    + $ git commit -m "Commit 086: Demostración del objetivo al final de la sección"
+    + $ git push -u origin main
 
 ### Video 87. Inicio de proyecto - Pokémon Game
 ### Video 88. Estructura del proyecto y componentes
