@@ -2587,10 +2587,59 @@
     + $ git push -u origin main
 
 ### Video 79. Spy con la instancia de Vue
++ [Vue Test Utils](https://vue-test-utils.vuejs.org/api/wrapper)
+1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import Indecision from '@/components/Indecision'
 
+    describe('Indecision Component', () => {
+        let wrapper
+        let clgSpy
 
+        beforeEach(() => {
+            wrapper = shallowMount(Indecision)
+            clgSpy = jest.spyOn(console, 'log')
+        })
+
+        test('debe de hacer match con el sanpshot', () => {
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+
+        test('escribir en el input no debe de disparar nada (console.log)', async() => {
+            const getAnswerSpy = jest.spyOn(wrapper.vm, 'getAnswer')
+            const input = wrapper.find('input')
+            await input.setValue('Hola Mundo')
+
+            expect(clgSpy).toHaveBeenCalledTimes(1)
+            /* expect(getAnswerSpy).toHaveReturnedTimes(0) */
+            expect(getAnswerSpy).not.toHaveBeenCalled()
+        })
+
+        test('escribir el simbolo de "?" debe de disparar el fetch', () => {
+            
+        })
+
+        test('pruebas en getAnswer', () => {
+
+        })
+
+        test('pruebas en getAnswer - Fallo en el API', () => {
+
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit indecision
+3. Commit Video 079:
+    + $ git add .
+    + $ git commit -m "Commit 079: Spy con la instancia de Vue"
+    + $ git push -u origin main
 
 ### Video 80. Tarea: Probar que el getAnswer fue llamado
+
+
+
 ### Video 81. Pruebas sobre Fetch Api
 ### Video 82. Simular un fallo en el API
 ### Nota 83. Código fuente de la sección

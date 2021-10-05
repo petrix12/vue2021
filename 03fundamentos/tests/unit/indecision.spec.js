@@ -15,14 +15,17 @@ describe('Indecision Component', () => {
     })
 
     test('escribir en el input no debe de disparar nada (console.log)', async() => {
+        const getAnswerSpy = jest.spyOn(wrapper.vm, 'getAnswer')
         const input = wrapper.find('input')
         await input.setValue('Hola Mundo')
 
         expect(clgSpy).toHaveBeenCalledTimes(1)
+        /* expect(getAnswerSpy).toHaveReturnedTimes(0) */
+        expect(getAnswerSpy).not.toHaveBeenCalled()
     })
 
     test('escribir el simbolo de "?" debe de disparar el fetch', () => {
-
+        
     })
 
     test('pruebas en getAnswer', () => {
