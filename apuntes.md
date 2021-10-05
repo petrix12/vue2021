@@ -2435,7 +2435,36 @@
     + $ git push -u origin main
 
 ### Video 75. Enviar Props y evaluarlas
+1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
+    ```js
+    ≡
+    describe('Counter Component', () => {
+        ≡
+        test('Debe de mostrar la prop title', () => {
+            const title = 'Hola Tía Elizabeth'
+            const wrapper = shallowMount(Counter, {
+                props: {
+                    /* title: title */
+                    // La expresión de abajo es equivalente a la anteriormente comentada
+                    title
+                }
+            })
+            /* console.log(wrapper.html()) */
+            expect(wrapper.find('h2').text()).toBe(title)
+        })
+    })
+    ```
+2. Ubicarse en la raíz del proyecto **03fundamentos** y ejecutar una prueba global:
+    + $ npm run test:unit
+3. Commit Video 075:
+    + $ git add .
+    + $ git commit -m "Commit 075: Enviar Props y evaluarlas"
+    + $ git push -u origin main
+
 ### Video 76. Pruebas iniciales en el Indecision component
+
+
+
 ### Video 77. Definir las pruebas a realizar
 ### Video 78. Spy y Mocks
 ### Video 79. Spy con la instancia de Vue
