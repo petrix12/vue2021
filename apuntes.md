@@ -2864,6 +2864,33 @@
     + $ git push -u origin main
 
 ### Nota 83. Código fuente de la sección
++ [Código fuente de la sección](https://github.com/Klerith/vue-fundamentos-cli/tree/fin-seccion-6)
+1. Commit Video 083:
+    + $ git add .
+    + $ git commit -m "Commit 083: Código fuente de la sección"
+    + $ git push -u origin main
+
+## Sección 7: Pokemon Game
+
+### Video 84. Introducción a la sección
+
+
+
+### Video 85. Temas puntuales de la sección
+### Video 86. Demostración del objetivo al final de la sección
+### Video 87. Inicio de proyecto - Pokémon Game
+### Video 88. Estructura del proyecto y componentes
+### Video 89. Diseño de los componentes
+### Video 90. Funcionalidad de PokemonPicture
+### Video 91. Lógica de los nombres de los pokémons
+### Video 92. Obtener nombres de los 4 pokémons
+### Video 93. Mostrar las opciones posibles
+### Video 94. Seleccionar un pokémon aleatoriamente
+### Video 95. Emit - Emitir eventos
+### Video 96. Resultado y reinicio de juego
+### Video 97. Desplegar nuestro juego en producción
+### Video 98. Código fuente de la sección
+
 
 
 0.25 - x
