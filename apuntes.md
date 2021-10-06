@@ -3156,10 +3156,95 @@
     + $ git push -u origin main
 
 ### Video 90. Funcionalidad de PokemonPicture
+1. Modificar componente **04pokemon\src\components\PokemonPicture.vue**:
+    ```vue
+    <template>
+        <div class="pokemon-container">
+            <img 
+                :src="imgSrc" 
+                class="hidden-pokemon" 
+                alt="pokémon"
+            >
+            <img 
+                v-if="showPokemon"
+                :src="imgSrc" 
+                class="fade-in" 
+                alt="pokémon"
+            >
+        </div>
+    </template>
 
+    <script>
+    export default {        
+        props: {
+            pokemonId: {
+                type: Number,
+                required: true
+            },
+            showPokemon: {
+                type: Boolean,
+                required: true,
+                default: false
+            }
+        },    
+        computed: {
+            imgSrc(){
+                return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${ this.pokemonId }.svg`
+            }
+        }
+    }
+    </script>
 
+    <style scoped>
+    /* Pokemon Picture */
+    .pokemon-container {
+        height: 200px;
+    }
+    img {
+        height: 200px;
+        position: absolute;
+        right: 32%;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+    }
+    .hidden-pokemon {
+        filter: brightness(0);
+    }
+    </style>
+    ```
+2. Modificar componente **04pokemon\src\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1>¿Quién es este pokémon?</h1>
+        
+        <PokemonPicture :pokemonId="4" :showPokemon="true" />
+        <PokemonOptions />
+    </template>
+
+    <script>
+    import PokemonPicture from '@/components/PokemonPicture'
+    import PokemonOptions from '@/components/PokemonOptions'
+
+    export default {
+        components: {
+            PokemonPicture,
+            PokemonOptions
+        }
+    }
+    </script>    
+    ```
+3. Commit Video 090:
+    + $ git add .
+    + $ git commit -m "Commit 090: Funcionalidad de PokemonPicture"
+    + $ git push -u origin main
 
 ### Video 91. Lógica de los nombres de los pokémons
+
+
+
 ### Video 92. Obtener nombres de los 4 pokémons
 ### Video 93. Mostrar las opciones posibles
 ### Video 94. Seleccionar un pokémon aleatoriamente
