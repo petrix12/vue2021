@@ -3061,10 +3061,104 @@
     + $ git push -u origin main
 
 ### Video 89. Diseño de los componentes
++ [Klerith/pokemon-options-picture.css](https://gist.github.com/Klerith/2f3d69f8b03de511fe87dd14fb7a235c)
++ [Imagen de un pokémon](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg)
++ [PokéAPI](https://pokeapi.co/)
+1. Modificar el componente **04pokemon\src\components\PokemonPicture.vue**:
+    ```vue
+    <template>
+        <div class="pokemon-container">
+            <img 
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" 
+                class="hidden-pokemon" 
+                alt="pokémon"
+            >
+            <img 
+                src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" 
+                class="fade-in" 
+                alt="pokémon"
+            >
+        </div>
+    </template>
 
+    <script>
+    export default {
 
+    }
+    </script>
+
+    <style scoped>
+    /* Pokemon Picture */
+    .pokemon-container {
+        height: 200px;
+    }
+    img {
+        height: 200px;
+        position: absolute;
+        right: 32%;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+    }
+    .hidden-pokemon {
+        filter: brightness(0);
+    }
+    </style>
+    ```
+2. Modificar el componente **04pokemon\src\components\PokemonOptions.vue**:
+    ```vue
+    <template>
+        <div class="options-container">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </template>
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style scoped>
+    /* Pokemon Options */
+    ul {
+        list-style-type: none;
+    }
+    li {
+        background-color: white;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        margin-bottom: 10px;
+        width: 250px;
+    }
+
+    li:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .options-container {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    ```
+3. Commit Video 089:
+    + $ git add .
+    + $ git commit -m "Commit 089: Diseño de los componentes"
+    + $ git push -u origin main
 
 ### Video 90. Funcionalidad de PokemonPicture
+
+
+
 ### Video 91. Lógica de los nombres de los pokémons
 ### Video 92. Obtener nombres de los 4 pokémons
 ### Video 93. Mostrar las opciones posibles
