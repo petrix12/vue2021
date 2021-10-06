@@ -2901,6 +2901,77 @@
     + $ git push -u origin main
 
 ### Video 87. Inicio de proyecto - Pokémon Game
++ [Klerith/animations.css](https://gist.github.com/Klerith/4c2c2d726a0c6875367174dcef49631c)
+1. Crear aplicación Vue.js **04pokemon**:
+    + $ vue create 04pokemon
+    + Seleccionar: **Manually select features**
+    + Check the features needed for your project:
+        + **Choose Vue version**
+        + **Babel**
+        + **Unit Testing**
+    + Choose a version of Vue.js that you want to start the project with: **3.x**
+    + Pick a unit testing solution: **Jest**
+    + Where do you prefer placing config for Babel, ESLint, etc.?: **In dedicated config files**
+    + Save this as a preset for future projects?: **N**
+2. Ir a la raíz del proyecto **04pokemon** y levantar un servidor:
+    + $ cd 04pokemon
+    + $ npm run serve
+3. Crear archivo de estilo **04pokemon\src\css\animations.css**:
+    ```css
+    .fade-in {
+        animation: fadeIn 0.3s;
+        -webkit-animation: fadeIn 0.3s;
+        -moz-animation: fadeIn 0.3s;
+        -o-animation: fadeIn 0.3s;
+        -ms-animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    
+    @-moz-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    
+    @-webkit-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    
+    @-o-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    
+    @-ms-keyframes fadeIn {
+        0% {opacity:0;}
+        100% {opacity:1;}
+    }
+    ```
+4. Crear archivo de estilo **04pokemon\src\css\styles.css**:
+    ```css
+    html, body {
+        background-color: #f1f1f1;
+        margin: 0px;
+    }  
+    ```
+5. Importar los estilos nuevos en **04pokemon\src\main.js**:
+    ```js
+    import { createApp } from 'vue'
+    import App from './App.vue'
+
+    import './css/styles.css'
+    import './css/animations.css'
+
+    createApp(App).mount('#app')
+    ```
+7. Commit Video 087:
+    + $ git add .
+    + $ git commit -m "Commit 087: Inicio de proyecto - Pokémon Game"
+    + $ git push -u origin main
+
 ### Video 88. Estructura del proyecto y componentes
 ### Video 89. Diseño de los componentes
 ### Video 90. Funcionalidad de PokemonPicture
@@ -2915,7 +2986,7 @@
 
 
 
-0.25 - x
+0.30 - x
 1 - 321
 
 
