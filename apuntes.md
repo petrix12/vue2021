@@ -2973,7 +2973,97 @@
     + $ git push -u origin main
 
 ### Video 88. Estructura del proyecto y componentes
+1. Crear componente **04pokemon\src\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1>¿Quién es este pokémon?</h1>
+        
+        <PokemonPicture />
+        <PokemonOptions />
+    </template>
+
+    <script>
+    import PokemonPicture from '@/components/PokemonPicture'
+    import PokemonOptions from '@/components/PokemonOptions'
+
+    export default {
+        components: {
+            PokemonPicture,
+            PokemonOptions
+        }
+    }
+    </script>
+    ```
+2. Modificar **04pokemon\src\App.vue**:
+    ```vue
+    <template>
+        <PokemonPage />
+    </template>
+
+    <script>
+    import PokemonPage from './pages/PokemonPage.vue'
+
+    export default {
+    name: 'App',
+        components: {
+            PokemonPage
+        }
+    }
+    </script>
+
+    <style>
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+    </style>
+    ```
+3. Borrar el componente **04pokemon\src\components\HelloWorld.vue**.
+4. Crear componente **04pokemon\src\components\PokemonPicture.vue**:
+    ```vue
+    <template>
+        <h3>Pokemon picture</h3>
+    </template>
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style>
+
+    </style>
+    ```
+5. Crear componente **04pokemon\src\components\PokemonOptions.vue**:
+    ```vue
+    <template>
+        <h3>Pokemon options</h3>
+    </template>
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style>
+
+    </style>   
+    ```
+6. Commit Video 088:
+    + $ git add .
+    + $ git commit -m "Commit 088: Estructura del proyecto y componentes"
+    + $ git push -u origin main
+
 ### Video 89. Diseño de los componentes
+
+
+
 ### Video 90. Funcionalidad de PokemonPicture
 ### Video 91. Lógica de los nombres de los pokémons
 ### Video 92. Obtener nombres de los 4 pokémons
