@@ -3280,10 +3280,65 @@
     + $ git push -u origin main
 
 ### Video 92. Obtener nombres de los 4 pokémons
+1. Instalar Axios:
+    + $ npm install axios
+2. Crear **04pokemon\src\api\pokemonApi.js**:
+    ```js
+    import axios from 'axios'
 
+    const pokemonApi = axios.create({
+        baseURL: 'https://pokeapi.co/api/v2/pokemon'
+    })
 
+    export default pokemonApi
+    ```
+3. Modificar **04pokemon\src\helpers\getPokemonOptions.js**:
+    ```js
+    import pokemonApi from '../api/pokemonApi'
+
+    const getPokemons = () => {
+        const pokemonsArr = Array.from( Array(650) )
+        return pokemonsArr.map( ( _ , index ) => index + 1 )
+    }
+
+    const getPokemonOptions = async() => {
+        const mixedPokemons = getPokemons().sort( () => Math.random() - 0.5 ) 
+        const pokemons = await getPokemonNames( mixedPokemons.splice(0,4) )
+        return pokemons
+    }
+
+    const getPokemonNames = async( [a,b,c,d] = [] ) => {
+        // const resp = await pokemonApi.get(`/3`)
+        // console.log(resp.data.name, resp.data.id)
+        const promiseArr = [
+            pokemonApi.get(`/${ a }`),
+            pokemonApi.get(`/${ b }`),
+            pokemonApi.get(`/${ c }`),
+            pokemonApi.get(`/${ d }`),
+        ]
+
+        const [ p1, p2, p3, p4 ] = await Promise.all( promiseArr )
+        
+        return [
+            { name: p1.data.name, id: p1.data.id },
+            { name: p2.data.name, id: p2.data.id },
+            { name: p4.data.name, id: p3.data.id },
+            { name: p3.data.name, id: p4.data.id },
+        ]
+    }
+
+    export default getPokemonOptions
+    ```
+4. Commit Video 092:
+    + $ git add .
+    + $ git commit -m "Commit 092: Obtener nombres de los 4 pokémons"
+    + $ git push -u origin main
 
 ### Video 93. Mostrar las opciones posibles
+
+
+
+
 ### Video 94. Seleccionar un pokémon aleatoriamente
 ### Video 95. Emit - Emitir eventos
 ### Video 96. Resultado y reinicio de juego
