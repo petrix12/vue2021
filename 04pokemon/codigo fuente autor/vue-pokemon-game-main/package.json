@@ -1,5 +1,5 @@
 {
-  "name": "04pokemon",
+  "name": "04-pokemon-game",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "axios": "^0.22.0",
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },
