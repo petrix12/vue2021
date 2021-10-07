@@ -3242,10 +3242,47 @@
     + $ git push -u origin main
 
 ### Video 91. Lógica de los nombres de los pokémons
+1. Crear helper **04pokemon\src\helpers\getPokemonOptions.js**:
+    ```js
+    const getPokemons = () => {
+        const pokemonsArr = Array.from(Array(650))
+        /* console.log(pokemonsArr) */
+        return pokemonsArr.map((_, index) => index +1)
+    }
 
+    const getPokemonOptions = () => {
+        const mixedPokemons = getPokemons().sort(() => Math.random() - 0.5)
+        /* console.log(mixedPokemons) */
+        getPokemonNames(mixedPokemons.splice(0, 4))
+    }
 
+    const getPokemonNames = ([a, b, c, d] = []) => {
+        console.log(a, b, c, d)
+    }
+
+    export default getPokemonOptions
+    ```
+2. Modificar 04pokemon\src\pages\PokemonPage.vue:
+    ```vue
+    ≡
+    <script>
+    import PokemonPicture from '@/components/PokemonPicture'
+    import PokemonOptions from '@/components/PokemonOptions'
+    import getPokemonOptions from '@/helpers/getPokemonOptions'
+
+    console.log(getPokemonOptions())
+    ≡
+    </script>
+    ```
+3. Commit Video 091:
+    + $ git add .
+    + $ git commit -m "Commit 091: Lógica de los nombres de los pokémons"
+    + $ git push -u origin main
 
 ### Video 92. Obtener nombres de los 4 pokémons
+
+
+
 ### Video 93. Mostrar las opciones posibles
 ### Video 94. Seleccionar un pokémon aleatoriamente
 ### Video 95. Emit - Emitir eventos
