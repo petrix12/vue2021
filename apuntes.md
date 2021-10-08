@@ -3431,10 +3431,70 @@
     + $ git push -u origin main
 
 ### Video 95. Emit - Emitir eventos
++ [Documentación Vue.js - v-model arguments](https://v3.vuejs.org/guide/component-custom-events.html#v-model-arguments)
+1. Modificar componente hijo **04pokemon\src\components\PokemonOptions.vue**:
+    ```vue
+    <template>
+        <div class="options-container">
+            <ul>
+                <li
+                    v-for="pokemon in pokemons"
+                    :key="pokemon.id"
+                    @click="$emit('selectionPokemon', pokemon.id)"
+                >
+                    {{ pokemon.name }}
+                </li>
+            </ul>
+        </div>
+    </template>
+    ≡
+    ```
+2. Modificar componente padre **04pokemon\src\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1 v-if="!pokemon">Espere por favor...</h1>
+        <div v-else>
+            <h1>¿Quién es este pokémon?</h1>
+            
+            <pokemon-picture
+                :pokemon-id="pokemon.id"
+                :show-pokemon="showPokemon"
+            ></pokemon-picture>
+            <PokemonOptions
+                :pokemons="pokemonArr"
+                @selection-pokemon="checkAnswer"
+            />
+        </div>
+    </template>
 
-
+    <script>
+    ≡
+    export default {
+        ≡
+        methods:{
+            ≡
+            checkAnswer(pokemonId){
+                /* console.log('Llamado Pokemon Page', pokemonId) */
+                this.showPokemon = true
+            }
+        },
+        ≡
+    }
+    </script>
+    ```
+3. Commit Video 095:
+    + $ git add .
+    + $ git commit -m "Commit 095: Emit - Emitir eventos"
+    + $ git push -u origin main
 
 ### Video 96. Resultado y reinicio de juego
+
+
+
+
+
+
+
 ### Video 97. Desplegar nuestro juego en producción
 ### Nota 98. Código fuente de la sección
 
