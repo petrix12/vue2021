@@ -1788,14 +1788,14 @@
 
 ## Sección 05: IndecisionApp - Continuación
 
-### Video 55. Introducción a la sección
+### Video 055. Introducción a la sección
 + **Contenido**: Breve explicación al **Options API** y **Composition API**.
 1. Commit Video 055:
     + $ git add .
     + $ git commit -m "Commit 055: Introducción a la sección"
     + $ git push -u origin main
 
-### Nota 56. Temas puntuales de la sección
+### Nota 056. Temas puntuales de la sección
 1. Temas puntuales de la sección:
     + Esta sección aunque es pequeña, contiene información importante sobre:
         + Watch
@@ -1811,21 +1811,21 @@
     + $ git commit -m "Commit 056: Temas puntuales de la sección"
     + $ git push -u origin main
 
-### Video 57. Demostración del objetivo final
+### Video 057. Demostración del objetivo final
 + **Contenido**: breve explicación de una aplicación que consume una API.
 1. Commit Video 057:
     + $ git add .
     + $ git commit -m "Commit 057: Demostración del objetivo final"
     + $ git push -u origin main
 
-### Video 58. Continuación de proyecto - FundamentosApp
+### Video 058. Continuación de proyecto - FundamentosApp
 **Contenido**: indicaciones para seguir trabajando con el proyecto **03fundamentos**.
 1. Commit Video 058:
     + $ git add .
     + $ git commit -m "Commit 058: Continuación de proyecto - FundamentosApp"
     + $ git push -u origin main
 
-### Video 59. Indecision Component
+### Video 059. Indecision Component
 + [Klerith/indecision.html](https://gist.github.com/Klerith/0008cd42c24ae01089749ad4d5dcc0c2)
 1. Crear componente Vue **03fundamentos\src\components\Indecision.vue**:
     ```vue
@@ -1925,7 +1925,7 @@
     + $ git commit -m "Commit 059: Indecision Component"
     + $ git push -u origin main
 
-### Video 60. Watch - Observar cambios en una propiedad reactiva
+### Video 060. Watch - Observar cambios en una propiedad reactiva
 1. Modificar **03fundamentos\src\components\Indecision.vue**:
     ```vue
     <template>
@@ -1967,7 +1967,7 @@
     + $ git commit -m "Commit 060: Watch - Observar cambios en una propiedad reactiva"
     + $ git push -u origin main
 
-### Video 61. Realizar petición HTTP a un backend
+### Video 061. Realizar petición HTTP a un backend
 + [Yes or No](https://yesno.wtf)
 1. Modificar **03fundamentos\src\components\Indecision.vue**:
     ```vue
@@ -2039,7 +2039,7 @@
     + $ git commit -m "Commit 061: Realizar petición HTTP a un backend"
     + $ git push -u origin main
 
-### Video 62. Pulir detalles de nuestra aplicación
+### Video 062. Pulir detalles de nuestra aplicación
 1. Modificar **03fundamentos\src\components\Indecision.vue**:
     ```vue
     <template>
@@ -2142,7 +2142,7 @@
     + $ git commit -m "Commit 062: Pulir detalles de nuestra aplicación"
     + $ git push -u origin main
 
-### Nota 63. Código fuente de la sección
+### Nota 063. Código fuente de la sección
 + [Repositorio de la sección en GitHub](https://github.com/Klerith/vue-fundamentos-cli/tree/fin-seccion-5)
 1. Commit Video 063:
     + $ git add .
@@ -2151,14 +2151,14 @@
 
 ## Sección 06: Introducción a las pruebas unitarias y de integración
 
-### Video 64. Introducción a la sección
+### Video 064. Introducción a la sección
 + **Contenido**: importancia de probar nuestra aplicaciones.
 1. Commit Video 064:
     + $ git add .
     + $ git commit -m "Commit 064: Introducción a la sección"
     + $ git push -u origin main
 
-### Nota 65. Temas puntuales de la sección
+### Nota 065. Temas puntuales de la sección
 1. Temas puntuales de la sección:
     + Esta es nuestra primera sección de pruebas unitarias, el objetivo es que probemos todo el trabajo realizado anteriormente. Aquí tocaremos los siguientes temas:
         + Jest
@@ -2179,14 +2179,14 @@
     + $ git commit -m "Commit 065: Temas puntuales de la sección"
     + $ git push -u origin main
 
-### Video 66. Introducción a las pruebas unitarias y de integración
+### Video 066. Introducción a las pruebas unitarias y de integración
 + **Contenido**: Breve introducción a las pruebas unitarias y de integración
 1. Commit Video 066:
     + $ git add .
     + $ git commit -m "Commit 066: Introducción a las pruebas unitarias y de integración"
     + $ git push -u origin main
 
-### Video 67. Mi primera prueba
+### Video 067. Mi primera prueba
 + **Nota**: Para las pruebas se recomienda copiar la misma estructura del directorio **03fundamentos\src** en **03fundamentos\tests\unit**.
 1. Modificar o crear según sea el caso el archivo **03fundamentos\tests\unit\example.spec.js**:
     ```js
@@ -2215,7 +2215,7 @@
     + $ git commit -m "Commit 067: Mi primera prueba"
     + $ git push -u origin main
 
-### Video 68. Expect
+### Video 068. Expect
 + [Jest.js](https://jestjs.io)
 1. Modificar **03fundamentos\tests\unit\example.spec.js**:
     ```js
@@ -2239,7 +2239,7 @@
     + $ git commit -m "Commit 068: Expect"
     + $ git push -u origin main
 
-### Video 69. Snapshot
+### Video 069. Snapshot
 1. Crear archivo de prueba **03fundamentos\tests\unit\counter.spec.js**:
     ```js
     import { shallowMount } from '@vue/test-utils'
@@ -2261,7 +2261,7 @@
     + $ git commit -m "Commit 069: Snapshot"
     + $ git push -u origin main
 
-### Video 70. Verificar valor en una etiqueta HTML
+### Video 070. Verificar valor en una etiqueta HTML
 1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
     ```js
     import { shallowMount } from '@vue/test-utils'
@@ -2291,7 +2291,7 @@
     + $ git commit -m "Commit 070: Verificar valor en una etiqueta HTML"
     + $ git push -u origin main
 
-### Video 71. FindAll vs Find
+### Video 071. FindAll vs Find
 1. Modificar componente **03fundamentos\src\components\Counter.vue**:
     ```vue
     <template>
@@ -2332,7 +2332,7 @@
     + $ git commit -m "Commit 071: FindAll vs Find"
     + $ git push -u origin main
 
-### Video 72. Simular eventos
+### Video 072. Simular eventos
 1. Modificar prueba **03fundamentos\tests\unit\counter.spec.js**:
     ```js
     ≡
@@ -2362,7 +2362,7 @@
     + $ git commit -m "Commit 072: Simular eventos"
     + $ git push -u origin main
 
-### Video 73. Optimización de código
+### Video 073. Optimización de código
 + [Jest.js - Setup and Teardown](https://jestjs.io/docs/setup-teardown)
 1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
     ```js
@@ -2410,7 +2410,7 @@
     + $ git commit -m "Commit 073: Optimización de código"
     + $ git push -u origin main
 
-### Video 74. Leer props desde pruebas
+### Video 074. Leer props desde pruebas
 1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
     ```js
     ≡
@@ -2435,7 +2435,7 @@
     + $ git commit -m "Commit 074: Leer props desde pruebas"
     + $ git push -u origin main
 
-### Video 75. Enviar Props y evaluarlas
+### Video 075. Enviar Props y evaluarlas
 1. Modificar **03fundamentos\tests\unit\counter.spec.js**:
     ```js
     ≡
@@ -2462,7 +2462,7 @@
     + $ git commit -m "Commit 075: Enviar Props y evaluarlas"
     + $ git push -u origin main
 
-### Video 76. Pruebas iniciales en el Indecision component
+### Video 076. Pruebas iniciales en el Indecision component
 1. Crear el archivo de prueba para el componente Indecision **03fundamentos\tests\unit\indecision.spec.js**:
     ```js
     import { shallowMount } from '@vue/test-utils'
@@ -2486,7 +2486,7 @@
     + $ git commit -m "Commit 076: Pruebas iniciales en el Indecision component"
     + $ git push -u origin main
 
-### Video 77. Definir las pruebas a realizar
+### Video 077. Definir las pruebas a realizar
 1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
     ```js
     import { shallowMount } from '@vue/test-utils'
@@ -2541,7 +2541,7 @@
     + $ git commit -m "Commit 077: Definir las pruebas a realizar"
     + $ git push -u origin main
 
-### Video 78. Spy y Mocks
+### Video 078. Spy y Mocks
 1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
     ```js
     import { shallowMount } from '@vue/test-utils'
@@ -2587,7 +2587,7 @@
     + $ git commit -m "Commit 078: Spy y Mocks"
     + $ git push -u origin main
 
-### Video 79. Spy con la instancia de Vue
+### Video 079. Spy con la instancia de Vue
 + [Vue Test Utils](https://vue-test-utils.vuejs.org/api/wrapper)
 1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
     ```js
@@ -2637,7 +2637,7 @@
     + $ git commit -m "Commit 079: Spy con la instancia de Vue"
     + $ git push -u origin main
 
-### Video 80. Tarea: Probar que el getAnswer fue llamado
+### Video 080. Tarea: Probar que el getAnswer fue llamado
 1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
     ```js
     import { shallowMount } from '@vue/test-utils'
@@ -2692,7 +2692,7 @@
     + $ git commit -m "Commit 080: Probar que el getAnswer fue llamado"
     + $ git push -u origin main
 
-### Video 81. Pruebas sobre Fetch Api
+### Video 081. Pruebas sobre Fetch Api
 1. Modificar prueba **03fundamentos\tests\unit\indecision.spec.js**:
     ```js
     import { shallowMount } from '@vue/test-utils'
@@ -2761,7 +2761,7 @@
     + $ git commit -m "Commit 081: Pruebas sobre Fetch Api"
     + $ git push -u origin main
 
-### Video 82. Simular un fallo en el API
+### Video 082. Simular un fallo en el API
 1. Modificar **03fundamentos\src\components\Indecision.vue**:
     ```vue
     ≡
@@ -2864,23 +2864,23 @@
     + $ git commit -m "Commit 082: Simular un fallo en el API"
     + $ git push -u origin main
 
-### Nota 83. Código fuente de la sección
+### Nota 083. Código fuente de la sección
 + [Código fuente de la sección](https://github.com/Klerith/vue-fundamentos-cli/tree/fin-seccion-6)
 1. Commit Video 083:
     + $ git add .
     + $ git commit -m "Commit 083: Código fuente de la sección"
     + $ git push -u origin main
 
-## Sección 7: Pokemon Game
+## Sección 07: Pokemon Game
 
-### Video 84. Introducción a la sección
+### Video 084. Introducción a la sección
 + **Contenido**: Sobre el proyecto que se construirá en esta sección.
 1. Commit Video 084:
     + $ git add .
     + $ git commit -m "Commit 084: Introducción a la sección"
     + $ git push -u origin main
 
-### Nota 85. Temas puntuales de la sección
+### Nota 085. Temas puntuales de la sección
 1. Temas puntuales de la sección
     + En esta sección haremos un juego que nos permita aprender mucho sobre Vue y la comunicación entre componentes. Puntualmente veremos:
         + Mount
@@ -2894,14 +2894,14 @@
     + $ git commit -m "Commit 085: Temas puntuales de la sección"
     + $ git push -u origin main
 
-### Video 86. Demostración del objetivo al final de la sección
+### Video 086. Demostración del objetivo al final de la sección
 + **Contenido**: Muestra del proyecto terminado.
 1. Commit Video 086:
     + $ git add .
     + $ git commit -m "Commit 086: Demostración del objetivo al final de la sección"
     + $ git push -u origin main
 
-### Video 87. Inicio de proyecto - Pokémon Game
+### Video 087. Inicio de proyecto - Pokémon Game
 + [Klerith/animations.css](https://gist.github.com/Klerith/4c2c2d726a0c6875367174dcef49631c)
 1. Crear aplicación Vue.js **04pokemon**:
     + $ vue create 04pokemon
@@ -2973,7 +2973,7 @@
     + $ git commit -m "Commit 087: Inicio de proyecto - Pokémon Game"
     + $ git push -u origin main
 
-### Video 88. Estructura del proyecto y componentes
+### Video 088. Estructura del proyecto y componentes
 1. Crear componente **04pokemon\src\pages\PokemonPage.vue**:
     ```vue
     <template>
@@ -3061,7 +3061,7 @@
     + $ git commit -m "Commit 088: Estructura del proyecto y componentes"
     + $ git push -u origin main
 
-### Video 89. Diseño de los componentes
+### Video 089. Diseño de los componentes
 + [Klerith/pokemon-options-picture.css](https://gist.github.com/Klerith/2f3d69f8b03de511fe87dd14fb7a235c)
 + [Imagen de un pokémon](https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg)
 + [PokéAPI](https://pokeapi.co/)
@@ -3156,7 +3156,7 @@
     + $ git commit -m "Commit 089: Diseño de los componentes"
     + $ git push -u origin main
 
-### Video 90. Funcionalidad de PokemonPicture
+### Video 090. Funcionalidad de PokemonPicture
 1. Modificar componente **04pokemon\src\components\PokemonPicture.vue**:
     ```vue
     <template>
@@ -3242,7 +3242,7 @@
     + $ git commit -m "Commit 090: Funcionalidad de PokemonPicture"
     + $ git push -u origin main
 
-### Video 91. Lógica de los nombres de los pokémons
+### Video 091. Lógica de los nombres de los pokémons
 1. Crear helper **04pokemon\src\helpers\getPokemonOptions.js**:
     ```js
     const getPokemons = () => {
@@ -3280,7 +3280,7 @@
     + $ git commit -m "Commit 091: Lógica de los nombres de los pokémons"
     + $ git push -u origin main
 
-### Video 92. Obtener nombres de los 4 pokémons
+### Video 092. Obtener nombres de los 4 pokémons
 1. Instalar Axios:
     + $ npm install axios
 2. Crear **04pokemon\src\api\pokemonApi.js**:
@@ -3335,7 +3335,7 @@
     + $ git commit -m "Commit 092: Obtener nombres de los 4 pokémons"
     + $ git push -u origin main
 
-### Video 93. Mostrar las opciones posibles
+### Video 093. Mostrar las opciones posibles
 1. Modificar **04pokemon\src\pages\PokemonPage.vue**:
     ```vue
     <template>
@@ -3390,7 +3390,7 @@
     + $ git commit -m "Commit 093: Mostrar las opciones posibles"
     + $ git push -u origin main
 
-### Video 94. Seleccionar un pokémon aleatoriamente
+### Video 094. Seleccionar un pokémon aleatoriamente
 1. Modificar **04pokemon\src\pages\PokemonPage.vue**:
     ```vue
     <template>
@@ -3431,7 +3431,7 @@
     + $ git commit -m "Commit 094: Seleccionar un pokémon aleatoriamente"
     + $ git push -u origin main
 
-### Video 95. Emit - Emitir eventos
+### Video 095. Emit - Emitir eventos
 + [Documentación Vue.js - v-model arguments](https://v3.vuejs.org/guide/component-custom-events.html#v-model-arguments)
 1. Modificar componente hijo **04pokemon\src\components\PokemonOptions.vue**:
     ```vue
@@ -3488,7 +3488,7 @@
     + $ git commit -m "Commit 095: Emit - Emitir eventos"
     + $ git push -u origin main
 
-### Video 96. Resultado y reinicio de juego
+### Video 096. Resultado y reinicio de juego
 1. Modificar componente padre **04pokemon\src\pages\PokemonPage.vue**:
     ```vue
     <template>
@@ -3570,7 +3570,7 @@
     + $ git commit -m "Commit 096: Resultado y reinicio de juego"
     + $ git push -u origin main
 
-### Video 97. Desplegar nuestro juego en producción
+### Video 097. Desplegar nuestro juego en producción
 + [netlify](https://www.netlify.com)
 1. Modificar estilos en el componente **04pokemon\src\components\PokemonPicture.vue**:
     ```vue
@@ -3623,7 +3623,34 @@
     + $ git commit -m "Commit 097: Desplegar nuestro juego en producción"
     + $ git push -u origin main
 
-### Nota 98. Código fuente de la sección
+### Nota 098. Código fuente de la sección
+**Contenido**: entrega del código fuente de la sección, la cual esta ubicada en **04pokemon\codigo-fuente-autor**.
+1. Commit Video 098:
+    + $ git add .
+    + $ git commit -m "Commit 098: Código fuente de la sección"
+    + $ git push -u origin main
+
+## Sección 08: Pokemon Game - Unit Test
+
+### Video 099. Introducción a la sección
+
+
+
+### Nota 100. Temas puntuales de la sección
+### Video 101. Pruebas con Axios
+### Video 102. Pruebas en helpers
+### Video 103. getPokemonNames y getPokemonOptions
+### Video 104. Pruebas en PokemonPicture
+### Video 105. PokemonPicture - Segunda Parte
+### Video 106. Pruebas en PokemonOptions
+### Video 107. Pruebas con emisiones
+### Video 108. Pruebas en PokemonPage
+### Video 109. Snapshot con data y stubs
+### Video 110. Tarea: Pruebas de que los componentes existan
+### Video 111. Pruebas las propiedades reactivas del componente
+### Nota 112. Código fuente de la sección
+
+
 
 
 
