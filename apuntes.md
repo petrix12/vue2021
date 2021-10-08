@@ -1,6 +1,7 @@
 # Vue.js: De cero a experto
 + **URL Curso**: https://www.udemy.com/course/vuejs-fh/
 + **URL Repositorio**: https://github.com/petrix12/vue2021.git
++ **URL App en producción de 04pokemon**: https://solucionespp-pokemon.netlify.app
 
 ## Antes de iniciar:
 1. Crear proyecto en la página de [GitHub](https://github.com) con el nombre: **vue2021**.
@@ -3570,8 +3571,57 @@
     + $ git push -u origin main
 
 ### Video 97. Desplegar nuestro juego en producción
-
-
++ [netlify](https://www.netlify.com)
+1. Modificar estilos en el componente **04pokemon\src\components\PokemonPicture.vue**:
+    ```vue
+    ≡
+    <style scoped>
+    ≡
+    img {
+        height: 200px;
+        user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+    }
+    ≡
+    </style>
+    ```
+2. Preparar y compilar la aplicación el deploy:
+    + $ npm run build
+    + **Nota**: esta acción genera un proyecto optimizado para producción ubicado en **04pokemon\dist**.
+3. Ir a la página de [netlify](https://www.netlify.com), iniciar sesión e ir a **Site**.
+4. Arrastrar la carpeta para distribución **04pokemon\dist** en la página de netlify.
+5. Ir a **Site settings** y luego a **Change site name** y cambiar el **Site name** a **solucionespp-pokemon**.
+    + Nota: ahora podemos ver nuestra aplicación en producción en: https://solucionespp-pokemon.netlify.app
+6. Modificar nuevamente el componente **04pokemon\src\components\PokemonPicture.vue**:
+    ```vue
+    <template>
+        <div class="pokemon-container">
+            <img
+                v-if="!showPokemon"
+                :src="imgSrc" 
+                class="hidden-pokemon" 
+                alt="pokémon"
+            >
+            <img 
+                v-else
+                :src="imgSrc" 
+                class="fade-in" 
+                alt="pokémon"
+            >
+        </div>
+    </template>
+    ≡
+    ```
+7. Generar la nueva versión de producción:
+    + $ npm run build
+8. Ingresar nuevamente a la página de [netlify](https://www.netlify.com) e ir a **Deploys** y arrastra la nueva versión de la aplicación.
+9. Commit Video 097:
+    + $ git add .
+    + $ git commit -m "Commit 097: Desplegar nuestro juego en producción"
+    + $ git push -u origin main
 
 ### Nota 98. Código fuente de la sección
 
