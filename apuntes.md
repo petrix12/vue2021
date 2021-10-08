@@ -3488,14 +3488,91 @@
     + $ git push -u origin main
 
 ### Video 96. Resultado y reinicio de juego
+1. Modificar componente padre **04pokemon\src\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1 v-if="!pokemon">Espere por favor...</h1>
+        <div v-else>
+            <h1>¿Quién es este pokémon?</h1>
+            
+            <PokemonPicture
+                :pokemon-id="pokemon.id"
+                :show-pokemon="showPokemon"
+            />
+            <PokemonOptions
+                :pokemons="pokemonArr"
+                @selection-pokemon="checkAnswer"
+            />
 
+            <div v-if="showAnswer">
+                <h2 class="fade-in">{{ message }}</h2>
+                <button @click="newGame">Nuevo Juego</button>
+            </div>
+        </div>
+    </template>
 
+    <script>
+    import PokemonPicture from '@/components/PokemonPicture'
+    import PokemonOptions from '@/components/PokemonOptions'
+    import getPokemonOptions from '@/helpers/getPokemonOptions'
 
+    console.log(getPokemonOptions())
 
+    export default {
+        components: {
+            PokemonPicture,
+            PokemonOptions
+        },
+        data(){
+            return {
+            pokemonArr: [],
+            pokemon: null,
+            showPokemon: false,
+            showAnswer: false,
+            message: ''
+            } 
+        },
+        methods:{
+            async mixPokemonArray(){
+                this.pokemonArr = await getPokemonOptions()
+                /* console.log(this.pokemonArr) */
+                const rndInt = Math.floor(Math.random()*4)
+                this.pokemon = this.pokemonArr[rndInt]
+            },
+            checkAnswer(selectedId){
+                /* console.log('Llamado Pokemon Page', selectedId) */
+                this.showPokemon = true
+                this.showAnswer = true
 
-
+                if(selectedId === this.pokemon.id){
+                    this.message = `Correcto, ${this.pokemon.name}`
+                }else{
+                    this.message = `Ooops, Incorrecto, era ${this.pokemon.name}`
+                }
+            },
+            newGame(){
+            this.pokemonArr = []
+            this.pokeman = null
+            this.showPokemon = false
+            this.showAnswer = false
+            this.mixPokemonArray()      
+            }
+        },
+        mounted(){
+            this.mixPokemonArray()
+        }
+    }
+    </script>
+    ```
+2. Commit Video 096:
+    + $ git add .
+    + $ git commit -m "Commit 096: Resultado y reinicio de juego"
+    + $ git push -u origin main
 
 ### Video 97. Desplegar nuestro juego en producción
+
+
+
 ### Nota 98. Código fuente de la sección
 
 
