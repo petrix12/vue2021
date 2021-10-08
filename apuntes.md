@@ -3335,11 +3335,64 @@
     + $ git push -u origin main
 
 ### Video 93. Mostrar las opciones posibles
+1. Modificar **04pokemon\src\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        ≡
+        <PokemonOptions :pokemons="pokemonArr" />
+    </template>
 
+    <script>
+    ≡
+    export default {
+        ≡
+        methods:{
+            async mixPokemonArray(){
+                this.pokemonArr = await getPokemonOptions()
+                /* console.log(this.pokemonArr) */
+            },
+        },
+        mounted(){
+            this.mixPokemonArray()
+        }
+    }
+    </script>
+    ```
+2. Modificar componente **04pokemon\src\components\PokemonOptions.vue**:
+    ```vue
+    <template>
+        <div class="options-container">
+            <ul>
+                <li
+                    v-for="pokemon in pokemons"
+                    :key="pokemon.id">
+                    {{ pokemon.name }}
+                </li>
+            </ul>
+        </div>
+    </template>
 
-
+    <script>
+    export default {
+        props:{
+            pokemons: {
+                type: Array,
+                required: true
+            }
+        }
+    }
+    </script>
+    ≡
+    ```
+3. Commit Video 093:
+    + $ git add .
+    + $ git commit -m "Commit 093: Mostrar las opciones posibles"
+    + $ git push -u origin main
 
 ### Video 94. Seleccionar un pokémon aleatoriamente
+
+
+
 ### Video 95. Emit - Emitir eventos
 ### Video 96. Resultado y reinicio de juego
 ### Video 97. Desplegar nuestro juego en producción
