@@ -3390,10 +3390,50 @@
     + $ git push -u origin main
 
 ### Video 94. Seleccionar un pokémon aleatoriamente
+1. Modificar **04pokemon\src\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1 v-if="!pokemon">Espere por favor...</h1>
+        <div v-else>
+            <h1>¿Quién es este pokémon?</h1>
+            
+            <PokemonPicture :pokemonId="pokemon.id" :showPokemon="showPokemon" />
+            <PokemonOptions :pokemons="pokemonArr" />
+        </div>
+    </template>
 
-
+    <script>
+    ≡
+    export default {
+        ≡
+        data(){
+            return {
+            pokemonArr: [],
+            pokemon: null,
+            showPokemon: false
+            } 
+        },
+        methods:{
+            async mixPokemonArray(){
+                this.pokemonArr = await getPokemonOptions()
+                /* console.log(this.pokemonArr) */
+                const rndInt = Math.floor(Math.random()*4)
+                this.pokemon = this.pokemonArr[rndInt]
+            },
+        },
+        ≡
+    }
+    </script>
+    ```
+2. Commit Video 094:
+    + $ git add .
+    + $ git commit -m "Commit 094: Seleccionar un pokémon aleatoriamente"
+    + $ git push -u origin main
 
 ### Video 95. Emit - Emitir eventos
+
+
+
 ### Video 96. Resultado y reinicio de juego
 ### Video 97. Desplegar nuestro juego en producción
 ### Nota 98. Código fuente de la sección
