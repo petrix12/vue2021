@@ -3624,7 +3624,7 @@
     + $ git push -u origin main
 
 ### Nota 098. Código fuente de la sección
-**Contenido**: entrega del código fuente de la sección, la cual esta ubicada en **04pokemon\codigo-fuente-autor**.
+**Contenido**: entrega del código fuente de la sección, la cual esta ubicada en **codigo-fuente-autor\vue-pokemon-game-main**.
 1. Commit Video 098:
     + $ git add .
     + $ git commit -m "Commit 098: Código fuente de la sección"
@@ -3649,16 +3649,37 @@
         + stubs
         + Revisión de cambio en propiedades reactivas (data)
     + Esta sección contiene muchas pruebas nuevas que son necesarias en el día a día del unit test
-1. Commit Video 100:
+2. Commit Video 100:
     + $ git add .
     + $ git commit -m "Commit 100: Temas puntuales de la sección"
     + $ git push -u origin main
 
 ### Video 101. Pruebas con Axios
+1. Ejecutar:
+    + $ npm run test:unit
+3. Eliminar el test **04pokemon\tests\unit\example.spec.js**.
+2. Crear archivo de prueba **04pokemon\tests\unit\api\pokemonApi.spec.js**:
+    ```js
+    import pokemonApi from '@/api/pokemonApi'
 
+    describe('pokemonApi', () => {
+        test('axios debe de estar configurado con el api de pokemon', () => {
+            /* console.log(pokemonApi) */
+            expect( pokemonApi.defaults.baseURL )
+                .toBe('https://pokeapi.co/api/v2/pokemon')
 
+        })
+    })
+    ```
+3. Commit Video 101:
+    + $ git add .
+    + $ git commit -m "Commit 101: Pruebas con Axios"
+    + $ git push -u origin main
 
 ### Video 102. Pruebas en helpers
+
+
+
 ### Video 103. getPokemonNames y getPokemonOptions
 ### Video 104. Pruebas en PokemonPicture
 ### Video 105. PokemonPicture - Segunda Parte
@@ -3669,7 +3690,8 @@
 ### Video 110. Tarea: Pruebas de que los componentes existan
 ### Video 111. Pruebas las propiedades reactivas del componente
 ### Nota 112. Código fuente de la sección
-
++ [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
++ Ubicación del código fuente en el proyecto: **codigo-fuente-autor\vue-pokemon-game-pokemon-testing**.
 
 
 
