@@ -3640,10 +3640,24 @@
     + $ git push -u origin main
 
 ### Nota 100. Temas puntuales de la sección
-
-
+1. Temas puntuales de la sección:
+    + Bienvenidos a otra sección de pruebas, en la cual aparte de reforzar ciertas pruebas que hicimos anteriormente, también veremos otros puntos importantes a probar. Puntualmente hablaremos sobre:
+        + Pruebas con Axios
+        + Pruebas con data aleatoria
+        + Pruebas con emisiones
+        + Multiples emisiones al mismo tiempo
+        + stubs
+        + Revisión de cambio en propiedades reactivas (data)
+    + Esta sección contiene muchas pruebas nuevas que son necesarias en el día a día del unit test
+1. Commit Video 100:
+    + $ git add .
+    + $ git commit -m "Commit 100: Temas puntuales de la sección"
+    + $ git push -u origin main
 
 ### Video 101. Pruebas con Axios
+
+
+
 ### Video 102. Pruebas en helpers
 ### Video 103. getPokemonNames y getPokemonOptions
 ### Video 104. Pruebas en PokemonPicture
