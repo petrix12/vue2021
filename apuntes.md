@@ -3633,10 +3633,16 @@
 ## Sección 08: Pokemon Game - Unit Test
 
 ### Video 099. Introducción a la sección
-
-
++ **Contenido**: importancia de las pruebas.
+1. Commit Video 099:
+    + $ git add .
+    + $ git commit -m "Commit 099: Introducción a la sección"
+    + $ git push -u origin main
 
 ### Nota 100. Temas puntuales de la sección
+
+
+
 ### Video 101. Pruebas con Axios
 ### Video 102. Pruebas en helpers
 ### Video 103. getPokemonNames y getPokemonOptions
@@ -3654,7 +3660,7 @@
 
 
 
-0.30 - x
+0.35 - x
 1 - 321
 
 
