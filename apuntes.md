@@ -3655,9 +3655,7 @@
     + $ git push -u origin main
 
 ### Video 101. Pruebas con Axios
-1. Ejecutar:
-    + $ npm run test:unit
-3. Eliminar el test **04pokemon\tests\unit\example.spec.js**.
+1. Eliminar el test **04pokemon\tests\unit\example.spec.js**.
 2. Crear archivo de prueba **04pokemon\tests\unit\api\pokemonApi.spec.js**:
     ```js
     import pokemonApi from '@/api/pokemonApi'
@@ -3671,16 +3669,60 @@
         })
     })
     ```
-3. Commit Video 101:
+3. Ejecutar pruebas:
+    + $ npm run test:unit
+4. Commit Video 101:
     + $ git add .
     + $ git commit -m "Commit 101: Pruebas con Axios"
     + $ git push -u origin main
 
 ### Video 102. Pruebas en helpers
+1. Crear test **04pokemon\tests\unit\helpers\getPokemonOptions.spec.js**:
+    ```js
+    import { getPokemons } from '@/helpers/getPokemonOptions'
 
+    describe('getPokemonOptions helpers', () => {
+        test('debe de regresar un arreglo de números', () => {
+            const pokemons = getPokemons()
+            /* console.log(pokemons) */
+            expect(pokemons.length).toBe(650)
+            expect(pokemons[0]).toBe(1)
+            expect(pokemons[500]).toBe(501)
+            expect(pokemons[649]).toBe(650)
+        })
 
+        test('debe de retornar un arreglo de 4 elementos con nombres de pokemons', () => {
+
+        })
+
+        test('getPokemonOptions debe de retornar un arreglo mezclado', () => {
+            
+        })
+    })
+    ```
+2. Exportar **getPokemons** y **getPokemonNames** del helper **04pokemon\src\helpers\getPokemonOptions.js** para poder probarlos:
+    ```js
+    ≡
+    export const getPokemons = () => {
+        ≡
+    }
+    ≡
+    export const getPokemonNames = async( [a,b,c,d] = [] ) => {
+        ≡
+    }
+    ≡
+    ```
+3. Ejecutar pruebas:
+    + $ npm run test:unit getPokemonOptions
+4. Commit Video 102:
+    + $ git add .
+    + $ git commit -m "Commit 102: Pruebas en helpers"
+    + $ git push -u origin main
 
 ### Video 103. getPokemonNames y getPokemonOptions
+
+
+
 ### Video 104. Pruebas en PokemonPicture
 ### Video 105. PokemonPicture - Segunda Parte
 ### Video 106. Pruebas en PokemonOptions
