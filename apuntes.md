@@ -3720,11 +3720,98 @@
     + $ git push -u origin main
 
 ### Video 103. getPokemonNames y getPokemonOptions
+1. Modificar el test **04pokemon\tests\unit\helpers\getPokemonOptions.spec.js** para realizar pruebas a los elementos **getPokemonNames** y **getPokemonOptions**:
+    ```js
+    import getPokemonOptions, { getPokemons, getPokemonNames } from '@/helpers/getPokemonOptions'
 
+    describe('getPokemonOptions helpers', () => {
+        ≡
+        test('debe de retornar un arreglo de 4 elementos con nombres de pokemons', async() => {
+            const pokemons = await getPokemonNames([1,2,3,4])
+            /* console.log(pokemons) */
+            expect(pokemons).toStrictEqual(
+                [
+                    { name: 'bulbasaur', id: 1 },
+                    { name: 'ivysaur', id: 2 },
+                    { name: 'charmander', id: 3 },
+                    { name: 'venusaur', id: 4 }
+                ]
+            )
+        })
 
+        test('getPokemonOptions debe de retornar un arreglo mezclado', async() => {
+            const pokemons = await getPokemonOptions()
+            /* console.log(pokemons) */
+            expect(pokemons.length).toBe(4)
+            expect(pokemons).toEqual(
+                [
+                    { 
+                        name: expect.any(String),
+                        id: expect.any(Number)
+                    },
+                    { 
+                        name: expect.any(String),
+                        id: expect.any(Number)
+                    },
+                    { 
+                        name: expect.any(String),
+                        id: expect.any(Number) 
+                    },
+                    { 
+                        name: expect.any(String),
+                        id: expect.any(Number)
+                    }
+                ]
+            )
+        })
+    })
+    ```
+2. Ejecutar pruebas:
+    + $ npm run test:unit getPokemonOptions
+3. Commit Video 103:
+    + $ git add .
+    + $ git commit -m "Commit 103: getPokemonNames y getPokemonOptions"
+    + $ git push -u origin main
 
 ### Video 104. Pruebas en PokemonPicture
+1. Crear test **04pokemon\tests\unit\components\PokemonPicture.spec.js**:
+    ```js
+    import { shallowMount } from '@vue/test-utils'
+    import PokemonPicture from '@/components/PokemonPicture'
+
+    describe('PokemonPicture component', () => {
+        test('debe de hacer match con el snapshot', () => {
+
+            const wrapper = shallowMount( PokemonPicture, {
+                props: {
+                    pokemonId: 1,
+                    showPokemon: false
+                }
+            })
+
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+
+        test('debe de mostrar la imagen oculta y el pokemon 100', () => {
+
+        })
+        
+        test('debe de mostrar el pokemon si showPokemon:true', () => {
+
+        })
+    })
+    ```
+2. Ejecutar pruebas:
+    + $ npm run test:unit PokemonPicture
+3. Commit Video 104:
+    + $ git add .
+    + $ git commit -m "Commit 104:Pruebas en PokemonPicture"
+    + $ git push -u origin main
+
 ### Video 105. PokemonPicture - Segunda Parte
+
+
+
 ### Video 106. Pruebas en PokemonOptions
 ### Video 107. Pruebas con emisiones
 ### Video 108. Pruebas en PokemonPage
