@@ -3805,14 +3805,65 @@
     + $ npm run test:unit PokemonPicture
 3. Commit Video 104:
     + $ git add .
-    + $ git commit -m "Commit 104:Pruebas en PokemonPicture"
+    + $ git commit -m "Commit 104: Pruebas en PokemonPicture"
     + $ git push -u origin main
 
 ### Video 105. PokemonPicture - Segunda Parte
+1. Modificar test **04pokemon\tests\unit\components\PokemonPicture.spec.js**:
+    ```js
+    ≡
+    describe('PokemonPicture component', () => {
+        test('debe de hacer match con el snapshot', () => {
+            ≡
+        })
 
+        test('debe de mostrar la imagen oculta y el pokemon 100', () => {
+            const wrapper = shallowMount( PokemonPicture, {
+                props: {
+                    pokemonId: 100,
+                    showPokemon: false
+                }
+            })
 
+            const [ img1, img2 ] = wrapper.findAll('img')
+
+            expect( img1.exists() ).toBeTruthy()
+            expect( img2 ).toBe(undefined)
+            
+            expect( img1.classes('hidden-pokemon') ).toBe(true)
+
+            expect( img1.attributes('src') ).toBe('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/100.svg')
+        })
+        
+        test('debe de mostrar el pokemon si showPokemon:true', () => {
+            const wrapper = shallowMount( PokemonPicture, {
+                props: {
+                    pokemonId: 100,
+                    showPokemon: true
+                }
+            })
+
+            const img1 = wrapper.find('img')
+
+            expect( img1.exists() ).toBeTruthy()
+            
+            expect( img1.classes('hidden-pokemon') ).toBe(false)
+            expect( img1.classes('fade-in') ).toBe(true)
+
+        })
+    })
+    ```
+2. Ejecutar pruebas:
+    + $ npm run test:unit PokemonPicture
+3. Commit Video 105:
+    + $ git add .
+    + $ git commit -m "Commit 105: PokemonPicture - Segunda Parte"
+    + $ git push -u origin main
 
 ### Video 106. Pruebas en PokemonOptions
+
+
+
 ### Video 107. Pruebas con emisiones
 ### Video 108. Pruebas en PokemonPage
 ### Video 109. Snapshot con data y stubs
