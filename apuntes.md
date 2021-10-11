@@ -3861,8 +3861,45 @@
     + $ git push -u origin main
 
 ### Video 106. Pruebas en PokemonOptions
+1. Crear test **04pokemon\tests\unit\components\PokemonOptions.spec.js**:
+    ```js
+    import { shallowMount } from "@vue/test-utils";
+    import PokemonOptions from "@/components/PokemonOptions";
+    import { pokemons } from "../mocks/pokemons.mock";
 
+    describe("PokemonOptions Component", () => {
+        let wrapper;
 
+        beforeEach(() => {
+            wrapper = shallowMount(PokemonOptions, {
+                props: {
+                    pokemons
+                }
+            });
+        });
+
+        test('debe de hacer match con el snapshot', () => {    // toMatchInlineSnapshot
+            console.log(wrapper.html())
+            expect(wrapper.html()).toMatchSnapshot()
+        })
+    })
+    ```
+2. Crear archivo **04pokemon\tests\unit\mocks\pokemons.mock.js**:
+    ```js
+    export const pokemons = [
+        { name: 'pikachu', id: 5 },
+        { name: 'charmander', id: 10 },
+        { name: 'venusaur', id: 15 },
+        { name: 'mew', id: 20 }
+    ]
+    ```
+3. Ejecutar pruebas:
+    + $ npm run test:unit PokemonOptions
+    + $ npm run test:unit /PokemonOptions
+4. Commit Video 106:
+    + $ git add .
+    + $ git commit -m "Commit 106: Pruebas en PokemonOptions"
+    + $ git push -u origin main
 
 ### Video 107. Pruebas con emisiones
 ### Video 108. Pruebas en PokemonPage
