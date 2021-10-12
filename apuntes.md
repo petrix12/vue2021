@@ -4138,10 +4138,35 @@
     + $ git push -u origin main
 
 ### Nota 114. Temas puntuales de la sección
-
-
+1. Temas puntuales de la sección:
+    + En esta sección aprenderemos profundamente a utilizar y configurar el Vue Router, el cual permite crear una navegación entre componentes, puntualmente veremos:
+        + Vue Router
+        + Navegación por:
+            + Path
+            + Nombre
+            + Programáticamente
+            + Estáticamente
+        + Guards
+            + Síncronos
+            + Asíncronos
+        + 404 Page
+        + Rutas hijas
+        + Diferentes diseños entre router views
+        + Argumentos por URL (Query parameters)
+        + Segmentos por URL
+        + Lifecycle hooks
+            + **Nota**: con el Options API, luego hablaremos del composition API en otras secciones.
+        + Llamar cada lifecycle hooks y los más comunes
+    + Es una sección grande en la cual quiero enfocarme en que dominemos bien el Vue Router para aplicaciones futuras.
+2. Commit Video 114:
+    + $ git add .
+    + $ git commit -m "Commit 114: Temas puntuales de la sección"
+    + $ git push -u origin main
 
 ### Video 115. Concepto de SPA
+
+
+
 ### Video 116. Inicio de proyecto - Rutas y Ciclo de Vida
 ### Video 117. Creación de páginas necesarias
 ### Video 118. Configuración manual del Vue Router
