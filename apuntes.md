@@ -4164,10 +4164,16 @@
     + $ git push -u origin main
 
 ### Video 115. Concepto de SPA
-
-
+**Contenido**: comentarios acerca de SPA.
+1. Commit Video 115:
+    + $ git add .
+    + $ git commit -m "Commit 115: Concepto de SPA"
+    + $ git push -u origin main
 
 ### Video 116. Inicio de proyecto - Rutas y Ciclo de Vida
+
+
+
 ### Video 117. Creación de páginas necesarias
 ### Video 118. Configuración manual del Vue Router
 ### Video 119. No page found
