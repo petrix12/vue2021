@@ -4171,10 +4171,55 @@
     + $ git push -u origin main
 
 ### Video 116. Inicio de proyecto - Rutas y Ciclo de Vida
+1. Crear un nuevo proyecto Vue:
+    + $ vue create 05rutas-ciclo
+    + Seleccionar: Manually select features
+    + Check the features needed for your project:
+        + Choose Vue version
+        + Babel
+    + Choose a version of Vue.js that you want to start the project with:
+        + 3.x
+    + Where do you prefer placing config for Babel, ESLint, etc.?
+        + In dedicated config files
+    + Save this as a preset for future projects? (y/N)
+        + N
+2. Levantar un servidor local para ejecutar el proyecto:
+    + $ cd 05rutas-ciclo
+    + $ npm run serve
+3. Eliminar la carpeta **05rutas-ciclo\src\components**.
+4. Modificar **05rutas-ciclo\src\App.vue**:
+    ```vue
+    <template>
+        <img alt="Vue logo" src="./assets/logo.png">
+    </template>
 
+    <script>
+    export default {
+        name: 'App',
+        components: {  }
+    }
+    </script>
 
+    <style>
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+    </style>
+    ```
+5. Commit Video 116:
+    + $ git add .
+    + $ git commit -m "Commit 116: Inicio de proyecto - Rutas y Ciclo de Vida"
+    + $ git push -u origin main
 
 ### Video 117. Creación de páginas necesarias
+
+
+
 ### Video 118. Configuración manual del Vue Router
 ### Video 119. No page found
 ### Video 120. LazyLoad de páginas
