@@ -3948,10 +3948,43 @@
     + $ git push -u origin main
 
 ### Video 108. Pruebas en PokemonPage
+1. Crear test **04pokemon\tests\unit\pages\PokemonPage.spec.js**:
+    ```js
+    import { shallowMount, mount } from '@vue/test-utils'
+    import PokemonPage from '@/pages/PokemonPage'
 
+    describe('PokemonPage Component', () => {
+        let wrapper
 
+        beforeEach(() => {
+            wrapper = shallowMount( PokemonPage )
+        })
+
+        test('debe de hacer match con el snapshot', () => {        
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+
+        test('debe de llamar mixPokemonArray al montar', () => {
+            
+            const mixPokemonArraySpy = jest.spyOn( PokemonPage.methods, 'mixPokemonArray' )
+            const wrapper = shallowMount( PokemonPage )
+            
+            expect( mixPokemonArraySpy ).toHaveBeenCalled()
+        })
+
+    })
+    ```
+2. Ejecutar pruebas:
+    + $ npm run test:unit PokemonPage
+3. Commit Video 108:
+    + $ git add .
+    + $ git commit -m "Commit 108: Pruebas en PokemonPage"
+    + $ git push -u origin main
 
 ### Video 109. Snapshot con data y stubs
+
+
+
 ### Video 110. Tarea: Pruebas de que los componentes existan
 ### Video 111. Pruebas las propiedades reactivas del componente
 ### Nota 112. Código fuente de la sección
