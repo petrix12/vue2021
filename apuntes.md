@@ -4235,16 +4235,81 @@
         <h1>Página de Pokémon</h1>
     </template>
     ```
-5. Commit Video 117:
+4. Commit Video 117:
     + $ git add .
     + $ git commit -m "Commit 117: Creación de páginas necesarias"
     + $ git push -u origin main
 
 ### Video 118. Configuración manual del Vue Router
++ [Documentación Vue Router](https://next.router.vuejs.org)
+1. Ubicarse en la raíz del proyecto **05rutas-ciclo** e instalar Vue Router:
+    + $ npm install vue-router@4
+2. Crear archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    import { createRouter, createWebHashHistory } from 'vue-router'
 
+    import AboutPage from '@/modules/pokemon/pages/AboutPage'
+    import ListPage from '@/modules/pokemon/pages/ListPage'
+    import PokemonPage from '@/modules/pokemon/pages/PokemonPage'
 
+    const routes = [
+        { path: '/', component: ListPage },
+        { path: '/about', component: AboutPage },
+        { path: '/id', component: PokemonPage },
+    ]
+
+    const router = createRouter({
+        history: createWebHashHistory(),
+        routes,
+    })
+
+    export default router
+    ```
+3. Modificar **05rutas-ciclo\src\main.js**:
+    ```js
+    import { createApp } from 'vue'
+    import App from './App.vue'
+
+    import router from '@/router/router'
+
+    createApp(App)
+        .use(router)
+        .mount('#app')
+    ```
+4. Modificar **05rutas-ciclo\src\App.vue**:
+    ```vue
+    <template>
+        <img alt="Vue logo" src="./assets/logo.png">
+        <router-view />
+    </template>
+
+    <script>
+    export default {
+        name: 'App',
+        components: {}
+    }
+    </script>
+
+    <style>
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+    </style>
+    ```
+5. Commit Video 118:
+    + $ git add .
+    + $ git commit -m "Commit 118: Configuración manual del Vue Router"
+    + $ git push -u origin main
 
 ### Video 119. No page found
+
+
+
 ### Video 120. LazyLoad de páginas
 ### Video 121. Navegar entre páginas - RouterLink
 ### Video 122. RouterLink Active
