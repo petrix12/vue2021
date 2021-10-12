@@ -4131,7 +4131,16 @@
 ## Sección 9: Vue Router y Ciclo de vida de los componentes - Options Api
 
 ### Video 113. Introducción a la sección
+**Contenido**: explicación del proyecto para esta sección aplicando Vue Router.
+1. Commit Video 113:
+    + $ git add .
+    + $ git commit -m "Commit 113: Introducción a la sección"
+    + $ git push -u origin main
+
 ### Nota 114. Temas puntuales de la sección
+
+
+
 ### Video 115. Concepto de SPA
 ### Video 116. Inicio de proyecto - Rutas y Ciclo de Vida
 ### Video 117. Creación de páginas necesarias
@@ -4154,9 +4163,13 @@
 ### Video 134. Guard global asíncrono
 ### Video 135. Guard específico para rutas
 ### Nota 136. Código fuente de la sección
++ [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
++ Código fuente de la sección por parte del autor: **codigo-fuente-autor\vue-router-fin-seccion-9**.
 
 
-0.35 - x
+
+
+0.4 - x
 1 - 321
 
 
