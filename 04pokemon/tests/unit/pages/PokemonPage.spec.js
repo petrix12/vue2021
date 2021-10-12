@@ -37,8 +37,7 @@ describe('PokemonPage Component', () => {
     })
 
     test('debe de mostrar los componentes de PokemonPicture y PokemonOptions', () => {
-
-         const wrapper = shallowMount( PokemonPage, {
+        const wrapper = shallowMount( PokemonPage, {
             data() {
                 return {
                     pokemonArr: pokemons,
@@ -58,14 +57,9 @@ describe('PokemonPage Component', () => {
 
         expect( picture.attributes('pokemonid') ).toBe('5')
         expect( options.attributes('pokemons') ).toBeTruthy()
-    })    
-})
-/* 
-
+    })
     
-
     test('pruebas con checkAnswer', async() => {
-        
         const wrapper = shallowMount( PokemonPage, {
             data() {
                 return {
@@ -86,8 +80,6 @@ describe('PokemonPage Component', () => {
 
         await wrapper.vm.checkAnswer(10)
 
-        expect( wrapper.vm.message ).toBe(`Oops, era ${ pokemons[0].name }`)
-
-    }) 
-
- */
+        expect( wrapper.vm.message ).toBe(`Ooops, Incorrecto, era ${ pokemons[0].name }`)
+    })
+})

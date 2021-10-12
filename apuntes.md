@@ -4036,7 +4036,6 @@
         })
 
         test('debe de mostrar los componentes de PokemonPicture y PokemonOptions', () => {
-
             const wrapper = shallowMount( PokemonPage, {
                 data() {
                     return {
@@ -4070,7 +4069,49 @@
 ### Video 111. Pruebas las propiedades reactivas del componente
 1. Modificar test **04pokemon\tests\unit\pages\PokemonPage.spec.js**:
     ```js
+    ≡
+    describe('PokemonPage Component', () => {
+        ≡
+        test('debe de hacer match con el snapshot', () => {        
+            ≡
+        })
 
+        test('debe de llamar mixPokemonArray al montar', () => {
+            ≡
+        })
+
+        test('debe de hacer match con el snapshot cuando cargan los pokemons', () => {
+            ≡
+        })
+
+        test('debe de mostrar los componentes de PokemonPicture y PokemonOptions', () => {
+            ≡
+        })
+        
+        test('pruebas con checkAnswer', async() => {
+            const wrapper = shallowMount( PokemonPage, {
+                data() {
+                    return {
+                        pokemonArr: pokemons,
+                        pokemon: pokemons[0],
+                        showPokemon: false,
+                        showAnswer: false,
+                        message: ''
+                    }
+                }
+            })
+
+            await wrapper.vm.checkAnswer(5)
+
+            expect( wrapper.find('h2').exists() ).toBeTruthy()
+            expect( wrapper.vm.showPokemon ).toBe(true)
+            expect( wrapper.find('h2').text() ).toBe(`Correcto, ${ pokemons[0].name }`)
+
+            await wrapper.vm.checkAnswer(10)
+
+            expect( wrapper.vm.message ).toBe(`Ooops, Incorrecto, era ${ pokemons[0].name }`)
+        })
+    })
     ```
 2. Ejecutar pruebas:
     + $ npm run test:unit PokemonPage
