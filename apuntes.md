@@ -3971,7 +3971,6 @@
             
             expect( mixPokemonArraySpy ).toHaveBeenCalled()
         })
-
     })
     ```
 2. Ejecutar pruebas:
@@ -3982,10 +3981,20 @@
     + $ git push -u origin main
 
 ### Video 109. Snapshot con data y stubs
-
-
+1. Modificar test **04pokemon\tests\unit\pages\PokemonPage.spec.js**:
+    ```js
+    ```
+2. Ejecutar pruebas:
+    + $ npm run test:unit PokemonPage
+3. Commit Video 109:
+    + $ git add .
+    + $ git commit -m "Commit 109: Snapshot con data y stubs"
+    + $ git push -u origin main
 
 ### Video 110. Tarea: Pruebas de que los componentes existan
+
+
+
 ### Video 111. Pruebas las propiedades reactivas del componente
 ### Nota 112. Código fuente de la sección
 + [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
