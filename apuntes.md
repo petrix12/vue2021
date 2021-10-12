@@ -4123,10 +4123,37 @@
 ### Nota 112. Código fuente de la sección
 + [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
 + Ubicación del código fuente en el proyecto: **codigo-fuente-autor\vue-pokemon-game-pokemon-testing**.
+1. Commit Video 112:
+    + $ git add .
+    + $ git commit -m "Commit 112: Código fuente de la sección"
+    + $ git push -u origin main
 
+## Sección 9: Vue Router y Ciclo de vida de los componentes - Options Api
 
-
-
+### Video 113. Introducción a la sección
+### Nota 114. Temas puntuales de la sección
+### Video 115. Concepto de SPA
+### Video 116. Inicio de proyecto - Rutas y Ciclo de Vida
+### Video 117. Creación de páginas necesarias
+### Video 118. Configuración manual del Vue Router
+### Video 119. No page found
+### Video 120. LazyLoad de páginas
+### Video 121. Navegar entre páginas - RouterLink
+### Video 122. RouterLink Active
+### Video 123. Lifecycle Hooks - Ciclo de vida de un componente
+### Video 124. Disparar métodos del ciclo de vida
+### Video 125. Segmentos del URL y QuueryParameters
+### Video 126. Recibir Props por URL
+### Video 127. Petición HTTP y redirecciones
+### Video 128. Redirección desde el router
+### Video 129. RouterLink Personalizado
+### Video 130. Multiples Router-View - Rutas Hijas
+### Video 131. Segundo Layout
+### Video 132. Arreglar nuestro NavBar personalizado
+### Video 133. Guard - Protección de rutas ( Global )
+### Video 134. Guard global asíncrono
+### Video 135. Guard específico para rutas
+### Nota 136. Código fuente de la sección
 
 
 0.35 - x
