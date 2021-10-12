@@ -3983,6 +3983,32 @@
 ### Video 109. Snapshot con data y stubs
 1. Modificar test **04pokemon\tests\unit\pages\PokemonPage.spec.js**:
     ```js
+    ≡e('PokemonPage Component', () => {
+        ≡
+        test('debe de hacer match con el snapshot', () => {        
+            ≡
+        })
+
+        test('debe de llamar mixPokemonArray al montar', () => {  
+            ≡
+        })
+
+        test('debe de hacer match con el snapshot cuando cargan los pokemons', () => {
+            const wrapper = shallowMount( PokemonPage, {
+                data() {
+                    return {
+                        pokemonArr: pokemons,
+                        pokemon: pokemons[0],
+                        showPokemon: false,
+                        showAnswer: false,
+                        message: ''
+                    }
+                }
+            })
+
+            expect( wrapper.html() ).toMatchSnapshot()
+        })
+    })
     ```
 2. Ejecutar pruebas:
     + $ npm run test:unit PokemonPage
@@ -3992,13 +4018,72 @@
     + $ git push -u origin main
 
 ### Video 110. Tarea: Pruebas de que los componentes existan
+1. Modificar test **04pokemon\tests\unit\pages\PokemonPage.spec.js**:
+    ```js
+    ≡
+    describe('PokemonPage Component', () => {
+        ≡
+        test('debe de hacer match con el snapshot', () => {        
+            ≡
+        })
 
+        test('debe de llamar mixPokemonArray al montar', () => {
+            ≡
+        })
 
+        test('debe de hacer match con el snapshot cuando cargan los pokemons', () => {
+            ≡
+        })
+
+        test('debe de mostrar los componentes de PokemonPicture y PokemonOptions', () => {
+
+            const wrapper = shallowMount( PokemonPage, {
+                data() {
+                    return {
+                        pokemonArr: pokemons,
+                        pokemon: pokemons[0],
+                        showPokemon: false,
+                        showAnswer: false,
+                        message: ''
+                    }
+                }
+            })
+            
+            const picture = wrapper.find('pokemon-picture-stub')
+            const options = wrapper.find('pokemon-options-stub')
+
+            expect( picture.exists() ).toBeTruthy()
+            expect( options.exists() ).toBeTruthy()
+
+            expect( picture.attributes('pokemonid') ).toBe('5')
+            expect( options.attributes('pokemons') ).toBeTruthy()
+        })    
+    })
+    ```
+2. Ejecutar pruebas:
+    + $ npm run test:unit PokemonPage
+3. Commit Video 110:
+    + $ git add .
+    + $ git commit -m "Commit 110: Pruebas de que los componentes existan"
+    + $ git push -u origin main
 
 ### Video 111. Pruebas las propiedades reactivas del componente
+1. Modificar test **04pokemon\tests\unit\pages\PokemonPage.spec.js**:
+    ```js
+
+    ```
+2. Ejecutar pruebas:
+    + $ npm run test:unit PokemonPage
+3. Commit Video 111:
+    + $ git add .
+    + $ git commit -m "Commit 111: Pruebas las propiedades reactivas del componente"
+    + $ git push -u origin main
+
 ### Nota 112. Código fuente de la sección
 + [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
 + Ubicación del código fuente en el proyecto: **codigo-fuente-autor\vue-pokemon-game-pokemon-testing**.
+
+
 
 
 

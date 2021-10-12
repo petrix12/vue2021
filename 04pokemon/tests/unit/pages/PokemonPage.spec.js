@@ -14,7 +14,6 @@ describe('PokemonPage Component', () => {
     })
 
     test('debe de llamar mixPokemonArray al montar', () => {
-        
         const mixPokemonArraySpy = jest.spyOn( PokemonPage.methods, 'mixPokemonArray' )
         const wrapper = shallowMount( PokemonPage )
         
@@ -22,7 +21,6 @@ describe('PokemonPage Component', () => {
     })
 
     test('debe de hacer match con el snapshot cuando cargan los pokemons', () => {
-        
         const wrapper = shallowMount( PokemonPage, {
             data() {
                 return {
@@ -37,11 +35,10 @@ describe('PokemonPage Component', () => {
 
         expect( wrapper.html() ).toMatchSnapshot()
     })
-})
-/* 
+
     test('debe de mostrar los componentes de PokemonPicture y PokemonOptions', () => {
 
-        const wrapper = shallowMount( PokemonPage, {
+         const wrapper = shallowMount( PokemonPage, {
             data() {
                 return {
                     pokemonArr: pokemons,
@@ -52,19 +49,19 @@ describe('PokemonPage Component', () => {
                 }
             }
         })
-
+        
         const picture = wrapper.find('pokemon-picture-stub')
         const options = wrapper.find('pokemon-options-stub')
 
         expect( picture.exists() ).toBeTruthy()
         expect( options.exists() ).toBeTruthy()
 
-        
         expect( picture.attributes('pokemonid') ).toBe('5')
         expect( options.attributes('pokemons') ).toBeTruthy()
+    })    
+})
+/* 
 
-        
-    })
     
 
     test('pruebas con checkAnswer', async() => {
