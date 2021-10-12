@@ -4307,10 +4307,46 @@
     + $ git push -u origin main
 
 ### Video 119. No page found
+1. Modificar **05rutas-ciclo\src\router\router.js**:
+    ```js
+    import { createRouter, createWebHashHistory } from 'vue-router'
 
+    import AboutPage from '@/modules/pokemon/pages/AboutPage'
+    import ListPage from '@/modules/pokemon/pages/ListPage'
+    import PokemonPage from '@/modules/pokemon/pages/PokemonPage'
 
+    import NoPageFound from '@/modules/shared/pages/NoPageFound'
+
+    const routes = [
+        { path: '/', component: ListPage },
+        { path: '/about', component: AboutPage },
+        { path: '/id', component: PokemonPage },
+        { path: '/:pathMatch(.*)*', component: NoPageFound },
+    ]
+
+    const router = createRouter({
+        history: createWebHashHistory(),
+        routes,
+    })
+
+    export default router
+    ```
+2. Crear vista **05rutas-ciclo\src\modules\shared\pages\NoPageFound.vue**:
+    ```vue
+    <template>
+        <h1>No Page Found</h1>
+        <h3>404</h3>
+    </template>
+    ```
+3. Commit Video 119:
+    + $ git add .
+    + $ git commit -m "Commit 119: No page found"
+    + $ git push -u origin main
 
 ### Video 120. LazyLoad de páginas
+
+
+
 ### Video 121. Navegar entre páginas - RouterLink
 ### Video 122. RouterLink Active
 ### Video 123. Lifecycle Hooks - Ciclo de vida de un componente
