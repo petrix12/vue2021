@@ -4217,10 +4217,33 @@
     + $ git push -u origin main
 
 ### Video 117. Creación de páginas necesarias
-
-
+1. Crear componente **05rutas-ciclo\src\modules\pokemon\pages\AboutPage.vue**:
+    ```vue
+    <template>
+        <h1>About Page</h1>
+    </template>
+    ```
+2. Crear componente **05rutas-ciclo\src\modules\pokemon\pages\ListPage.vue**:
+    ```vue
+    <template>
+        <h1>Lista de Pokémons</h1>
+    </template>
+    ```
+3. Crear componente **05rutas-ciclo\src\modules\pokemon\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1>Página de Pokémon</h1>
+    </template>
+    ```
+5. Commit Video 117:
+    + $ git add .
+    + $ git commit -m "Commit 117: Creación de páginas necesarias"
+    + $ git push -u origin main
 
 ### Video 118. Configuración manual del Vue Router
+
+
+
 ### Video 119. No page found
 ### Video 120. LazyLoad de páginas
 ### Video 121. Navegar entre páginas - RouterLink
