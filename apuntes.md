@@ -4585,10 +4585,76 @@
     + $ git push -u origin main
 
 ### Video 126. Recibir Props por URL
+1. Modificar el componente **05rutas-ciclo\src\modules\pokemon\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1>Pokémon: <span>#{{ id }}</span></h1>
+    </template>
 
+    <script>
+    export default {
+        props:{
+            id:{
+                type: Number,
+                required: true
+            }
+        },
+        data(){
+            return {
+                /* id: this.$route.params.id */
+            }
+        },
 
+        created(){
+            /* console.log(this.$route) */
+            /* const { id } = this.$route.params
+            console.log(id) */
+            /* this.id = id */
+            /* console.log(this.$attrs) */
+        }
+    }
+    </script>
+    ```
+2. Modificar archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    ≡
+    const routes = [
+        ≡
+        {
+            path: '/about', 
+            component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage') 
+        },
+        {
+            path: '/:id',
+            name: 'pokemon-id',
+            component: import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
+            props: (route) => {
+                /* console.log(route) */
+                /* const { id } = route.params */
+                const id = Number(route.params.id)
+                return isNaN(id) ? { id:1 } : { id }
+                /* return {
+                    
+                    id: Number(id)
+                    //id: 100,
+                    //nombre: 'Coco',
+                    //apellido: 'Bazó'
+                } */
+            }
+        },
+        ≡
+    ]
+    ≡
+    ```
+3. Commit Video 126:
+    + $ git add .
+    + $ git commit -m "Commit 126: Recibir Props por URL"
+    + $ git push -u origin main
 
 ### Video 127. Petición HTTP y redirecciones
+
+
+
 ### Video 128. Redirección desde el router
 ### Video 129. RouterLink Personalizado
 ### Video 130. Multiples Router-View - Rutas Hijas

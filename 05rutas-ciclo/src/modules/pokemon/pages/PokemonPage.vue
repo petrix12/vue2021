@@ -12,15 +12,16 @@ export default {
     },
     data(){
         return {
-            /* id: null */
+            /* id: this.$route.params.id */
         }
     },
 
     created(){
         /* console.log(this.$route) */
-        const { id } = this.$route.params
-        console.log(id)
+        /* const { id } = this.$route.params
+        console.log(id) */
         /* this.id = id */
+        /* console.log(this.$attrs) */
     }
 }
 </script>
