@@ -4344,8 +4344,45 @@
     + $ git push -u origin main
 
 ### Video 120. LazyLoad de páginas
+1. Modificar **05rutas-ciclo\src\router\router.js**:
+    ```js
+    import { createRouter, createWebHashHistory } from 'vue-router'
 
+    /* import AboutPage from '@/modules/pokemon/pages/AboutPage' */
+    /* import ListPage from '@/modules/pokemon/pages/ListPage' */
+    /* import PokemonPage from '@/modules/pokemon/pages/PokemonPage' */
+    /* import NoPageFound from '@/modules/shared/pages/NoPageFound' */
 
+    const routes = [
+        {
+            path: '/', 
+            component: import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
+        },
+        {
+            path: '/about', 
+            component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage') 
+        },
+        {
+            path: '/id', 
+            component: import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage')
+        },
+        {
+            path: '/:pathMatch(.*)*', 
+            component: import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound') 
+        },
+    ]
+
+    const router = createRouter({
+        history: createWebHashHistory(),
+        routes,
+    })
+
+    export default router
+    ```
+2. Commit Video 120:
+    + $ git add .
+    + $ git commit -m "Commit 120: LazyLoad de páginas"
+    + $ git push -u origin main
 
 ### Video 121. Navegar entre páginas - RouterLink
 ### Video 122. RouterLink Active
