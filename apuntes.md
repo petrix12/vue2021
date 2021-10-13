@@ -4736,10 +4736,61 @@
     + $ git push -u origin main
 
 ### Video 128. Redirección desde el router
-
-
+1. Modificar archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    ≡
+    const routes = [
+        {
+            path: '/',
+            redirect: '/home'
+        },
+        {
+            path: '/home',
+            name: 'home',
+            component: import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
+        },
+        {
+            path: '/about', 
+            name: 'about',
+            component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage') 
+        },
+        {
+            path: '/pokemonid/:id',
+            name: 'pokemon-id',
+            component: import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
+            props: (route) => {
+                const id = Number(route.params.id)
+                return isNaN(id) ? { id:1 } : { id }
+            }
+        },
+        {
+            path: '/:pathMatch(.*)*', 
+            component: import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound')
+            // redirect: '/home'
+        },
+    ]
+    ≡
+    ```
+2. Modificar el componente **05rutas-ciclo\src\modules\shared\components\Navbar.vue** para cambiar la nevegación por los nombres de las rutas:
+    ```vue
+    <template>
+        <div>
+            <router-link :to="{ name: 'home' }">Lista de Pokémons</router-link>
+            <router-link :to="{ name: 'pokemon-id', params: { id: '85' }}">Pokémon por id</router-link>
+            <router-link :to="{ name: 'about' }">About</router-link>
+        </div>
+    </template>
+    ≡
+    ```
+3. Commit Video 128:
+    + $ git add .
+    + $ git commit -m "Commit 128: Redirección desde el router"
+    + $ git push -u origin main
 
 ### Video 129. RouterLink Personalizado
+
+
+
 ### Video 130. Multiples Router-View - Rutas Hijas
 ### Video 131. Segundo Layout
 ### Video 132. Arreglar nuestro NavBar personalizado
@@ -4753,7 +4804,7 @@
 
 
 
-0.4 - x
+0.45 - x
 1 - 321
 
 
