@@ -4452,10 +4452,18 @@
     + $ git push -u origin main
 
 ### Video 123. Lifecycle Hooks - Ciclo de vida de un componente
-
-
++ [Documentación Vue.js - Lifecycle Hooks](https://v3.vuejs.org/guide/composition-api-lifecycle-hooks.html)
++ [Documentación Vue.js - Lifecycle Diagram](https://v3.vuejs.org/guide/instance.html#lifecycle-diagram)
+**Contenido**: sobre los ciclos de vida de un componente.
+1. Commit Video 123:
+    + $ git add .
+    + $ git commit -m "Commit 123: Lifecycle Hooks - Ciclo de vida de un componente"
+    + $ git push -u origin main
 
 ### Video 124. Disparar métodos del ciclo de vida
+
+
+
 ### Video 125. Segmentos del URL y QuueryParameters
 ### Video 126. Recibir Props por URL
 ### Video 127. Petición HTTP y redirecciones
