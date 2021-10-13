@@ -4385,6 +4385,53 @@
     + $ git push -u origin main
 
 ### Video 121. Navegar entre páginas - RouterLink
+1. Crear componente **05rutas-ciclo\src\modules\shared\components\Navbar.vue**:
+    ```vue
+    <template>
+        <div>
+            <router-link to="/">Lista de Pokémons</router-link>
+            <router-link to="/id">Pokémon por id</router-link>
+            <router-link to="/about">About</router-link>
+        </div>
+    </template>
+
+    <style scoped>
+        div {
+            padding: 0 30px;
+        }
+
+        div a {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 10px;
+        }
+    </style>
+    ```
+2. Cargar el componente **Navbar** en **05rutas-ciclo\src\App.vue**:
+    ```vue
+    ≡
+    <template>
+        <Navbar />
+        ≡
+    </template>
+
+    <script>
+    import { defineAsyncComponent } from 'vue'
+
+    export default {
+        name: 'App',
+        components: {
+            Navbar: defineAsyncComponent(() => import(/* webpackChunkName: "Navbar" */ '@/modules/shared/components/Navbar'))
+        }
+    }
+    </script>
+    ≡
+    ```
+3. Commit Video 121:
+    + $ git add .
+    + $ git commit -m "Commit 121: Navegar entre páginas - RouterLink"
+    + $ git push -u origin main
+
 ### Video 122. RouterLink Active
 ### Video 123. Lifecycle Hooks - Ciclo de vida de un componente
 ### Video 124. Disparar métodos del ciclo de vida
