@@ -4652,10 +4652,93 @@
     + $ git push -u origin main
 
 ### Video 127. Petición HTTP y redirecciones
++ [Documentación Vue Router - API Reference](https://next.router.vuejs.org/api/#to)
+1. Modificar componente **05rutas-ciclo\src\modules\pokemon\pages\PokemonPage.vue**:
+    ```vue
+    <template>
+        <h1>Pokémon: <span>#{{ id }}</span></h1>
+        <div v-if="pokemon">
+            <img :src="pokemon.sprites.front_default" :alt="pokemon.name">
+        </div>
+    </template>
 
+    <script>
+    export default {
+        props:{
+            id:{
+                type: Number,
+                required: true
+            }
+        },
+        data(){
+            return {
+                pokemon: null
+            }
+        },
 
+        created(){
+            this.getPokemon()
+        },
+
+        methods: {
+            async getPokemon() {
+                try {
+                    const pokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${ this.id }`)
+                        .then(r => r.json())
+                    console.log(pokemon)
+                    this.pokemon = pokemon
+                } catch (error) {
+                    /* console.log(error) */
+                    this.$router.push('/')
+                    console.log('No hay nada que hacer aquí')
+                }
+            }
+        },
+
+        watch:{
+            id(){
+                this.getPokemon()
+            /*  console.log(this.id) */
+            }
+        }
+    }
+    </script>
+    ```
+2. Modificar componente **05rutas-ciclo\src\modules\shared\components\Navbar.vue**:
+    ```vue
+    <template>
+        <div>
+            <router-link to="/">Lista de Pokémons</router-link>
+            <router-link :to="{ name: 'pokemon-id', params: { id: '85' }}">Pokémon por id</router-link>
+            <router-link to="/about">About</router-link>
+        </div>
+    </template>
+
+    <style scoped>
+        div {
+            padding: 0 30px;
+        }
+
+        div a {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 10px;
+        }
+
+        a.router-link-exact-active {
+            color: #42b983;
+        }
+    </style>
+    ```
+4. Commit Video 127:
+    + $ git add .
+    + $ git commit -m "Commit 127: Petición HTTP y redirecciones"
+    + $ git push -u origin main
 
 ### Video 128. Redirección desde el router
+
+
+
 ### Video 129. RouterLink Personalizado
 ### Video 130. Multiples Router-View - Rutas Hijas
 ### Video 131. Segundo Layout
