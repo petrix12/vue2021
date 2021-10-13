@@ -4461,10 +4461,80 @@
     + $ git push -u origin main
 
 ### Video 124. Disparar métodos del ciclo de vida
++ [Documentación Vue.js - Lifecycle hooks](https://v3.vuejs.org/api/options-lifecycle-hooks.html#lifecycle-hooks)
+1. Modificar el componente **05rutas-ciclo\src\modules\pokemon\pages\AboutPage.vue**:
+    ```vue
+    <template>
+        <h1>About Page</h1>
+        <hr>
+        <h2>{{ name }}</h2>
+        <button @click="onChangeName"> Cambiar nombre</button>
+    </template>
 
+    <script>
+    export default {
+        data(){
+            return{
+                name: 'Rebeca'
+            }
+        },
 
+        methods: {
+            onChangeName(){
+                console.log('Se cambiará el nombre')
+                this.name = 'Ester'
+            }
+        },
+
+        beforeCreate() {
+            console.log('beforeCreate')
+        },
+        created() {
+            console.log('created')
+            // Buen lugar para realizar peticiones http
+        },
+        beforeMount() {
+            console.log('beforeMount')
+        },
+        mounted() {
+            console.log('mounted')
+        },
+        beforeUpdate() {
+            console.log('beforeUpdate')
+        },
+        updated() {
+            console.log('updated')
+        },
+        activated() {
+            console.log('activated')
+        },
+        deactivated() {
+            console.log('deactivated')
+        },
+        beforeUnmount() {
+            console.log('beforeUnmount')
+        },
+        unmounted() {
+            console.log('unmounted')
+        },
+        renderTracked() {
+            console.log('renderTracked')
+        },
+        renderTriggered() {
+            console.log('renderTriggered')
+        },
+    }
+    </script>
+    ```
+2. Commit Video 124:
+    + $ git add .
+    + $ git commit -m "Commit 124: Disparar métodos del ciclo de vida"
+    + $ git push -u origin main
 
 ### Video 125. Segmentos del URL y QuueryParameters
+
+
+
 ### Video 126. Recibir Props por URL
 ### Video 127. Petición HTTP y redirecciones
 ### Video 128. Redirección desde el router
