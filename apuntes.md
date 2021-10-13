@@ -4433,7 +4433,28 @@
     + $ git push -u origin main
 
 ### Video 122. RouterLink Active
+1. Modificar componente **05rutas-ciclo\src\modules\shared\components\Navbar.vue**:
+    ```vue
+    <template>
+        ≡
+    </template>
+
+    <style scoped>
+        ≡
+        a.router-link-exact-active {
+            color: #42b983;
+        }
+    </style>
+    ```
+2. Commit Video 122:
+    + $ git add .
+    + $ git commit -m "Commit 122: RouterLink Active"
+    + $ git push -u origin main
+
 ### Video 123. Lifecycle Hooks - Ciclo de vida de un componente
+
+
+
 ### Video 124. Disparar métodos del ciclo de vida
 ### Video 125. Segmentos del URL y QuueryParameters
 ### Video 126. Recibir Props por URL
