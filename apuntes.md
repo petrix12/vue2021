@@ -4356,7 +4356,7 @@
     const routes = [
         {
             path: '/', 
-            component: import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
+            component: () => import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
         },
         {
             path: '/about', 
@@ -4364,11 +4364,11 @@
         },
         {
             path: '/id', 
-            component: import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage')
+            component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage')
         },
         {
             path: '/:pathMatch(.*)*', 
-            component: import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound') 
+            component: () => import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound') 
         },
     ]
 
@@ -4627,7 +4627,7 @@
         {
             path: '/:id',
             name: 'pokemon-id',
-            component: import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
+            component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
             props: (route) => {
                 /* console.log(route) */
                 /* const { id } = route.params */
@@ -4747,7 +4747,7 @@
         {
             path: '/home',
             name: 'home',
-            component: import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
+            component: () => import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
         },
         {
             path: '/about', 
@@ -4757,7 +4757,7 @@
         {
             path: '/pokemonid/:id',
             name: 'pokemon-id',
-            component: import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
+            component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
             props: (route) => {
                 const id = Number(route.params.id)
                 return isNaN(id) ? { id:1 } : { id }
@@ -4765,7 +4765,7 @@
         },
         {
             path: '/:pathMatch(.*)*', 
-            component: import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound')
+            component: () => import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound')
             // redirect: '/home'
         },
     ]
@@ -4968,10 +4968,115 @@
     + $ git push -u origin main
 
 ### Video 131. Segundo Layout
+1. Crear componente **05rutas-ciclo\src\modules\dbz\pages\Characters.vue**:
+    ```vue
+    <template>
+        <h3>Personajes</h3>
+    </template>
+    ```
+2. Crear componente **05rutas-ciclo\src\modules\dbz\pages\About.vue**:
+    ```vue
+    <template>
+        <h3>About DBZ</h3>
+    </template>
+    ```
+3. Crear componente **05rutas-ciclo\src\modules\dbz\layouts\DragonBallLayout.vue**:
+    ```vue
+    <template>
+        <div class="dragonball-layout">
+            <h3>Dragon Ball Z Layout</h3>
+            <router-view></router-view>
+        </div>
+    </template>
 
+    <style scoped>
+    .dragonball-layout{
+        background-color: greenyellow;
+    }
+    </style>
+    ```
+4. Modificar el archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    import { createRouter, createWebHashHistory } from 'vue-router'
 
+    const routes = [
+        {
+            path: '/',
+            redirect: '/pokemon'
+        },
+
+        // Pokémon
+        {
+            path: '/pokemon',
+            name: 'pokemon',
+            component: () => import(/* webpackChunkName: "PokemonLayout" */ '@/modules/pokemon/layouts/PokemonLayout'),
+            children: [
+                {
+                    path: 'home',
+                    name: 'pokemon-home',
+                    component: () => import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
+                },
+                {
+                    path: 'about', 
+                    name: 'pokemon-about',
+                    component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage') 
+                },
+                {
+                    path: 'pokemonid/:id',
+                    name: 'pokemon-id',
+                    component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
+                    props: (route) => {
+                        const id = Number(route.params.id)
+                    return isNaN(id) ? { id:1 } : { id }
+                    }
+                },
+                {
+                    path: '',
+                    redirect: { name: 'pokemon-about' }
+                },
+            ]
+        },
+
+        // Dragon Ball Z
+        {
+            path: '/dbz',
+            name: 'dbz',
+            component: () => import(/* webpackChunkName: "DragonBallLayout" */ '@/modules/dbz/layouts/DragonBallLayout'),
+            children: [
+                {
+                    path: 'characters',
+                    name: 'dbz-characters',
+                    component: () => import(/* webpackChunkName: "Characters" */ '@/modules/dbz/pages/Characters')
+                },
+                {
+                    path: 'about', 
+                    name: 'dbz-about',
+                    component: () => import(/* webpackChunkName: "About" */ '@/modules/dbz/pages/About') 
+                },
+            ]
+        },
+        {
+            path: '/:pathMatch(.*)*', 
+            component: () => import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound')
+        },
+    ]
+
+    const router = createRouter({
+        history: createWebHashHistory(),
+        routes,
+    })
+
+    export default router
+    ```
+5. Commit Video 131:
+    + $ git add .
+    + $ git commit -m "Commit 131: Segundo Layout"
+    + $ git push -u origin main
 
 ### Video 132. Arreglar nuestro NavBar personalizado
+
+
+
 ### Video 133. Guard - Protección de rutas ( Global )
 ### Video 134. Guard global asíncrono
 ### Video 135. Guard específico para rutas

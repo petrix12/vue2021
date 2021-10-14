@@ -5,6 +5,8 @@ const routes = [
 		path: '/',
 		redirect: '/pokemon'
 	},
+
+	// Pokémon
 	{
 		path: '/pokemon',
 		name: 'pokemon',
@@ -35,10 +37,28 @@ const routes = [
 			},
 		]
 	},
+	
+	// Dragon Ball Z
+	{
+		path: '/dbz',
+		name: 'dbz',
+		component: () => import(/* webpackChunkName: "DragonBallLayout" */ '@/modules/dbz/layouts/DragonBallLayout'),
+		children: [
+    		{
+    		  	path: 'characters',
+				name: 'dbz-characters',
+				component: () => import(/* webpackChunkName: "Characters" */ '@/modules/dbz/pages/Characters')
+			},
+    		{
+    		  	path: 'about', 
+				name: 'dbz-about',
+				component: () => import(/* webpackChunkName: "About" */ '@/modules/dbz/pages/About') 
+			},
+		]
+	},
     {
       	path: '/:pathMatch(.*)*', 
 		component: () => import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound')
-		// redirect: '/home'
 	},
 ]
 
