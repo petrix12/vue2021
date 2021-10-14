@@ -4894,10 +4894,83 @@
     + $ git push -u origin main
 
 ### Video 130. Multiples Router-View - Rutas Hijas
+1. Modificar archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    import { createRouter, createWebHashHistory } from 'vue-router'
 
+    const routes = [
+        {
+            path: '/',
+            redirect: '/pokemon'
+        },
+        {
+            path: '/pokemon',
+            name: 'pokemon',
+            component: () => import(/* webpackChunkName: "PokemonLayout" */ '@/modules/pokemon/layouts/PokemonLayout'),
+            children: [
+                {
+                    path: 'home',
+                    name: 'pokemon-home',
+                    component: () => import(/* webpackChunkName: "ListPage" */ '@/modules/pokemon/pages/ListPage')  
+                },
+                {
+                    path: 'about', 
+                    name: 'pokemon-about',
+                    component: () => import(/* webpackChunkName: "AboutPage" */ '@/modules/pokemon/pages/AboutPage') 
+                },
+                {
+                    path: 'pokemonid/:id',
+                    name: 'pokemon-id',
+                    component: () => import(/* webpackChunkName: "PokemonPage" */ '@/modules/pokemon/pages/PokemonPage'),
+                    props: (route) => {
+                        const id = Number(route.params.id)
+                    return isNaN(id) ? { id:1 } : { id }
+                    }
+                },
+                {
+                    path: '',
+                    redirect: { name: 'pokemon-about' }
+                },
+            ]
+        },
+        {
+            path: '/:pathMatch(.*)*', 
+            component: () => import(/* webpackChunkName: "NoPageFound" */ '@/modules/shared/pages/NoPageFound')
+            // redirect: '/home'
+        },
+    ]
 
+    const router = createRouter({
+        history: createWebHashHistory(),
+        routes,
+    })
+
+    export default router
+    ```
+2. Crear componente **05rutas-ciclo\src\modules\pokemon\layouts\PokemonLayout.vue**:
+    ```vue
+    <template>
+        <div class="pokemon-layout">
+            <h1>Pokemon Layout</h1>
+            <router-view></router-view>
+        </div>
+    </template>
+
+    <style scoped>
+    .pokemon-layout{
+        background-color: deeppink;
+    }
+    </style>
+    ```
+3. Commit Video 130:
+    + $ git add .
+    + $ git commit -m "Commit 130: Multiples Router-View - Rutas Hijas"
+    + $ git push -u origin main
 
 ### Video 131. Segundo Layout
+
+
+
 ### Video 132. Arreglar nuestro NavBar personalizado
 ### Video 133. Guard - Protección de rutas ( Global )
 ### Video 134. Guard global asíncrono
