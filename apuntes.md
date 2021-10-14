@@ -5074,10 +5074,120 @@
     + $ git push -u origin main
 
 ### Video 132. Arreglar nuestro NavBar personalizado
+1. Modificar componente **05rutas-ciclo\src\modules\shared\components\Navbar.vue**:
+    ```vue
+    <template>
+        <div>
+            <CustomLink
+                v-for="link in links"
+                :key="link.to"
+                :link="link"
+            />
+        </div>
+    </template>
 
+    <script>
+    import { defineAsyncComponent } from 'vue';
 
+    export default {
+        data() {
+            return {
+                links: [
+                    {to: 'pokemon-home', name: 'Pokemons'},
+                    {to: 'pokemon-id', name: 'Por ID', id: 151 },
+                    {to: 'pokemon-about', name: 'About'},
+
+                    {to: 'dbz-characters', name: 'Personajes' },
+                    {to: 'dbz-about', name: 'DBZ-About'},
+
+                    {to: 'https://google.com', name: 'Google'},
+                ]
+            }
+        },
+        components: {
+            CustomLink: defineAsyncComponent(() => import('./CustomLink.vue'))
+        }
+    }
+    </script>
+
+    <style scoped>
+        div {
+            padding: 0 30px;
+        }
+
+        div a {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 10px;
+        }
+
+        /* a.router-link-exact-active {
+            color: #42b983;
+        } */
+    </style>
+    ```
+2. Modificar componente **05rutas-ciclo\src\modules\shared\components\CustomLink.vue**:
+    ```vue
+    <template>
+        <a
+            v-if="isExternalLink"
+            target="_blank"
+            class="normal-link"
+            :href="link.to">{{ link.name }}
+        </a>
+
+        <router-link
+            v-else
+            :to="route"
+            v-slot="{ isActive }"
+        >
+            <a 
+                :class="isActive ? 'is-active' : 'normal-link'"
+            >
+                {{ link.name }}
+            </a>
+        </router-link>
+    </template>
+
+    <script>
+    export default {
+        props: {
+            link: {
+                type: Object,
+                required: true
+            }
+        },
+        computed: {
+            isExternalLink() {
+                return this.link.to.startsWith('http')
+            },
+            route(){
+                return this.link.id === undefined 
+                    ? { name: this.link.to }
+                    : { name: this.link.to, params: { id: this.link.id } }
+            }
+        }
+    }
+    </script>
+
+    <style scoped>
+    .is-active{
+        color: #42b983;
+    }
+    .normal-link{
+        color: #c6c5c5;
+    }
+    </style>
+    ```
+3. Commit Video 132:
+    + $ git add .
+    + $ git commit -m "Commit 132: Arreglar nuestro NavBar personalizado"
+    + $ git push -u origin main
 
 ### Video 133. Guard - Protección de rutas ( Global )
+
+
+
 ### Video 134. Guard global asíncrono
 ### Video 135. Guard específico para rutas
 ### Nota 136. Código fuente de la sección
