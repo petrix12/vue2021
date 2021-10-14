@@ -4788,10 +4788,115 @@
     + $ git push -u origin main
 
 ### Video 129. RouterLink Personalizado
+1. Modificar componente **05rutas-ciclo\src\modules\shared\components\Navbar.vue**:
+    ```vue
+    <template>
+        <div>
+            <!-- <router-link :to="{ name: 'home' }">Lista de Pokémons</router-link>
+            <router-link :to="{ name: 'pokemon-id', params: { id: '85' }}">Pokémon por id</router-link>
+            <router-link :to="{ name: 'about' }">About</router-link> -->
+            <CustomLink
+                v-for="link in links"
+                :key="link.to"
+                :link="link"
+            />
+        </div>
+    </template>
 
+    <script>
+    import { defineAsyncComponent } from 'vue';
 
+    export default {
+        data() {
+            return {
+                links: [
+                    {to: '/home', name: 'Pokemons'},
+                    {to: '/pokemonid/50', name: 'Por ID'},
+                    {to: '/about', name: 'About'},
+                    {to: 'https://google.com', name: 'Google'},
+                ]
+            }
+        },
+        components: {
+            CustomLink: defineAsyncComponent(() => import('./CustomLink.vue'))
+        }
+    }
+    </script>
+
+    <style scoped>
+        div {
+            padding: 0 30px;
+        }
+
+        div a {
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 10px;
+        }
+
+        /* a.router-link-exact-active {
+            color: #42b983;
+        } */
+    </style>
+    ```
+2. Crear componente **05rutas-ciclo\src\modules\shared\components\CustomLink.vue**:
+    ```vue
+    <template>
+        <a
+            v-if="isExternalLink"
+            target="_blank"
+            class="normal-link"
+            :href="link.to">{{ link.name }}
+        </a>
+
+        <router-link
+            v-else
+            :to="link.to"
+            v-slot="{ href, isActive }"
+        >
+            <a 
+                :href="href"
+                :class="isActive ? 'is-active' : 'normal-link'"
+            >
+                {{ link.name }}
+            </a>
+        </router-link>
+    </template>
+
+    <script>
+    export default {
+        props: {
+            link: {
+                type: Object,
+                required: true
+            }
+        },
+        computed: {
+            isExternalLink() {
+                return this.link.to.startsWith('http')
+            }
+        }
+    }
+    </script>
+
+    <style scoped>
+    .is-active{
+        color: #42b983;
+    }
+    .normal-link{
+        color: #c6c5c5;
+    }
+    </style>   
+    ```
+3. Commit Video 129:
+    + $ git add .
+    + $ git commit -m "Commit 129: RouterLink Personalizado"
+    + $ git push -u origin main
 
 ### Video 130. Multiples Router-View - Rutas Hijas
+
+
+
 ### Video 131. Segundo Layout
 ### Video 132. Arreglar nuestro NavBar personalizado
 ### Video 133. Guard - Protección de rutas ( Global )
