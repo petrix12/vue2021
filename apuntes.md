@@ -5334,11 +5334,16 @@
     + $ git commit -m "Commit 137: Introducción a la sección"
     + $ git push -u origin main
 
-### Video 138. Temas puntuales de la sección
+### Nota 138. Temas puntuales de la sección
 
 
 
-### Nota 139. Introducción a Vuex
+1. Commit Video 138:
+    + $ git add .
+    + $ git commit -m "Commit 138: Temas puntuales de la sección"
+    + $ git push -u origin main
+
+### Video 139. Introducción a Vuex
 ### Video 140. Inicio de proyecto - Bases Vuex
 ### Video 141. Instalación manual de Vuex
 ### Video 142. Leer el state reactivo
