@@ -4128,7 +4128,7 @@
     + $ git commit -m "Commit 112: Código fuente de la sección"
     + $ git push -u origin main
 
-## Sección 9: Vue Router y Ciclo de vida de los componentes - Options Api
+## Sección 09: Vue Router y Ciclo de vida de los componentes - Options Api
 
 ### Video 113. Introducción a la sección
 **Contenido**: explicación del proyecto para esta sección aplicando Vue Router.
@@ -5320,7 +5320,31 @@
 ### Nota 136. Código fuente de la sección
 + [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
 + Código fuente de la sección por parte del autor: **codigo-fuente-autor\vue-router-fin-seccion-9**.
+1. Commit Video 136:
+    + $ git add .
+    + $ git commit -m "Commit 136: Código fuente de la sección"
+    + $ git push -u origin main
 
+## Sección 10: Introducción a Vuex
+
+### Video 137. Introducción a la sección
+
+
+
+### Video 138. Temas puntuales de la sección
+### Nota 139. Introducción a Vuex
+### Video 140. Inicio de proyecto - Bases Vuex
+### Video 141. Instalación manual de Vuex
+### Video 142. Leer el state reactivo
+### Video 143. Mutations
+### Video 144. Actions
+### Video 145. mapActions
+### Video 146. Bloquear botón mientras una acción trabaja
+### Video 147. Getters
+### Video 148. Modules
+### Video 149. Actions, Getters, Mutations, State desde un módulo
+### Video 150. Separar módulo en archivosindependientes
+### Nota 151. Código fuente de la sección
 
 
 
@@ -5335,3 +5359,11 @@
     ```js
     ```
     npm run serve
+
+## Comandos Git:
++ Historial de commit:
+    + git log --pretty=oneline
++ Borrar ultimo commit:
+    + git reset HEAD^ --soft
++ Forzar push
+    + git push origin -f
