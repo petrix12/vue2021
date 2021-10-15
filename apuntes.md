@@ -5335,15 +5335,30 @@
     + $ git push -u origin main
 
 ### Nota 138. Temas puntuales de la sección
-
-
-
-1. Commit Video 138:
+1. Temas puntuales de la sección:
+    + Esta sección esta dedicada a tener una introducción a Vuex, como gestor de estado global de nuestra aplicación, puntualmente veremos:
+        + ¿Qué es Vuex?
+        + ¿Qué problema resuelve Vuex?
+        + Actions
+        + Getters
+        + Mutations
+        + State
+        + Módulos
+        + Segmentación
+        + Vuex DevTools
+    + Esta sección es muy importante para comprender Vuex, el cual es un gestor de estado muy popular cuando sabemos que las aplicaciones serán de mediana a gran escala.
+2. Commit Video 138:
     + $ git add .
     + $ git commit -m "Commit 138: Temas puntuales de la sección"
     + $ git push -u origin main
 
 ### Video 139. Introducción a Vuex
+**Contenido**: acerca de implementar Vuex en nuestros proyectos Vue.
+1. Commit Video 139:
+    + $ git add .
+    + $ git commit -m "Commit 139: Introducción a Vuex"
+    + $ git push -u origin main
+
 ### Video 140. Inicio de proyecto - Bases Vuex
 ### Video 141. Instalación manual de Vuex
 ### Video 142. Leer el state reactivo
