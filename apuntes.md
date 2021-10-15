@@ -5211,10 +5211,53 @@
     + $ git push -u origin main
 
 ### Video 134. Guard global asíncrono
+1. Modificar el archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    ≡
+    // Guard Global - Sincrono
+    /* router.beforeEach((to, from, next) => {
+        console.log({to, from, next})
 
+        const random = Math.random() * 100
+        if(random > 50){
+            console.log(random, 'autenticado')
+            next()
+        } else {
+            console.log(random, 'bloqueado por el beforeEach Guard')
+            next({ name: 'pokemon-home'})
+        }
+    }) */
 
+    const CanAccess = () => {
+        return new Promise(resolve => {
+            const random = Math.random() * 100
+            if(random > 50){
+                console.log(random, 'Autenticado - Puede acceder')
+                resolve(true)
+            } else {
+                console.log(random, 'bloqueado por el beforeEach Guard - No puede acceder')
+                resolve(false)
+            }		
+        })
+    }
+
+    router.beforeEach(async(to, from, next) => {
+        const authorized = await CanAccess()
+
+        authorized ? next() : next({name: 'pokemon-home'})
+    })
+
+    export default router
+    ```
+2. Commit Video 134:
+    + $ git add .
+    + $ git commit -m "Commit 134: Guard global asíncrono"
+    + $ git push -u origin main
 
 ### Video 135. Guard específico para rutas
+
+
+
 ### Nota 136. Código fuente de la sección
 + [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
 + Código fuente de la sección por parte del autor: **codigo-fuente-autor\vue-router-fin-seccion-9**.
