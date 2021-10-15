@@ -5255,8 +5255,67 @@
     + $ git push -u origin main
 
 ### Video 135. Guard específico para rutas
+1. Modificar el archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    ≡
+    // Guard Global - Sincrono
+    /* router.beforeEach((to, from, next) => {
+        console.log({to, from, next})
 
+        const random = Math.random() * 100
+        if(random > 50){
+            console.log(random, 'autenticado')
+            next()
+        } else {
+            console.log(random, 'bloqueado por el beforeEach Guard')
+            next({ name: 'pokemon-home'})
+        }
+    }) */
 
+    /* const CanAccess = () => {
+        return new Promise(resolve => {
+            const random = Math.random() * 100
+            if(random > 50){
+                console.log(random, 'Autenticado - Puede acceder')
+                resolve(true)
+            } else {
+                console.log(random, 'bloqueado por el beforeEach Guard - No puede acceder')
+                resolve(false)
+            }		
+        })
+    }
+
+    router.beforeEach(async(to, from, next) => {
+        const authorized = await CanAccess()
+
+        authorized ? next() : next({name: 'pokemon-home'})
+    }) */
+
+    export default router
+    ```
+2. Crear archivo **05rutas-ciclo\src\router\auth-guard.js**:
+    ```js
+    const isAuthenticatedGuard = async(to, from, next) => {
+        /* console.log({to, from, next}, 'Bloqueado') */
+
+        return new Promise(() => {
+            const random = Math.random() * 100
+            if(random > 50){
+                console.log(random, 'Autenticado - Puede acceder XYZ')
+                next()
+            } else {
+                console.log(random, 'bloqueado por el beforeEach Guard - No puede acceder XYZ')
+                next({ name: 'pokemon-home'})
+            }        
+        })
+    }
+
+    export default isAuthenticatedGuard
+    ```
+3. Commit Video 135:
+    + $ git add .
+    + $ git commit -m "Commit 135: Guard específico para rutas"
+    + $ git push -u origin main
 
 ### Nota 136. Código fuente de la sección
 + [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
