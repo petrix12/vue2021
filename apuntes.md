@@ -5185,10 +5185,35 @@
     + $ git push -u origin main
 
 ### Video 133. Guard - Protección de rutas ( Global )
++ [Vue Router - Navigation Guards](https://next.router.vuejs.org/guide/advanced/navigation-guards.html)
+1. Modificar el archivo de rutas **05rutas-ciclo\src\router\router.js**:
+    ```js
+    ≡
+    // Guard Global - Sincrono
+    router.beforeEach((to, from, next) => {
+        console.log({to, from, next})
 
+        const random = Math.random() * 100
+        if(random > 50){
+            console.log(random, 'autenticado')
+            next()
+        } else {
+            console.log(random, 'bloqueado por el beforeEach Guard')
+            next({ name: 'pokemon-home'})
+        }
+    })
 
+    export default router
+    ```
+2. Commit Video 133:
+    + $ git add .
+    + $ git commit -m "Commit 133: Guard - Protección de rutas ( Global )"
+    + $ git push -u origin main
 
 ### Video 134. Guard global asíncrono
+
+
+
 ### Video 135. Guard específico para rutas
 ### Nota 136. Código fuente de la sección
 + [Repositorio de la sección](https://github.com/Klerith/vue-pokemon-game/tree/pokemon-testing)
