@@ -5411,10 +5411,38 @@
     + $ git push -u origin main
 
 ### Video 141. Instalación manual de Vuex
+1. Instalar Vuex en el proyecto :
+    + ubicarse el la raíz del proyeco **06bases-vuex**.
+    + $ npm install vuex@next --save
+2. Crear archivo **06bases-vuex\src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
 
+    export default createStore({
+        state: {
+            count: 1
+        }
+    })
+    ```
+3. Modificar **06bases-vuex\src\main.js** para importar **06bases-vuex\src\store\index.js**:
+    ```js
+    import { createApp } from 'vue'
+    import store from '@/store'
+    import App from './App.vue'
 
+    createApp(App)
+        .use(store)
+        .mount('#app')
+    ```
+4. Commit Video 141:
+    + $ git add .
+    + $ git commit -m "Commit 141: Instalación manual de Vuex"
+    + $ git push -u origin main
 
 ### Video 142. Leer el state reactivo
+
+
+
 ### Video 143. Mutations
 ### Video 144. Actions
 ### Video 145. mapActions
