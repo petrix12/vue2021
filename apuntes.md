@@ -2,6 +2,9 @@
 + **URL Curso**: https://www.udemy.com/course/vuejs-fh/
 + **URL Repositorio**: https://github.com/petrix12/vue2021.git
 + **URL App en producción de 04pokemon**: https://solucionespp-pokemon.netlify.app
++ **URL App en producción de 99rick-and-morty**: https://vue3-rick-and-morty.netlify.app
++ **URL App en producción de tareas con Vue 3 + Net Core + EFC**: https://solucionespp-vue3-net-core.netlify.app
++ **URL App Menú de proyectos**: https://solucionespp-vuejs.netlify.app
 
 ## Antes de iniciar:
 1. Crear proyecto en la página de [GitHub](https://github.com) con el nombre: **vue2021**.
@@ -5360,7 +5363,57 @@
     + $ git push -u origin main
 
 ### Video 140. Inicio de proyecto - Bases Vuex
+1. Crear proyecto vue:
+    + $ vue create 06bases-vuex
+    + Seleccionar: **Manually select features**
+    + Check the features needed for your project:
+        + Choose Vue version
+        + Babel
+        + Linter / Formatter
+    + Choose a version of Vue.js that you want to start the project with: **3.x**
+    + Pick a linter / formatter config: **ESLint with error prevention only**
+    + Pick additional lint features: **Lint on save**
+    + Where do you prefer placing config for Babel, ESLint, etc.?: **In dedicated config files**
+    + Save this as a preset for future projects?: **n**
+2. Levantar proyecto:
+    + $ cd 06bases-vuex
+    + $ npm run serve
+3. Eliminar componente **06bases-vuex\src\App.vue**.
+4. Modificar componente **06bases-vuex\src\App.vue**:
+    ```vue
+    <template>
+        <img alt="Vue logo" src="./assets/logo.png">
+    </template>
+
+    <script>
+
+    export default {
+        name: 'App',
+        components: {
+        }
+    }
+    </script>
+
+    <style>
+    #app {
+        font-family: Avenir, Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
+    </style>
+    ```
+5. Commit Video 140:
+    + $ git add .
+    + $ git commit -m "Commit 140: Inicio de proyecto - Bases Vuex"
+    + $ git push -u origin main
+
 ### Video 141. Instalación manual de Vuex
+
+
+
 ### Video 142. Leer el state reactivo
 ### Video 143. Mutations
 ### Video 144. Actions
@@ -5384,7 +5437,11 @@
     ```
     ```js
     ```
-    npm run serve
+## Algunos comandos Vue:
++ Levantar proyecto:
+    + npm run serve
++ Actualizar Vue CLI:
+    + npm i -g @vue/cli to update!
 
 ## Comandos Git:
 + Historial de commit:
@@ -5393,3 +5450,35 @@
     + git reset HEAD^ --soft
 + Forzar push
     + git push origin -f
+
+## Proyectos extras:
+### Aplicación de tareas con Vue 3 + Net Core + EFC
++ [97vue3_net_core](97vue3_net_core/apuntes.md)
+
+### Vue 3 - Composition API, Vuex, API Rest - Rick And Morty
++ [98rick-and-morty](98rick-and-morty/apuntes.md)
+
+### Menú de proyectos:
+1. Crear proyecto:
+    + $ vue create 99menu_vuejs
+    + Seleccionar: Default (Vue 3) ([Vue 3] babel, eslint)
+2. Ingresar y levantar el proyecto:
+    + $ cd 99menu_vuejs
+    + $ npm run serve
+3. Modificar el contenido de la etiqueta **title** en **99menu_vuejs\public\index.html**:
+    ```html
+    <title>Proyectos Vue.js | Soluciones++</title>
+    ```
+4. Modificar el componente principal **99menu_vuejs\src\App.vue**:
+    ```vue
+    ```
+5. Modificar el componente **99menu_vuejs\src\components\HelloWorld.vue**:
+    ```vue
+    ```
+6. Preparar y compilar la aplicación el deploy:
+    + $ npm run build
+    + **Nota**: esta acción genera un proyecto optimizado para producción ubicado en **99menu_vuejs\dist**.
+7. Ir a la página de [netlify](https://www.netlify.com), iniciar sesión e ir a **Site**.
+8. Arrastrar la carpeta para distribución **99menu_vuejs\dist** en la página de netlify.
+9. Ir a **Site settings** y luego a **Change site name** y cambiar el **Site name** a **solucionespp-vuejs**.
+    + Nota: ahora podemos ver nuestra aplicación en producción en: https://solucionespp-vuejs.netlify.app
