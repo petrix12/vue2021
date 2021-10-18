@@ -5731,8 +5731,108 @@
     + $ git push -u origin main
 
 ### Video 146. Bloquear botón mientras una acción trabaja
+1. Modificar helper **06bases-vuex\src\helpers\getRandomInt.js**:
+    ```js
+    const getRandomInt = () => {
+        return new Promise(resolve => {
+            const rndInt = Math.floor((Math.random() * 20) + 1)
+            setTimeout(() => {
+                resolve(rndInt)
+            }, 2000)
+        })
+    }
 
+    export default getRandomInt
+    ```
+2. Modificar componente **06bases-vuex\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h1>Counter - Vuex</h1>
+        <h2>Direct access: {{ $store.state.count }}</h2>
+        <h2>Computed: {{ countComputed }}</h2>
 
+        <button @click="increment">+1</button>
+        <button @click="incrementBy">+5</button>
+        <button @click="randomInt" :disabled="isLoading">Random</button>
+
+        <h1>mapState</h1>
+        <h2>mapState: {{ count }}</h2>
+        <h2>lastMutation: {{ lastMutation }}</h2>
+    </template>
+
+    <script>
+    import { mapState, mapActions } from 'vuex'
+
+    export default {
+        computed: {
+            countComputed() {
+                return this.$store.state.count
+            },
+            ...mapState(['count', 'lastMutation', 'isLoading'])
+        },
+
+        methods: {
+            increment() {
+                this.$store.commit('increment')
+            },
+            incrementBy() {
+                this.$store.commit('incrementBy', 5)
+            },
+            /* incrementRandomInt() {
+                this.$store.dispatch('incrementRandomInt')
+            } */
+            /* ...mapActions(['incrementRandomInt']) */
+            // Lo siguiente es equivalente a la anterior
+            ...mapActions({
+                randomInt: 'incrementRandomInt'
+            })
+        }
+    }
+    </script>
+    ```
+3. Modificar **06bases-vuex\src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+    import getRandomInt from '@/helpers/getRandomInt'
+
+    export default createStore({
+        state: {
+            count: 1,
+            lastMutation: 'none',
+            lastRandomInt: 0,
+            isLoading: false
+        },
+
+        mutations: {
+            increment(state){
+                state.count++
+                state.lastMutation = 'increment'
+            },
+            incrementBy(state, val){
+                state.count += val
+                state.lastMutation = 'incrementBy ' + val
+                state.lastRandomInt = val
+            },
+            setLoading( state, val){
+                state.isLoading = val
+                state.lastMutation = 'setLoading ' + val
+            }
+        },
+
+        actions: {
+            async incrementRandomInt({ commit }) {
+                commit('setLoading', true)
+                const randomInt = await getRandomInt()
+                commit('incrementBy', randomInt)
+                commit('setLoading', false)
+            }
+        }
+    })
+    ```
+4. Commit Video 146:
+    + $ git add .
+    + $ git commit -m "Commit 146: Bloquear botón mientras una acción trabaja"
+    + $ git push -u origin main
 
 ### Video 147. Getters
 ### Video 148. Modules
