@@ -22,7 +22,7 @@ export default createStore({
     },
 
     actions: {
-        async incrementRendomInt(context) {
+        async incrementRandomInt(context) {
             const randomInt = await getRandomInt()
             context.commit('incrementBy', randomInt)
         }

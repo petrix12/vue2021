@@ -5605,7 +5605,7 @@
         },
 
         actions: {
-            async incrementRendomInt(context) {
+            async incrementRandomInt(context) {
                 const randomInt = await getRandomInt()
                 context.commit('incrementBy', randomInt)
             }
@@ -5666,7 +5666,7 @@
                 this.$store.commit('incrementBy', 5)
             },
             incrementRandomInt() {
-                this.$store.dispatch('incrementRendomInt')
+                this.$store.dispatch('incrementRandomInt')
             }
         }
     }
@@ -5678,10 +5678,62 @@
     + $ git push -u origin main
 
 ### Video 145. mapActions
+1. Modificar componente **06bases-vuex\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h1>Counter - Vuex</h1>
+        <h2>Direct access: {{ $store.state.count }}</h2>
+        <h2>Computed: {{ countComputed }}</h2>
 
+        <button @click="increment">+1</button>
+        <button @click="incrementBy">+5</button>
+        <!-- <button @click="incrementRandomInt">Random</button> -->
+        <button @click="randomInt">Random</button>
 
+        <h1>mapState</h1>
+        <h2>mapState: {{ count }}</h2>
+        <h2>lastMutation: {{ lastMutation }}</h2>
+    </template>
+
+    <script>
+    import { mapState, mapActions } from 'vuex'
+
+    export default {
+        computed: {
+            countComputed() {
+                return this.$store.state.count
+            },
+            ...mapState(['count', 'lastMutation'])
+        },
+
+        methods: {
+            increment() {
+                this.$store.commit('increment')
+            },
+            incrementBy() {
+                this.$store.commit('incrementBy', 5)
+            },
+            /* incrementRandomInt() {
+                this.$store.dispatch('incrementRandomInt')
+            } */
+            /* ...mapActions(['incrementRandomInt']) */
+            // Lo siguiente es equivalente a la anterior
+            ...mapActions({
+                randomInt: 'incrementRandomInt'
+            })
+        }
+    }
+    </script>
+    ```
+2. Commit Video 145:
+    + $ git add .
+    + $ git commit -m "Commit 145: mapActions"
+    + $ git push -u origin main
 
 ### Video 146. Bloquear botón mientras una acción trabaja
+
+
+
 ### Video 147. Getters
 ### Video 148. Modules
 ### Video 149. Actions, Getters, Mutations, State desde un módulo
