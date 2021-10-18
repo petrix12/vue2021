@@ -5579,10 +5579,108 @@
     + $ git push -u origin main
 
 ### Video 144. Actions
+1. Modificar **06bases-vuex\src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+    import getRandomInt from '@/helpers/getRandomInt'
 
+    export default createStore({
+        state: {
+            count: 1,
+            lastMutation: 'none',
+            lastRandomInt: 0,
+            isLoading: false
+        },
 
+        mutations: {
+            increment(state){
+                state.count++
+                state.lastMutation = 'increment'
+            },
+            incrementBy(state, val){
+                state.count += val
+                state.lastMutation = 'incrementBy ' + val
+                state.lastRandomInt = val
+            }
+        },
+
+        actions: {
+            async incrementRendomInt(context) {
+                const randomInt = await getRandomInt()
+                context.commit('incrementBy', randomInt)
+            }
+        }
+    })
+    ```
+2. Crear helper **06bases-vuex\src\helpers\getRandomInt.js**:
+    ```js
+    const getRandomInt = () => {
+        return new Promise(resolve => {
+            const rndInt = Math.floor((Math.random() * 20) + 1)
+            setTimeout(() => {
+                resolve(rndInt)
+            }, 1000)
+        })
+    }
+
+    export default getRandomInt
+    ```
+3. Modificar componente **06bases-vuex\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h1>Counter - Vuex</h1>
+        <h2>Direct access: {{ $store.state.count }}</h2>
+        <h2>Computed: {{ countComputed }}</h2>
+
+        <button @click="increment">+1</button>
+        <button @click="incrementBy">+5</button>
+        <button @click="incrementRandomInt">Random</button>
+
+        <h1>mapState</h1>
+        <h2>mapState: {{ count }}</h2>
+        <h2>lastMutation: {{ lastMutation }}</h2>
+    </template>
+
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        /* computed: mapState(['count']) */
+        computed: {
+            countComputed() {
+                return this.$store.state.count
+            },
+            ...mapState(['count', 'lastMutation'])
+            // Lo siguiente es equivalente a la anterior
+            /* ...mapState({
+                count: state => state.count,
+                lastMutation: state => state.lastMutation
+            }) */
+        },
+
+        methods: {
+            increment() {
+                this.$store.commit('increment')
+            },
+            incrementBy() {
+                this.$store.commit('incrementBy', 5)
+            },
+            incrementRandomInt() {
+                this.$store.dispatch('incrementRendomInt')
+            }
+        }
+    }
+    </script>
+    ```
+4. Commit Video 144:
+    + $ git add .
+    + $ git commit -m "Commit 144: Actions"
+    + $ git push -u origin main
 
 ### Video 145. mapActions
+
+
+
 ### Video 146. Bloquear botón mientras una acción trabaja
 ### Video 147. Getters
 ### Video 148. Modules
