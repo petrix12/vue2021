@@ -5440,10 +5440,76 @@
     + $ git push -u origin main
 
 ### Video 142. Leer el state reactivo
+1. Crear componente **06bases-vuex\src\components\Counter.vue**:
+    ```vue
+    <template>
+        <h1>Counter - Vuex</h1>
+        <h2>Direct access: {{ $store.state.count }}</h2>
+        <h2>Computed: {{ countComputed }}</h2>
 
+        <h1>mapState</h1>
+        <h2>mapState: {{ count }}</h2>
+        <h2>lastMutation: {{ lastMutation }}</h2>
+    </template>
 
+    <script>
+    import { mapState } from 'vuex'
+
+    export default {
+        /* computed: mapState(['count']) */
+        computed: {
+            countComputed() {
+                return this.$store.state.count
+            },
+            ...mapState(['count', 'lastMutation'])
+            // Lo siguiente es equivalente a la anterior
+            /* ...mapState({
+                count: state => state.count,
+                lastMutation: state => state.lastMutation
+            }) */
+        }
+    }
+    </script>
+    ```
+2. Modificar **06bases-vuex\src\App.vue**:
+    ```vue
+    <template>
+        <img alt="Vue logo" src="./assets/logo.png">
+        <Counter />
+    </template>
+
+    <script>
+    import { defineAsyncComponent } from 'vue';
+
+    export default {
+        name: 'App',
+        components: {
+            Counter: defineAsyncComponent(() => import('@/components/Counter'))
+        }
+    }
+    </script>
+    ≡
+    ```
+3. Modificar **06bases-vuex\src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+
+    export default createStore({
+        state: {
+            count: 1,
+            lastMutation: 'none'
+        }
+    })
+    ```
+4. Commit Video 142:
+    + $ git add .
+    + $ git commit -m "Commit 142: Leer el state reactivo"
+    + $ git push -u origin main
 
 ### Video 143. Mutations
+
+
+
 ### Video 144. Actions
 ### Video 145. mapActions
 ### Video 146. Bloquear botón mientras una acción trabaja
