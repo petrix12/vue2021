@@ -5949,7 +5949,7 @@
         <h2>mapState: {{ count }}</h2>
         <h2>lastMutation: {{ lastMutation }}</h2>
 
-        <h2>Direct getter: {{ $store.getters.squareCount }}</h2>
+        <h2>Direct getter: {{ $store.getters['counter/squareCount'] }}</h2>
     </template>
 
     <script>
@@ -5984,8 +5984,71 @@
     + $ git push -u origin main
 
 ### Video 150. Actions, Getters, Mutations, State desde un módulo
+1. Modificar **06bases-vuex\src\store\counter\index.js**:
+    ```js
+    import state from './state'
+    import * as mutations from './mutations'
+    import * as actions from './actions'
+    import * as getters from './getters'
 
+    const counterStore = {
+        namespaced: true,
+        state,
+        mutations,
+        actions,
+        getters
+    }
 
+    export default counterStore
+    ```
+2. Modificar **06bases-vuex\src\store\counter\state.js**:
+    ```js
+    export default () => ({
+        count: 1,
+        lastMutation: 'none',
+        lastRandomInt: 0,
+        isLoading: false
+    })
+    ```
+3. Modificar **06bases-vuex\src\store\counter\mutations.js**:
+    ```js
+    export const increment = (state) => {
+        state.count++
+        state.lastMutation = 'increment'
+    }
+
+    export const incrementBy = (state, val) => {
+        state.count += val
+        state.lastMutation = 'incrementBy ' + val
+        state.lastRandomInt = val
+    }
+
+    export const setLoading = ( state, val) => {
+        state.isLoading = val
+        state.lastMutation = 'setLoading ' + val
+    }
+    ```
+4. Modificar **06bases-vuex\src\store\counter\actions.js**:
+    ```js
+    import getRandomInt from '@/helpers/getRandomInt'
+
+    export const incrementRandomInt = async({ commit }) => {
+        commit('setLoading', true)
+        const randomInt = await getRandomInt()
+        commit('incrementBy', randomInt)
+        commit('setLoading', false)
+    }
+    ```
+5. Modificar **06bases-vuex\src\store\counter\getters.js**:
+    ```js
+    export const squareCount = (state) => {
+        return state.count * state.count
+    }
+    ```
+6. Commit Video 150:
+    + $ git add .
+    + $ git commit -m "Commit 150: Actions, Getters, Mutations, State desde un módulo"
+    + $ git push -u origin main
 
 ### Nota 151. Código fuente de la sección
 
