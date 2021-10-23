@@ -6051,7 +6051,12 @@
     + $ git push -u origin main
 
 ### Nota 151. Código fuente de la sección
-
+1. **Código fuente de la sección**: Aquí pueden descargar y tener mi código fuente de como referencia en caso de que lo lleguen a necesitar, también el repositorio de Github por si lo necesitan también
+    + [codigo-fuente-autor\vuejs-vuex-introduccion-fin-seccion-10.zip](codigo-fuente-autor\vuejs-vuex-introduccion-fin-seccion-10.zip)
+2. Commit Video 151:
+    + $ git add .
+    + $ git commit -m "Commit 151: Código fuente de la sección"
+    + $ git push -u origin main
 
 
 0.45 - x
