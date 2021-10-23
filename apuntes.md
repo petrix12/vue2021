@@ -5868,10 +5868,75 @@
     + $ git push -u origin main
 
 ### Video 148. Modules
++ https://next.vuex.vuejs.org/guide/modules.html#namespacing
+1. Crear archivo **06bases-vuex\src\store\counter\index.js**:
+    ```js
+    import getRandomInt from '@/helpers/getRandomInt'
 
+    const counterStore = {
+        namespaced: true,
 
+        state: () => ({
+            count: 1,
+            lastMutation: 'none',
+            lastRandomInt: 0,
+            isLoading: false
+        }),
+
+        mutations: {
+            increment(state){
+                state.count++
+                state.lastMutation = 'increment'
+            },
+            incrementBy(state, val){
+                state.count += val
+                state.lastMutation = 'incrementBy ' + val
+                state.lastRandomInt = val
+            },
+            setLoading( state, val){
+                state.isLoading = val
+                state.lastMutation = 'setLoading ' + val
+            }
+        },
+
+        actions: {
+            async incrementRandomInt({ commit }) {
+                commit('setLoading', true)
+                const randomInt = await getRandomInt()
+                commit('incrementBy', randomInt)
+                commit('setLoading', false)
+            }
+        },
+
+        getters: {
+            squareCount(state){
+                return state.count * state.count
+            }
+        }
+    }
+
+    export default counterStore
+    ```
+2. Modificar **06bases-vuex\src\store\index.js**:
+    ```js
+    import { createStore } from 'vuex'
+    import counterStore from './counter'
+
+    export default createStore({
+        modules: {
+            counter: counterStore
+        }
+    })
+    ```
+3. Commit Video 148:
+    + $ git add .
+    + $ git commit -m "Commit 148: Modules"
+    + $ git push -u origin main
 
 ### Video 149. Actions, Getters, Mutations, State desde un módulo
+
+
+
 ### Video 150. Separar módulo en archivosindependientes
 ### Nota 151. Código fuente de la sección
 
