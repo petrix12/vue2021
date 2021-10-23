@@ -5835,7 +5835,42 @@
     + $ git push -u origin main
 
 ### Video 147. Getters
+1. Modificar **06bases-vuex\src\store\index.js**:
+    ```js
+    ≡
+    export default createStore({
+        ≡
+        actions: {
+            ≡
+        },
+
+        getters: {
+            squareCount(state){
+                return state.count * state.count
+            }
+        }
+    })
+    ```
+2. Modificar componente **06bases-vuex\src\components\Counter.vue**:
+    ```vue
+    <template>
+        ≡
+        <h2>Direct getter: {{ $store.getters.squareCount }}</h2>
+    </template>
+
+    <script>
+        ≡
+    </script>
+    ```
+3. Commit Video 147:
+    + $ git add .
+    + $ git commit -m "Commit 147: Getters"
+    + $ git push -u origin main
+
 ### Video 148. Modules
+
+
+
 ### Video 149. Actions, Getters, Mutations, State desde un módulo
 ### Video 150. Separar módulo en archivosindependientes
 ### Nota 151. Código fuente de la sección
