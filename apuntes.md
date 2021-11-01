@@ -6399,10 +6399,91 @@
     + $ git push -u origin main
 
 ### Video 160. Componente NoEntrySelected
+1. Crear vista **07journal\src\modules\daybook\views\NoEntrySelected.vue**:
+    ```vue
+    <template>
+        <div class="d-flex justify-content-center">
+            <h1 class="align-self-center">No hay nada seleccionado</h1>
+        </div>
+        <Fab />
+    </template>
 
+    <script>
+    import { defineAsyncComponent } from 'vue';
+    export default {
+        components: {
+            Fab: defineAsyncComponent(() => import('../components/Fab.vue'))
+        }
+    }
+    </script>
 
+    <style lang="scss" scoped>
+    div {
+        height: 100%;
+    }
+    </style>
+    ```
+2. Modificar archivo de rutas **07journal\src\modules\daybook\router\index.js**:
+    ```js
+    export default {
+        name: 'daybook',
+        component: () => import(/* webpackChunkName: "daybook" */ '@/modules/daybook/layouts/DayBookLayout.vue'),
+        children: [
+            {
+                path: '',
+                name: 'no-entry',
+                component: () => import(/* webpackChunkName: "daybook-no-entry" */ '@/modules/daybook/views/NoEntrySelected.vue'),
+            }
+        ]
+    }
+    ```
+3. Modificar la vista **07journal\src\views\Home.vue**:
+    ```vue
+    ≡
+    <script>
+    export default {
+        methods: {
+            goToDaybook() {
+                this.$router.push({ name: 'no-entry' })
+            }
+        },
+    }
+    </script>
+    ```
+4. Crear componente **07journal\src\modules\daybook\components\Fab.vue**:
+    ```vue
+    <template>
+        <button class="btn btn-primary">
+            <i class="fa fa-2x fa-plus"></i>
+        </button>
+    </template>
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style lang="scss" scoped>
+        button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+        }
+    </style>
+    ```
+5. Commit Video 160:
+    + $ git add .
+    + $ git commit -m "Commit 160: Componente NoEntrySelected"
+    + $ git push -u origin main
 
 ### Video 161. EntryView
+
+
+
 ### Video 162. Mini tarea - Fab Icon
 ### Video 163. Instalar Vuex y crear un módulo reutilizable
 ### Video 164. Journal - Vuex Module
