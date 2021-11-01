@@ -27,7 +27,9 @@
         ></textarea>
     </div>
 
-    <Fab />
+    <Fab 
+        icon="fa-save"
+    />
 
     <img 
         src="https://cdn.pixabay.com/photo/2015/03/10/17/23/youtube-667451__340.png" 
@@ -40,7 +42,16 @@
 import { defineAsyncComponent } from 'vue'
 
 export default {
-    Fab: defineAsyncComponent(() => import('../components/Fab.vue'))
+    props: {
+        id: {
+            type: String,
+            required: true
+        }
+    },
+    components: {
+        Fab: defineAsyncComponent(() => import('../components/Fab.vue'))
+    }
+    
 }
 </script>
 
