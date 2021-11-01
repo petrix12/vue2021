@@ -6084,10 +6084,46 @@
     + $ git push -u origin main
 
 ### Video 154. Inicio de proyecto - Journal
-
-
+1. Crear proyecto Vue:
+    + $ vue create 07journal
+    + Seleccionar: **Manually select features**.
+    + Seleccionar:
+        + Choose Vue version
+        + Babel
+        + Router
+        + Linter / Formatter
+    + Choose a version of Vue.js that you want to start the project with: **3.x**.
+    + Use history mode for router?: **n**.
+    + Pick a linter / formatter config: **ESLint with error prevention only**.
+    + Pick additional lint features: **Lint on save**.
+    + Where do you prefer placing config for Babel, ESLint, etc.?: **In dedicated config files**.
+    + Save this as a preset for future projects?: **n**.
+2. Levantar nuestro proyecto:
+    + $ cd 07journal
+    + $ npm run serve
+3. Modificar **07journal\src\App.vue**:
+    ```vue
+    <template>
+        <router-view/>
+    </template>
+    ```
+4. Eliminar el componente **07journal\src\components\HelloWorld.vue**.
+5. Modificar la vista **07journal\src\views\Home.vue**:
+    ```vue
+    <template>
+        <div class="home">
+            <img alt="Vue logo" src="../assets/logo.png">
+        </div>
+    </template>
+    ```
+6. Commit Video 154:
+    + $ git add .
+    + $ git commit -m "Commit 154: Inicio de proyecto - Journal"
+    + $ git push -u origin main
 
 ### Video 155. Usar SASS en nuestro proyecto
+
+
 ### Video 156. Cambiar los colores por defecto del bootstrap
 ### Video 157. Estructura modular
 ### Video 158. Estructura del DaybookLayout
