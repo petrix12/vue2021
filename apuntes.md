@@ -6308,7 +6308,100 @@
     + $ git push -u origin main
 
 ### Video 159. Componentes EntryList y Entry
+1. Modificar componente **07journal\src\modules\daybook\components\EntryList.vue**:
+    ```vue
+    <template>
+        <div class="entry-list-container">
+            <div class="px-2 pt-2">
+                <input 
+                    type="text"
+                    class="form-control"
+                    placeholder="Buscar entrada"
+                >
+                <div class="entry-scrollarea">
+                    <Entry
+                        v-for="item in 100"
+                        :key="item"
+                    />
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+    import { defineAsyncComponent } from 'vue'
+
+    export default {
+        components: {
+            Entry: defineAsyncComponent(() => import('./Entry.vue'))
+        }
+    }
+    </script>
+
+    <style lang="scss" scoped>
+    .entry-list-container {
+        border-right: 1px solid #2c3e50;
+        height: calc(100vh - 56px);
+    }
+    .entry-scrollarea {
+        height: calc(100vh - 110px);
+        overflow: scroll;
+    }
+    </style>
+    ```
+2. Crear componente **07journal\src\modules\daybook\components\Entry.vue**:
+    ```vue
+    <template>
+        <div class="entry-container mb-3 pointer p-2">
+            <!-- Título -->
+            <div class="entry-title d-flex">
+                <span class="text-success fs-5 fw-bold">1</span>
+                <span class="mx-1 fs-5">Noviembre</span>
+                <span class="mx-2 fw-light">2021, lunes</span>
+            </div>
+
+            <div class="entry-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sapiente rerum eos ab repellat vero, necessitatibus hic nobis saepe voluptate eum quas libero, aspernatur totam adipisci laudantium error illum ut!
+            </div>
+        </div>
+    </template>
+
+    <script>
+    export default {
+
+    }
+    </script>
+
+    <style lang="scss" scoped>
+    .entry-container {
+        border-bottom: 1px solid #2c3e50;
+        transition: 0.2s all ease-in;
+        &:hover {
+            background-color: lighten($color: grey, $amount: 45);
+            transition: 0.2s all ease-in;
+        }
+
+        .entry-description {
+            font-size: 12px;
+        }
+    }
+    </style>
+    ```
+3. Agregar el estilo **pointer** en **07journal\src\styles\styles.scss**:
+    ```scss
+    .pointer {
+        cursor: pointer;
+    }
+    ```
+4. Commit Video 159:
+    + $ git add .
+    + $ git commit -m "Commit 159: Componentes EntryList y Entry"
+    + $ git push -u origin main
+
 ### Video 160. Componente NoEntrySelected
+
+
+
 ### Video 161. EntryView
 ### Video 162. Mini tarea - Fab Icon
 ### Video 163. Instalar Vuex y crear un módulo reutilizable
