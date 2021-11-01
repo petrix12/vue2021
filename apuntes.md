@@ -6779,7 +6779,103 @@
     + $ git push -u origin main
 
 ### Video 164. Journal - Vuex Module
+1. Crear archivo **07journal\src\store\index.js**:
+    ```js
+    import state from './state'
+    import * as actions from './actions'
+    import * as getters from './getters'
+    import * as mutations from './mutations'
+
+    const journalModule = {
+        namespaced: true,
+        actions,
+        getters,
+        mutations,
+        state
+    }
+
+    export default journalModule
+    ```
+2. Copiar **07journal\src\store\module-template** y pegar en **07journal\src\modules\daybook\store** y renombrar **module-template** a **journal**.
+3. Modificar **07journal\src\modules\daybook\store\journal\index.js**:
+    ```js
+    export default () => ({
+        isLoading: true,
+        entries: [1, 2, 3, 4, 5, 6]
+    })
+    ```
+4. Modificar **07journal\src\modules\daybook\store\journal\state.js**:
+    ```js
+    export default () => ({
+        isLoading: true,
+        entries: [1, 2, 3, 4, 5, 6]
+    })
+    ```
+5. Modificar **07journal\src\main.js**:
+    ```js
+    import { createApp } from 'vue'
+    import App from './App.vue'
+    import router from './router'
+    import store from './store'
+
+    import './styles/styles.scss'
+
+    createApp(App)
+        .use(store)
+        .use(router)
+        .mount('#app')
+    ```
+6. Modificar **07journal\src\modules\daybook\store\journal\actions.js**:
+    ```js
+    /* export const myAction = async ({ commit }) => {
+    } */
+
+    export const loadEntries = async (/* { commit } */) => {
+    }
+
+    export const updateEntry = async (/* { commit } */) => {
+    }
+
+    export const createEntry = async (/* { commit } */) => {
+    }
+    ```
+7. Modificar **07journal\src\modules\daybook\store\journal\mutations.js**:
+    ```js
+    /* export const myMutation = ( state ) => {
+    } */
+
+    export const setEntries = ( /* state */ ) => {
+    }
+
+    export const updateEntry = ( /* state */ ) => {
+    }
+
+    export const addEntry = ( /* state */ ) => {
+    }
+    ```
+8. Modificar **07journal\src\store\module-template\getters.js**:
+    ```js
+    /* export const myGetter = ( state ) => {
+        return state.algo
+    } */
+
+    export const getEntriesByTern = ( /* state */ ) => {
+        return state.algo
+    }
+
+    export const getEntryById = ( /* state */ ) => {
+        return state.algo
+    }
+    ```
+9. Commit Video 164:
+    + $ git add .
+    + $ git commit -m "Commit 164: Journal - Vuex Module"
+    + $ git push -u origin main
+
 ### Video 165. Entradas ficticias y punto de restauración
+
+
+
 ### Video 166. mapGetters - getEntriesByTerm
 ### Video 167. EntryComponent - Información al componente
 ### Video 168. GetEntryById - Obtener una entrada por el id
