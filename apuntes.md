@@ -6240,8 +6240,72 @@
     + $ git push -u origin main
 
 ### Video 158. Estructura del DaybookLayout
++ https://cdnjs.com/libraries/font-awesome
+1. Modificar plantilla **07journal\src\modules\daybook\layouts\DayBookLayout.vue**:
+    ```vue
+    import { defineAsyncComponent } from 'vue';
+    <template>
+        <Navbar />
+        <div class="d-flex">
+            <div class="col-4">
+                <EntryList />
+            </div>
+            <div class="col">
+                <router-view />
+            </div>
+        </div>
+    </template>
 
+    <script>
+    import { defineAsyncComponent } from 'vue'
+    export default {
+        components: {
+            Navbar: defineAsyncComponent(() => import('../components/Navbar.vue')),
+            EntryList: defineAsyncComponent(() => import('../components/EntryList.vue'))
+        }
+    }
+    </script>
+    ```
+2. crear componente **07journal\src\modules\daybook\components\Navbar.vue**:
+    ```vue
+    <template>
+        <nav class="navbar bg-primary">
+            <a class="navbar-brand text-white">
+                <img 
+                    src="@/assets/logo.png" 
+                    alt="Logo Vue"
+                    height="24"
+                    class="d-inline-block align-text-top mx-2"
+                >
+            </a>
+            <div class="d-flex">
+                <button class="btn btn-outline-info mx-2">
+                    <i class="fa fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </nav>
+    </template>
+    ```
+3. Agregar el CDN de **font-awesome** en **07journal\public\index.html**:
+    ```html
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    ```
+4. Crear componente **07journal\src\modules\daybook\components\EntryList.vue**:
+    ```vue
+    <template>
+        <h1>EntryList!!!!</h1>
+    </template>
 
+    <script>
+    export default {
+
+    }
+    </script>
+    ```
+5. Commit Video 158:
+    + $ git add .
+    + $ git commit -m "Commit 158: Estructura del DaybookLayout"
+    + $ git push -u origin main
 
 ### Video 159. Componentes EntryList y Entry
 ### Video 160. Componente NoEntrySelected
