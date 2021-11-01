@@ -6160,10 +6160,31 @@
     + $ git push -u origin main
 
 ### Video 156. Cambiar los colores por defecto del bootstrap
++ https://getbootstrap.com
+1. Modificar **07journal\src\styles\styles.scss**:
+    ```scss
+    $theme-colors: (
+    "primary":    #2c3e50,
+    "secondary":  #1d6042,
+    "success":    #198754,
+    "info":       #0dcaf0,
+    "warning":    #ffc107,
+    "danger":     #dc3545,
+    "light":      #f8f9fa,
+    "dark":       #343a40,
+    );
 
-
+    @import 'node_modules/bootstrap/scss/bootstrap.scss'
+    ```
+2. Commit Video 156:
+    + $ git add .
+    + $ git commit -m "Commit 156: Cambiar los colores por defecto del bootstrap"
+    + $ git push -u origin main
 
 ### Video 157. Estructura modular
+
+
+
 ### Video 158. Estructura del DaybookLayout
 ### Video 159. Componentes EntryList y Entry
 ### Video 160. Componente NoEntrySelected
