@@ -6732,6 +6732,52 @@
     + $ git push -u origin main
 
 ### Video 163. Instalar Vuex y crear un módulo reutilizable
++ https://next.vuex.vuejs.org/installation.html
+1. Instalar Vuex:
+    + $ npm install vuex@next --save
+2. Crear **07journal\src\store\module-template\actions.js**:
+    ```js
+    /* export const myAction = async ({ commit }) => {
+    } */
+    ```
+3. Crear **07journal\src\store\module-template\getters.js**:
+    ```js
+    /* export const myGetter = ( state ) => {
+        return state.algo
+    } */
+    ```
+4. Crear **07journal\src\store\module-template\mutations.js**:
+    ```js
+    /* export const myMutation = ( state ) => {
+    } */
+    ```
+5. Crear **07journal\src\store\module-template\state.js**:
+    ```js
+    /* export default () => ({
+    }) */
+    ```
+6. Crear **07journal\src\store\module-template\index.js**:
+    ```js
+    import state from './state'
+    import * as actions from './actions'
+    import * as getters from './getters'
+    import * as mutations from './mutations'
+
+    const myCustomModule = {
+        namespaced: true,
+        actions,
+        getters,
+        mutations,
+        state
+    }
+
+    export default myCustomModule
+    ```
+7. Commit Video 163:
+    + $ git add .
+    + $ git commit -m "Commit 163: Instalar Vuex y crear un módulo reutilizable"
+    + $ git push -u origin main
+
 ### Video 164. Journal - Vuex Module
 ### Video 165. Entradas ficticias y punto de restauración
 ### Video 166. mapGetters - getEntriesByTerm
