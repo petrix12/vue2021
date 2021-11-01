@@ -6068,10 +6068,25 @@
     + $ git push -u origin main
 
 ### Video 153. Temas puntuales de la sección
-
-
+1. Temas puntuales de la sección: En esta sección crearemos y configuraremos una aplicación para llevar registro de un diario, todo trabajado con OptionsAPI y Vuex, puntualmente haremos lo siguiente:
+    + Configuración de módulos en Vuex
+    + Configurar un backend para realizar peticiones http
+    + Getters con argumentos
+    + Controlar el state global y modular
+    + Diferentes rutas principales y rutas hijas
+    + Rutas con diferentes templates o plantillas
+    + Funciones con fechas
+    + Y más
+2. En esta sección aún no haremos nuestro CRUD, pero lo dejaremos todo preparado para la siguiente, pero todo lo que veremos aquí será de mucha utilidad para ustedes
+3. Commit Video 153:
+    + $ git add .
+    + $ git commit -m "Commit 153: Temas puntuales de la sección"
+    + $ git push -u origin main
 
 ### Video 154. Inicio de proyecto - Journal
+
+
+
 ### Video 155. Usar SASS en nuestro proyecto
 ### Video 156. Cambiar los colores por defecto del bootstrap
 ### Video 157. Estructura modular
