@@ -6182,10 +6182,67 @@
     + $ git push -u origin main
 
 ### Video 157. Estructura modular
+1. Crear plantilla **07journal\src\modules\daybook\layouts\DayBookLayout.vue**:
+    ```vue
+    <template>
+        <h1>Daybook Layouts</h1>
+    </template>
+    ```
+2. Agregar componente **DayBookLayout** en el archivo de rutas **07journal\src\router\index.js**:
+    ```js
+    ≡
+    import daybookRouter from '@/modules/daybook/router'
 
+    const routes = [
+        ≡,
+        {
+            path: '/daybook',
+            ...daybookRouter
+        }
+    ]
+    ≡
+    ```
+3. Crear archivo de rutas **07journal\src\modules\daybook\router\index.js**:
+    ```js
+    export default {
+        name: 'daybook',
+        component: () => import(/* webpackChunkName: "daybook" */ '@/modules/daybook/layouts/DayBookLayout.vue'),
+        children: [
+            
+        ]
+    }
+    ```
+4. Modificar vista **07journal\src\views\Home.vue**:
+    ```vue
+    <template>
+        <div class="home">
+            <img alt="Vue logo" src="../assets/logo.png">
+            <h1>Soluciones++</h1>
+            <button @click="goToDaybook" class="btn btn-primary">Primary</button>
+            <button @click="goToDaybook" class="btn btn-secondary">Secondary</button>
+            <button @click="goToDaybook" class="btn btn-success">Success</button>
+        </div>
+    </template>
 
+    <script>
+    export default {
+        methods: {
+            goToDaybook() {
+                this.$router.push({ name: 'daybook' })
+            }
+        },
+    }
+    </script>
+    ```
+5. Commit Video 157:
+    + $ git add .
+    + $ git commit -m "Commit 157: Estructura modular"
+    + $ git push -u origin main
 
 ### Video 158. Estructura del DaybookLayout
+
+
+
 ### Video 159. Componentes EntryList y Entry
 ### Video 160. Componente NoEntrySelected
 ### Video 161. EntryView
