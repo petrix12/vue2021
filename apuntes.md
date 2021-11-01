@@ -5331,7 +5331,7 @@
 ## Sección 10: Introducción a Vuex
 
 ### Video 137. Introducción a la sección
-**Contenido**: introducción a Vuex.
++ **Contenido**: introducción a Vuex.
 1. Commit Video 137:
     + $ git add .
     + $ git commit -m "Commit 137: Introducción a la sección"
@@ -6057,6 +6057,43 @@
     + $ git add .
     + $ git commit -m "Commit 151: Código fuente de la sección"
     + $ git push -u origin main
+
+## Sección 11: Journal App - Options Api + Vuex
+
+### Video 152. Introducción a la sección
++ **Contenido**: sobre lo que haremos en esta sección.
+1. Commit Video 152:
+    + $ git add .
+    + $ git commit -m "Commit 152: Introducción a la sección"
+    + $ git push -u origin main
+
+### Video 153. Temas puntuales de la sección
+
+
+
+### Video 154. Inicio de proyecto - Journal
+### Video 155. Usar SASS en nuestro proyecto
+### Video 156. Cambiar los colores por defecto del bootstrap
+### Video 157. Estructura modular
+### Video 158. Estructura del DaybookLayout
+### Video 159. Componentes EntryList y Entry
+### Video 160. Componente NoEntrySelected
+### Video 161. EntryView
+### Video 162. Mini tarea - Fab Icon
+### Video 163. Instalar Vuex y crear un módulo reutilizable
+### Video 164. Journal - Vuex Module
+### Video 165. Entradas ficticias y punto de restauración
+### Video 166. mapGetters - getEntriesByTerm
+### Video 167. EntryComponent - Información al componente
+### Video 168. GetEntryById - Obtener una entrada por el id
+### Video 169. Mostrar entrada en pantalla o redireccionar al usuario
+### Video 170. Cargar entrada cuando cambia el url
+### Video 171. Configurar RestAPI en Firebase
+### Video 172. Resumen de la sección
+### Video 173. Código fuente de la sección
+
+
+
 
 
 0.45 - x
