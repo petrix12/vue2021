@@ -6122,9 +6122,47 @@
     + $ git push -u origin main
 
 ### Video 155. Usar SASS en nuestro proyecto
++ https://getbootstrap.com
++ https://sass-lang.com
+1. Instalar Bootstrap de manera global en el proyecto:
+    + $ npm install bootstrap
+2. Crear archivo de estilos **07journal\src\styles\styles.scss**:
+    ```scss
+    @import 'node_modules/bootstrap/scss/bootstrap.scss'
+    ```
+3. Modificar **07journal\src\main.js** para configurar Bootstrap:
+    ```js
+    import { createApp } from 'vue'
+    import App from './App.vue'
+    import router from './router'
 
+    import './styles/styles.scss'
+
+    createApp(App).use(router).mount('#app')
+    ```
+4. Instalar dependencia de desarrollo del Saas:
+    + $ npm install -D sass-loader@10 sass
+5. Modificar la vista **07journal\src\views\Home.vue**:
+    ```vue
+    <template>
+        <div class="home">
+            <img alt="Vue logo" src="../assets/logo.png">
+            <h1>Soluciones++</h1>
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+        </div>
+    </template>
+    ```
+6. Commit Video 155:
+    + $ git add .
+    + $ git commit -m "Commit 155: Usar SASS en nuestro proyecto"
+    + $ git push -u origin main
 
 ### Video 156. Cambiar los colores por defecto del bootstrap
+
+
+
 ### Video 157. Estructura modular
 ### Video 158. Estructura del DaybookLayout
 ### Video 159. Componentes EntryList y Entry
@@ -6142,7 +6180,8 @@
 ### Video 171. Configurar RestAPI en Firebase
 ### Video 172. Resumen de la sección
 ### Video 173. Código fuente de la sección
-
+1. Código fuente de la sección: Aquí les dejo el código fuente de la sección por si lo llegan a necesitar o comparar contra el mío
+    + [Github.com - fin-seccion-11](https://github.com/Klerith/vue-journal-vuex/tree/fin-seccion-11)
 
 
 
