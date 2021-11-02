@@ -6853,18 +6853,18 @@
     export const addEntry = ( /* state */ ) => {
     }
     ```
-8. Modificar **07journal\src\store\module-template\getters.js**:
+8. Modificar **07journal\src\modules\daybook\store\journal\getters.js**:
     ```js
     /* export const myGetter = ( state ) => {
         return state.algo
     } */
 
     export const getEntriesByTern = ( /* state */ ) => {
-        return state.algo
+        /* return state.algo */
     }
 
     export const getEntryById = ( /* state */ ) => {
-        return state.algo
+        /* return state.algo */
     }
     ```
 9. Commit Video 164:
@@ -6873,10 +6873,100 @@
     + $ git push -u origin main
 
 ### Video 165. Entradas ficticias y punto de restauración
+1. Modificar **07journal\src\modules\daybook\store\journal\state.js**:
+    ```js
+    ```
+2. Ejecutar:
+    + $ git tag -a v1.0.0 -m "Vuex configurado - Journal"
+    + $ git push --tags
+3. En tu cuenta de GitHub ubicar el tag y presionar en **Create release from tag**:
+    + Release title: Vuex configurado - Journal
+    + Describe this release:
+        ```md
+        # Description
 
-
+        * Vuex configurado
+        * Journal hecho
+        ```
+4. Commit Video 165:
+    + $ git add .
+    + $ git commit -m "Commit 165: Entradas ficticias y punto de restauración"
+    + $ git push -u origin main
 
 ### Video 166. mapGetters - getEntriesByTerm
+1. Modificar **07journal\src\modules\daybook\store\journal\getters.js**:
+    ```js
+    /* export const myGetter = ( state ) => {
+        return state.algo
+    } */
+
+    export const getEntriesByTerm = ( state ) => ( term = '' ) => {
+        if ( term.length === 0 ) return state.entries
+        return state.entries.filter( entry => entry.text.toLowerCase().includes( term.toLocaleLowerCase() ) )
+    }
+
+    export const getEntryById = ( /* state */ ) => {
+        /* return state.algo */
+    }
+    ```
+2. Modificar **07journal\src\modules\daybook\components\EntryList.vue**:
+    ```vue
+    <template>
+        <div class="entry-list-container">
+            <div class="px-2 pt-2">
+                <input 
+                    type="text"
+                    class="form-control"
+                    placeholder="Buscar entrada"
+                    v-model="term"
+                >
+                <div class="entry-scrollarea">
+                    <Entry
+                        v-for="item in getEntriesByTerm"
+                        :key="item"
+                    />
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+    import { defineAsyncComponent } from 'vue'
+    import { mapGetters } from 'vuex'
+    export default {
+    components: {
+        Entry: defineAsyncComponent(() => import('./Entry.vue'))
+    },
+    computed: {
+        ...mapGetters('journal', ['getEntriesByTerm']),
+        entriesByTerm() {
+            return this.getEntriesByTerm( this.term )
+        }
+    },
+    data() {
+        return {
+            term: ''
+        }
+    }
+    }
+    </script>
+
+    <style lang="scss" scoped>
+    .entry-list-container {
+        border-right: 1px solid #2c3e50;
+        height: calc(100vh - 56px);
+    }
+    .entry-scrollarea {
+        height: calc(100vh - 110px);
+        overflow: scroll;
+    }
+    </style>
+    ```
+3. Commit Video 166:
+    + $ git add .
+    + $ git commit -m "Commit 166: mapGetters - getEntriesByTerm"
+    + $ git push -u origin main
+
 ### Video 167. EntryComponent - Información al componente
 ### Video 168. GetEntryById - Obtener una entrada por el id
 ### Video 169. Mostrar entrada en pantalla o redireccionar al usuario
@@ -6890,7 +6980,7 @@
 
 
 
-0.45 - x
+0.55 - x
 1 - 321
 
 
@@ -6900,6 +6990,7 @@
     ```
     ```js
     ```
+    
 ## Algunos comandos Vue:
 + Levantar proyecto:
     + npm run serve
@@ -6913,6 +7004,8 @@
     + git reset HEAD^ --soft
 + Forzar push
     + git push origin -f
++ Regresar al último repositorio:
+    + gti checkout -- .
 
 ## Proyectos extras:
 ### Aplicación de tareas con Vue 3 + Net Core + EFC
