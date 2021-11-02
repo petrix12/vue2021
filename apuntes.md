@@ -7551,8 +7551,10 @@
 ### Video 173. Código fuente de la sección
 1. Código fuente de la sección: Aquí les dejo el código fuente de la sección por si lo llegan a necesitar o comparar contra el mío
     + [Github.com - fin-seccion-11](https://github.com/Klerith/vue-journal-vuex/tree/fin-seccion-11)
-
-
+1. Commit Video 173:
+    + $ git add .
+    + $ git commit -m "Commit 173: Código fuente de la sección"
+    + $ git push -u origin main
 
 
 0.55 - x
