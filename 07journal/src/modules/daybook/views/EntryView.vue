@@ -40,6 +40,7 @@
 
 <script>
 import { defineAsyncComponent } from 'vue'
+import { mapGetters } from 'vuex'   // computed
 
 export default {
     props: {
@@ -50,8 +51,33 @@ export default {
     },
     components: {
         Fab: defineAsyncComponent(() => import('../components/Fab.vue'))
-    }
-    
+    },
+    computed: {
+        ...mapGetters('journal', ['getEntryById']),
+        /* day() {
+            const { day } = getDayMonthYear( this.entry.date )
+            return day
+        },
+        month() {
+            const { month } = getDayMonthYear( this.entry.date )
+            return month
+        },
+        yearDay() {
+            const { yearDay } = getDayMonthYear( this.entry.date )
+            return yearDay
+        } */
+    },
+    methods: {
+        loadEntry() {
+            const entry = this.getEntryById( this.id )
+            if ( !entry ) return this.$router.push({ name: 'no-entry' })
+            this.entry = entry
+        }
+    },
+    created() {
+        // console.log(this.$route.params.id)
+        this.loadEntry()
+    }, 
 }
 </script>
 

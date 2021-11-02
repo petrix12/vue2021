@@ -6968,7 +6968,282 @@
     + $ git push -u origin main
 
 ### Video 167. EntryComponent - Información al componente
++ https://gist.github.com/Klerith/b11f69a3646b2f94f66bb66a8a3dd995
+1. Modificar componente **07journal\src\modules\daybook\components\EntryList.vue**:
+    ```vue
+    <template>
+        <div class="entry-list-container">
+            <div class="px-2 pt-2">
+                <input 
+                    type="text"
+                    class="form-control"
+                    placeholder="Buscar entrada"
+                    v-model="term"
+                />
+            </div>
+
+            <div class="entry-scrollarea">
+                <Entry
+                    v-for="entry in entriesByTerm"
+                    :key="entry.id"
+                    :entry="entry"
+                />
+            </div>
+        </div>
+    </template>
+
+    <script>
+    import { defineAsyncComponent } from 'vue'
+    import { mapGetters } from 'vuex'
+    export default {
+        components: {
+            Entry: defineAsyncComponent(() => import('./Entry.vue'))
+        },
+        computed: {
+            ...mapGetters('journal', ['getEntriesByTerm']),
+            entriesByTerm() {
+                return this.getEntriesByTerm( this.term )
+            }
+        },
+        data() {
+            return {
+                term: ''
+            }
+        }
+    }
+    </script>
+
+    <style lang="scss" scoped>
+    .entry-list-container{
+        border-right: 1px solid #2c3e50;
+        height: calc( 100vh - 56px );
+    }
+    .entry-scrollarea{
+        height: calc( 100vh - 110px );
+        overflow: scroll;
+    }
+    </style>
+    ```
+2. Modificar componente **07journal\src\modules\daybook\components\Entry.vue**:
+    ```vue
+    <template>
+        <div
+            class="entry-container mb-3 pointer p-2"
+            @click="$router.push({ name: 'entry', params: { id: entry.id }})"
+        >
+            <!-- Titilo -->
+            <div class="entry-title d-flex">
+                <span class="text-success fs-5 fw-bold">{{ day }}</span>
+                <span class="mx-1 fs-5">{{ month }}</span>
+                <span class="mx-2 fw-light">{{ yearDay }}</span>
+            </div>
+
+            <div class="entry-description">
+                {{ shortText }}
+            </div>
+        </div>
+    </template>
+
+    <script>
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio','Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+    const days   = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado']
+    export default {
+        props: {
+            entry: {
+                type: Object,
+                required: true
+            }
+        },
+        computed: {
+            shortText() {
+                return ( this.entry.text.length > 130 )
+                    ? this.entry.text.substring(0,130) + '...'
+                    : this.entry.text
+            },
+            day() {
+                const date = new Date( this.entry.date )
+                return date.getDate()
+            },
+            month() {
+                const date = new Date( this.entry.date )
+                return months[ date.getMonth() ]
+            },
+            yearDay() {
+                const date = new Date( this.entry.date )
+                return `${ date.getFullYear() }, ${ days[ date.getDay() ] }`
+            }
+        }
+    }
+    </script>
+
+    <style lang="scss" scoped>
+    .entry-container {
+        border-bottom: 1px solid #2c3e50;
+        transition: 0.2s all ease-in;
+        &:hover {
+            background-color: lighten($color: grey, $amount: 45);
+            transition: 0.2s all ease-in;
+        }
+        .entry-description {
+            font-size: 12px;
+        }
+    }
+    </style>
+    ```
+3. Commit Video 167:
+    + $ git add .
+    + $ git commit -m "Commit 167: EntryComponent - Información al componente"
+    + $ git push -u origin main
+
 ### Video 168. GetEntryById - Obtener una entrada por el id
+1. Modificar vista **07journal\src\modules\daybook\views\EntryView.vue**:
+    ```vue
+    <template>
+        <div class="entry-title d-flex justify-content-between p-2">
+            <div>
+                <span class="text-success fs-3 fw-bold">1</span>
+                <span class="mx-1 fs-3">Noviembra</span>
+                <span class="mx-2 fs-4 fw-light">2021, lunes</span>
+            </div>
+
+            <div>
+                <button class="btn btn-danger mx-2">
+                    Borrar
+                    <i class="fa fa-trash-alt"></i>
+                </button>
+
+                <button class="btn btn-primary">
+                    Subir foto
+                    <i class="fa fa-upload"></i>
+                </button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="d-flex flex-column px-3 h-75">
+            <textarea
+                placeholder="¿Qué sucedió hoy?"
+            ></textarea>
+        </div>
+
+        <Fab 
+            icon="fa-save"
+        />
+
+        <img 
+            src="https://cdn.pixabay.com/photo/2015/03/10/17/23/youtube-667451__340.png" 
+            alt="Entry Picture"
+            class="img-thumbnail"
+        >
+    </template>
+
+    <script>
+    import { defineAsyncComponent } from 'vue'
+    import { mapGetters } from 'vuex'   // computed
+
+    export default {
+        props: {
+            id: {
+                type: String,
+                required: true
+            }
+        },
+        components: {
+            Fab: defineAsyncComponent(() => import('../components/Fab.vue'))
+        },
+        computed: {
+            ...mapGetters('journal', ['getEntryById']),
+        },
+        methods: {
+            loadEntry() {
+                const entry = this.getEntryById( this.id )
+                if ( !entry ) return this.$router.push({ name: 'no-entry' })
+                this.entry = entry
+            }
+        },
+        created() {
+            // console.log(this.$route.params.id)
+            this.loadEntry()
+        }, 
+    }
+    </script>
+
+    <style lang="scss" scoped>
+    textarea {
+        font-size: 20px;
+        border: none;
+        height: 100%;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    img {
+        width: 200px;
+        position: fixed;
+        bottom: 150px;
+        right: 20px;
+        box-shadow: 0px 5px 10px rgba($color: #000000, $alpha: 0.2);
+    }
+    </style>
+    ```
+2. Modificar archivo rutas **07journal\src\modules\daybook\router\index.js**:
+    ```js
+    export default {
+        name: 'daybook',
+        component: () => import(/* webpackChunkName: "daybook" */ '@/modules/daybook/layouts/DayBookLayout.vue'),
+        children: [
+            {
+                path: '',
+                name: 'no-entry',
+                component: () => import(/* webpackChunkName: "daybook-no-entry" */ '@/modules/daybook/views/NoEntrySelected.vue'),
+            },
+            {
+                path: ':id',
+                name: 'entry',
+                component: () => import(/* webpackChunkName: "daybook-no-entry" */ '@/modules/daybook/views/EntryView.vue'),
+                props: ( route ) => {
+                    return {
+                        id: route.params.id
+                    }
+                }
+            }
+        ]
+    }
+    ```
+3. Modificar **07journal\src\modules\daybook\store\journal\state.js**:
+    ```js
+    export default () => ({
+        isLoading: true,
+        entries: [
+            {
+                id: '1', // 12371298317892
+                date: new Date().toDateString(), // sat 23, julio
+                text: 'Minim exercitation ad nulla occaecat eiusmod qui enim amet voluptate incididunt esse. Consequat aute cillum laborum in. Est ullamco cillum aute do consequat culpa do non est consequat anim aliqua. Proident nostrud aute sit nisi velit. Tempor officia mollit quis eu aute deserunt laborum est ullamco minim. Do consectetur irure eu dolore reprehenderit dolor qui fugiat aliquip enim qui duis nisi sit. Aliqua velit non nostrud reprehenderit aliquip exercitation anim tempor sint irure aliquip.',
+                picture: null, // https://
+            },
+            {
+                id: '2', // 12371298317892
+                date: new Date().toDateString(), // sat 23, julio
+                text: 'Voluptate culpa sit ea nisi labore amet fugiat cupidatat duis culpa ex adipisicing enim quis. Ea aliquip laboris Lorem do irure amet qui fugiat. Officia laboris consectetur sint mollit est est aute mollit ut labore quis id do.',
+                picture: null, // https://
+            },
+            {
+                id: '3', // 12371298317892
+                date: new Date().toDateString(), // sat 23, julio
+                text: 'Fugiat consequat consectetur deserunt esse labore proident sit cupidatat nisi commodo eiusmod occaecat occaecat. Aute dolore voluptate ut id reprehenderit cupidatat cillum. Duis nisi magna est fugiat ut eu. Veniam consectetur in nulla officia eiusmod qui ad pariatur culpa eiusmod duis sint Lorem sit. Sunt proident veniam culpa labore sit enim ad ad.',
+                picture: null, // https://
+            },
+        ]
+    })
+    ```
+4. Commit Video 168:
+    + $ git add .
+    + $ git commit -m "Commit 168: GetEntryById - Obtener una entrada por el id"
+    + $ git push -u origin main
+
 ### Video 169. Mostrar entrada en pantalla o redireccionar al usuario
 ### Video 170. Cargar entrada cuando cambia el url
 ### Video 171. Configurar RestAPI en Firebase
@@ -7008,7 +7283,10 @@
     + gti checkout -- .
 
 ## Proyectos extras:
+
 ### Aplicación de tareas con Vue 3 + Net Core + EFC
++ [Vue 3 Desde Cero](96vue3_desde_0\apuntes.md)
+
 + [97vue3_net_core](97vue3_net_core/apuntes.md)
 
 ### Vue 3 - Composition API, Vuex, API Rest - Rick And Morty
