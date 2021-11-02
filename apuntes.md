@@ -7506,10 +7506,44 @@
     + $ git push -u origin main
 
 ### Video 171. Configurar RestAPI en Firebase
-
-
+1. Iniciar sesión en [Firebase](https://firebase.google.com) e **Ir a la consola**.
+2. Agregar nuevo proyecto: **vue-demos**.
+3. Dashabilitar **Google Analytics**.
+4. Dar clic en **Realtime Database** y luego dar clic en **Crear una base de datos**.
+5. Seleccionar la ubicación más cercana y **Siguiente**.
+6. Seleccionar **Comenzar en modo de prueba** y **Habilitar**.
+7. Ir a la pestaña **Reglas** y establecer reglas y **Publicar**:
+    ```json
+    {
+        "rules": {
+            ".read": true,
+            ".write": true
+        }
+    }
+    ```
+8. Ir a la pestaña **Datos** y agregar los siguientes documentos a **vue-demos-ccd6a-default-rtdb**:
+    ```json
+    {
+        "ABC123": {
+            "date": "Sat Jul 18 2021",
+            "text": "Minim exercitation ad nulla occaecat eiusmod qui enim amet voluptate incididunt esse. Consequat aute cillum laborum in. Est ullamco cillum aute do consequat culpa do non est consequat anim aliqua. Proident nostrud aute sit nisi velit. Tempor officia mollit quis eu aute deserunt laborum est ullamco minim. Do consectetur irure eu dolore reprehenderit dolor qui fugiat aliquip enim qui duis nisi sit. Aliqua velit non nostrud reprehenderit aliquip exercitation anim tempor sint irure aliquip."
+        },
+        "XYZ456": {
+            "date": "Sat 15 Jul 2021",
+            "text": "Voluptate culpa sit ea nisi labore amet fugiat cupidatat duis culpa ex adipisicing enim quis. Ea aliquip laboris Lorem do irure amet qui fugiat. Officia laboris consectetur sint mollit est est aute mollit ut labore quis id do."
+        }
+    }
+    ```
+9. Seleccinar el nodo **entries** y copiar su **url** y anexar al final **.json**.
+    + https://vue-demos-ccd6a-default-rtdb.firebaseio.com/entries.json
+10. Commit Video 171:
+    + $ git add .
+    + $ git commit -m "Commit 171: Configurar RestAPI en Firebase"
+    + $ git push -u origin main
 
 ### Video 172. Resumen de la sección
+
+
 ### Video 173. Código fuente de la sección
 1. Código fuente de la sección: Aquí les dejo el código fuente de la sección por si lo llegan a necesitar o comparar contra el mío
     + [Github.com - fin-seccion-11](https://github.com/Klerith/vue-journal-vuex/tree/fin-seccion-11)
