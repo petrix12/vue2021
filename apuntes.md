@@ -7542,7 +7542,11 @@
     + $ git push -u origin main
 
 ### Video 172. Resumen de la sección
-
++ **Contenido**: resumen de la sección.
+1. Commit Video 172:
+    + $ git add .
+    + $ git commit -m "Commit 172: Resumen de la sección"
+    + $ git push -u origin main
 
 ### Video 173. Código fuente de la sección
 1. Código fuente de la sección: Aquí les dejo el código fuente de la sección por si lo llegan a necesitar o comparar contra el mío
