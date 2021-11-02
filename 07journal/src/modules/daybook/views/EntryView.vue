@@ -1,9 +1,9 @@
 <template>
     <div class="entry-title d-flex justify-content-between p-2">
         <div>
-            <span class="text-success fs-3 fw-bold">1</span>
-            <span class="mx-1 fs-3">Noviembra</span>
-            <span class="mx-2 fs-4 fw-light">2021, lunes</span>
+            <span class="text-success fs-3 fw-bold">{{ day }}</span>
+            <span class="mx-1 fs-3">{{ month }}</span>
+            <span class="mx-2 fs-4 fw-light">{{ yearDay }}</span>
         </div>
 
         <div>
@@ -23,6 +23,7 @@
 
     <div class="d-flex flex-column px-3 h-75">
         <textarea
+            v-model="entry.text"
             placeholder="¿Qué sucedió hoy?"
         ></textarea>
     </div>
@@ -41,6 +42,7 @@
 <script>
 import { defineAsyncComponent } from 'vue'
 import { mapGetters } from 'vuex'   // computed
+import getDayMonthYear from '../helpers/getDayMonthYear'
 
 export default {
     props: {
@@ -52,9 +54,14 @@ export default {
     components: {
         Fab: defineAsyncComponent(() => import('../components/Fab.vue'))
     },
+    data() {
+        return {
+            entry: null
+        }
+    },
     computed: {
         ...mapGetters('journal', ['getEntryById']),
-        /* day() {
+        day() {
             const { day } = getDayMonthYear( this.entry.date )
             return day
         },
@@ -65,7 +72,7 @@ export default {
         yearDay() {
             const { yearDay } = getDayMonthYear( this.entry.date )
             return yearDay
-        } */
+        }
     },
     methods: {
         loadEntry() {
